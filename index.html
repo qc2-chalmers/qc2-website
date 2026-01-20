@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="QC2 @ Chalmers Research Group">
+  <meta name="author" content="QC2 Team">
+
+  <title>QC2 · Home Page</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/docs.css" rel="stylesheet">
+
+<style>
+    /* Theme-aware Color Palette */
+    :root {
+      --bd-violet: #2563eb;
+      --bd-violet-rgb: 37, 99, 235;
+      --bd-violet-bg: #2563eb;
+      --qc2-blue: #e0f2fe; /* Your requested light blue */
+    }
+
+    /* Navbar styling: Dark Slate */
+    .bd-navbar {
+      background-color: #0f172a !important;
+      padding-top: 1.5rem !important;
+      padding-bottom: 1.5rem !important;
+    }
+
+    .bd-navbar::after {
+      background-image: none !important;
+      background-color: #0f172a !important;
+    }
+
+    .bd-navbar .nav-link, .bd-navbar .navbar-brand {
+      color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .bd-navbar .nav-link:hover {
+      color: #60a5fa !important;
+    }
+
+    /* Block Styling for Sections */
+    .content-block {
+      border: 1px solid var(--bs-border-color-translucent);
+      border-radius: 1rem;
+      padding: 3rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+
+    /* Theme-specific Overrides */
+    [data-bs-theme="light"] .content-block { 
+      background-color: #ffffff; 
+    }
+    [data-bs-theme="dark"] .content-block { 
+      background-color: rgba(255, 255, 255, 0.03); 
+    }
+    [data-bs-theme="dark"] .bd-navbar { 
+      background-color: #020617 !important; 
+    }
+
+    /* Layout Width */
+    .wide-section { 
+      max-width: 1200px !important; 
+    }
+
+    /* Dates styling */
+    .badge.bg-primary {
+      background-color: var(--qc2-blue) !important;
+      color: #0369a1 !important; /* Dark blue text for readability */
+      font-weight: 600;
+    }
+
+    /* Big Blue Buttons (Show/Hide & Read Paper) */
+    .btn-outline-primary, .btn-outline-secondary {
+      background-color: var(--qc2-blue) !important; 
+      border: 1px solid #7dd3fc !important;       
+      padding: 0.6rem 1.2rem !important;           /* Increased size */
+      font-size: 1rem !important;                  /* Increased font */
+      font-weight: 600 !important;
+      color: #0369a1 !important;                   /* Dark blue text */
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline-primary:hover, .btn-outline-secondary:hover {
+      filter: brightness(0.9);
+      transform: translateY(-2px);
+      color: #0369a1 !important;
+    }
+
+    /* Publications List Tuning */
+    .pub-list { 
+      list-style: none; 
+      padding: 0; 
+      margin-top: 0.5rem; 
+    }
+    .pub-item { 
+      padding: 1.5rem 0; 
+      border-bottom: 1px solid var(--bs-border-color); 
+      text-align: left; 
+    }
+    .pub-item:last-child { 
+      border-bottom: none; 
+    }
+
+    /* Text & Icons */
+    .abstract-text { 
+      text-align: justify; 
+      line-height: 1.6; 
+      font-size: 0.95rem; 
+    }
+
+    .section-title-icon {
+      width: 1em; 
+      height: 1em; 
+      vertical-align: -0.15em;
+      margin-right: 0.75rem; 
+      fill: currentColor;
+    }
+
+    .btn-icon { 
+      width: 1.1em; 
+      height: 1.1em; 
+      vertical-align: -0.2em; 
+      margin-right: 0.4rem; 
+      fill: currentColor; 
+    }
+
+    /* Collaborators (Unified here) */
+    .collab-box {
+      width: 250px;
+      height: 120px;
+      background-color: var(--qc2-blue) !important;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      transition: transform 0.2s ease-in-out;
+    }
+    .collab-box:hover { 
+      transform: translateY(-5px); 
+    }
+    .collab-box img { 
+      max-width: 100%; 
+      max-height: 100%; 
+      object-fit: contain; 
+    }
+  </style>
+
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="images/favicon.ico">
+</head>
+
+<body>
+  <!-- SVG ICON SYMBOLS -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" /></symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" /><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" /></symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" /></symbol>
+    <symbol id="three-dots" viewBox="0 0 16 16"><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" /></symbol>
+    <symbol id="newspaper" viewBox="0 0 16 16"><path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .303-.204.627-.514.79-.241.125-.503.158-.738.158h-11a1.5 1.5 0 0 1-1.5-1.5zM1.5 2a.5.5 0 0 0-.5.5v10.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V2.5a.5.5 0 0 0-.5-.5z"/><path d="M2 3h10v2H2zm0 3h4v3H2zm5 0h5v1H7zm0 2h5v1H7zm-5 4h10v1H2z"/></symbol>
+    <symbol id="code-square" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0m2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0"/></symbol>
+    <symbol id="book-half" viewBox="0 0 16 16"><path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></symbol>
+    <symbol id="person-badge" viewBox="0 0 16 16"><path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/><path d="M4.5 0A.5.5 0 0 0 4 .5V1h8V.5a.5.5 0 0 0-.5-.5zm-.5 1H3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zM2 3a1 1 0 0 1 1-1h1v1a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V2h1a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="journal-text" viewBox="0 0 16 16"><path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/><path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/></symbol>
+    <symbol id="target" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></symbol>
+    <symbol id="people-fill" viewBox="0 0 16 16"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></symbol>
+  </svg>
+
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+      <a class="navbar-brand d-flex align-items-center gap-2 p-0 me-0 me-lg-4" href="#" aria-label="QC2 @ Chalmers">
+        <img src="images/chalmers_logo_white.png" alt="Chalmers" height="50">
+        <span class="fw-semibold">QC2 @ Chalmers</span>
+      </a>
+      <div class="d-flex align-items-center">
+        <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-label="Toggle navigation">
+          <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>
+        </button>
+      </div>
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" data-bs-scroll="true">
+        <div class="offcanvas-header px-4 pb-0">
+          <h5 class="offcanvas-title text-white">Menu</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#bdNavbar"></button>
+        </div>
+        <div class="offcanvas-body p-4 pt-0 p-lg-0">
+          <hr class="d-lg-none text-white-50">
+          <ul class="navbar-nav flex-row flex-wrap ms-md-auto align-items-center">
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="#news">News</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="#projects">Projects</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="#publications">Publications</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="#jobs">Jobs</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="#collaborations">Collaborators</a></li>
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-3 text-white"></div>
+              <hr class="d-lg-none my-2 text-white-50">
+            </li>
+            <li class="nav-item dropdown">
+              <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+                <span class="d-lg-none ms-2">Toggle theme</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#sun-fill"></use></svg>
+                        Light
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#moon-stars-fill"></use></svg>
+                        Dark
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
+                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#circle-half"></use></svg>
+                        Auto
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                    </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container-xxl bd-gutter mt-5">
+    <div class="col-md-10 mx-auto text-center mb-5">
+      <img src="images/qc2_intro.png" width="100%" alt="QC2 Chalmers" class="mb-4">
+      <h1 class="mb-3 fw-semibold lh-1">Welcome to the QC2 webpage!</h1>
+      <p class="lead">
+        Supported by the Wallenberg foundations and based at Chalmers, we are a research group developing 
+        a scalable 100-qubit superconducting quantum processor. We integrate theoretical research with 
+        hardware engineering to improve qubit performance and system integration. Through our quantum testbed,
+        we bridge the gap between academic research and industrial application, fostering a specialized workforce and a 
+        commercial ecosystem for quantum technology.
+      </p>
+    </div>
+
+    <!-- NEWS -->
+    <section id="news" class="content-block wide-section mx-auto text-md-center">
+      <h2 class="display-5 mb-3 fw-semibold lh-sm">
+        <svg class="section-title-icon"><use href="#newspaper"></use></svg>News & Blog
+      </h2>
+      <p class="lead fw-normal">Stay updated with the latest breakthroughs and group activities at Chalmers.</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="content-block wide-section mx-auto text-md-center">
+      <h2 class="display-5 mb-3 fw-semibold lh-sm">
+        <svg class="section-title-icon"><use href="#code-square"></use></svg>Software Projects
+      </h2>
+      <p class="lead fw-normal">Explore our open-source tools for quantum characterization and control.</p>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="content-block wide-section mx-auto text-md-center">
+      <h2 class="display-5 mb-1 fw-semibold lh-sm">
+        <svg class="section-title-icon"><use href="#book-half"></use></svg>Latest publications
+      </h2>
+      <p class="lead fw-normal mb-1">Latest research papers and preprints from the QC2 team.</p>
+      
+      <ul class="pub-list">
+        <!-- Paper 1 -->
+        <li class="pub-item">
+          <span class="badge bg-primary mb-2">June 2025</span>
+          <h5 class="mb-3 fw-bold">Real-time adaptive tracking of fluctuating relaxation rates in superconducting qubits</h5>
+          <div class="collapse mb-3" id="abstract1">
+            <div class="card card-body bg-body-tertiary border-0 abstract-text p-3">
+              The fidelity of operations on a solid-state quantum processor is ultimately bounded by decoherence effects induced by a fluctuating environment. Characterizing environmental fluctuations is challenging because the acquisition time of experimental protocols limits the precision with which the environment can be measured and may obscure the detailed structure of these fluctuations. Here we present a real-time Bayesian method for estimating the relaxation rate of a qubit, leveraging a classical controller with an integrated field-programmable gate array (FPGA). Using our FPGA-powered Bayesian method, we adaptively and continuously track the relaxation-time fluctuations of two fixed-frequency superconducting transmon qubits, which exhibit average relaxation times of approximately 0.17 ms and occasionally exceed 0.5 ms. Our technique allows for the estimation of these relaxation times in a few milliseconds, more than two orders of magnitude faster than previous nonadaptive methods, and allows us to observe fluctuations up to 5 times the qubit's average relaxation rates on significantly shorter timescales than previously reported. Our statistical analysis reveals that these fluctuations occur on much faster timescales than previously understood, with two-level-system switching rates reaching up to 10 Hz. Our work offers an appealing solution for rapid relaxation-rate characterization in device screening and for improved understanding of fast relaxation dynamics.
+            </div>
+          </div>
+          <div class="d-flex gap-2 justify-content-md-center">
+            <button class="btn btn-sm btn-outline-secondary d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#abstract1">
+              <svg class="btn-icon"><use href="#target"></use></svg> <span class="btn-text">Show Abstract</span>
+            </button>
+            <a href="https://arxiv.org/abs/2506.09576" target="_blank" class="btn btn-sm btn-outline-primary d-flex align-items-center">
+              <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+            </a>
+          </div>
+        </li>
+        <!-- Paper 2 -->
+        <li class="pub-item">
+            <span class="badge bg-primary mb-2">May 2025</span>
+            <h5 class="mb-3 fw-bold">Quantum Process Tomography with Digital Twins of Error Matrices</h5>
+            <div class="collapse mb-3" id="abstract2">
+                <div class="card card-body bg-body-tertiary border-0 abstract-text p-3">
+                  Accurate and robust quantum process tomography (QPT) is crucial for verifying quantum gates and diagnosing 
+                  implementation faults in experiments aimed at building universal quantum computers. However, the reliability 
+                  of QPT protocols is often compromised by faulty probes, particularly state preparation and measurement (SPAM) 
+                  errors, which introduce fundamental inconsistencies in traditional QPT algorithms. We propose and investigate 
+                  enhanced QPT for multi-qubit systems by integrating the error matrix in a digital twin of the identity process 
+                  matrix, enabling statistical refinement of SPAM error learning and improving QPT precision. Through numerical 
+                  simulations, we demonstrate that our approach enables highly accurate and faithful process characterization.
+                  We further validate our method experimentally using superconducting quantum gates, achieving at least an 
+                  order-of-magnitude fidelity improvement over standard QPT. Our results provide a practical and precise method 
+                  for assessing quantum gate fidelity and enhancing QPT on a given hardware.
+                </div>
+            </div>
+            <div class="d-flex gap-2 justify-content-md-center">
+                <button class="btn btn-sm btn-outline-secondary d-flex align-items-center toggle-abstract" type="button" data-bs-toggle="collapse" data-bs-target="#abstract2">
+                    <svg class="btn-icon"><use href="#target"></use></svg> <span class="btn-text">Show Abstract</span>
+                </button>
+                <a href="https://arxiv.org/abs/2505.07725" target="_blank" class="btn btn-sm btn-outline-primary d-flex align-items-center">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+            </div>
+          </li>
+          <!-- Additional papers kept exactly as before... -->
+          <li class="pub-item">
+            <span class="badge bg-primary mb-2">May 2025</span>
+            <h5 class="mb-3 fw-bold">Neural-network-based design and implementation of fast and robust quantum gates</h5>
+            <div class="collapse mb-3" id="abstract3">
+                <div class="card card-body bg-body-tertiary border-0 abstract-text p-3">
+                  We present a continuous-time, neural-network-based approach to optimal control in quantum systems, 
+                  with a focus on pulse engineering for quantum gates. Leveraging the framework of neural ordinary 
+                  differential equations, we construct control fields as outputs of trainable neural networks, thereby
+                  eliminating the need for discrete parametrization or predefined bases. This allows for generation of smooth, 
+                  hardware-agnostic pulses that can be optimized directly using differentiable integrators. As a case study we 
+                  design, and implement experimentally, a short and detuning-robust π/2 pulse for photon parity measurements in
+                  superconducting transmon circuits. This is achieved through simultaneous optimization for robustness and 
+                  suppressing the leakage outside of the computational basis. These pulses maintain a fidelity greater than 
+                  99.9% over a detuning range of ≈±20MHz, thereby outperforming traditional techniques while retaining comparable 
+                  gate durations. This showcases its potential for high-performance quantum control in experimentally relevant 
+                  settings.
+                </div>
+            </div>
+            <div class="d-flex gap-2 justify-content-md-center">
+                <button class="btn btn-sm btn-outline-secondary d-flex align-items-center toggle-abstract" type="button" data-bs-toggle="collapse" data-bs-target="#abstract3">
+                    <svg class="btn-icon"><use href="#target"></use></svg> <span class="btn-text">Show Abstract</span>
+                </button>
+                <a href="https://arxiv.org/abs/2505.02054" target="_blank" class="btn btn-sm btn-outline-primary d-flex align-items-center">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+            </div>
+          </li>
+          <li class="pub-item">
+            <span class="badge bg-primary mb-2">March 2025</span>
+            <h5 class="mb-3 fw-bold">Mitigating transients in flux-control signals in a superconducting quantum processor</h5>
+            <div class="collapse mb-3" id="abstract4">
+                <div class="card card-body bg-body-tertiary border-0 abstract-text p-3">
+                  Flux-tunable qubits and couplers are common components in superconducting quantum processors. However, dynamically 
+                  controlling these elements via current pulses poses challenges due to distortions and transients in the propagating 
+                  signals. In particular, long-time transients can persist, adversely affecting subsequent qubit control operations. 
+                  We model the flux control line as a first-order RC circuit and introduce a class of pulses designed to mitigate 
+                  long-time transients. We theoretically demonstrate the robustness of these pulses against parameter mischaracterization 
+                  and provide experimental evidence of their effectiveness in mitigating transients when applied to a flux-tunable 
+                  qubit coupler. The proposed pulse design offers a practical solution for mitigating long-time transients, enabling 
+                  efficient and reliable experiment tune-ups without requiring detailed flux line characterization.
+                </div>
+            </div>
+            <div class="d-flex gap-2 justify-content-md-center">
+                <button class="btn btn-sm btn-outline-secondary d-flex align-items-center toggle-abstract" type="button" data-bs-toggle="collapse" data-bs-target="#abstract4">
+                    <svg class="btn-icon"><use href="#target"></use></svg> <span class="btn-text">Show Abstract</span>
+                </button>
+                <a href="https://arxiv.org/abs/2503.08645" target="_blank" class="btn btn-sm btn-outline-primary d-flex align-items-center">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+            </div>
+          </li>
+      </ul>
+    </section>
+
+    <section id="jobs" class="content-block wide-section mx-auto text-md-center">
+      <h2 class="display-5 mb-3 fw-semibold lh-sm">
+        <svg class="section-title-icon"><use href="#person-badge"></use></svg>Vacancies & Jobs
+      </h2>
+      <p class="lead fw-normal">Join us at Chalmers! We are looking for talented PhDs and Postdocs.</p>
+    </section>
+
+<!-- COLLABORATIONS -->
+    <section id="collaborations" class="content-block wide-section mx-auto text-md-center">
+      <h2 class="display-5 mb-4 fw-semibold lh-sm">
+        <svg class="section-title-icon"><use href="#people-fill"></use></svg>External Collaborations
+      </h2>
+      
+      <style>
+        .collab-box {
+          width: 250px;
+          height: 120px;
+          background-color: #e0f2fe; /* Light Blue background */
+          border-radius: 0.75rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1.5rem;
+          transition: transform 0.2s ease-in-out;
+          border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .collab-box:hover {
+          transform: translateY(-5px);
+        }
+
+        .collab-box img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+
+        /* Ensure light background is visible in both modes for brand consistency */
+        [data-bs-theme="dark"] .collab-box {
+          background-color: #e0f2fe; 
+        }
+      </style>
+
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-4">
+        <!-- LUMI -->
+        <a href="https://lumi-supercomputer.eu/lumi-q-inaugurated/" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm">
+            <img src="images/lumi_logo.png" alt="LUMI">
+          </div>
+        </a>
+
+        <!-- QBLOX -->
+        <a href="https://qblox.com" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm">
+            <img src="images/qblox_logo.png" alt="Qblox">
+          </div>
+        </a>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
+    <div class="container py-4 text-body-secondary">
+      <small>© 2026 QC2 @ Chalmers University of Technology</small>
+      <small>   |   Supported by Wallenberg fundation</small>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    /*!
+     * Self-contained Theme Logic (Alternative to color-modes.js)
+     */
+    (() => {
+      'use strict'
+      const getStoredTheme = () => localStorage.getItem('theme')
+      const setStoredTheme = theme => localStorage.setItem('theme', theme)
+      const getPreferredTheme = () => {
+        const storedTheme = getStoredTheme()
+        if (storedTheme) return storedTheme
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      }
+
+      const setTheme = theme => {
+        if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-bs-theme', 'dark')
+        } else {
+          document.documentElement.setAttribute('data-bs-theme', theme)
+        }
+      }
+
+      setTheme(getPreferredTheme())
+
+      const showActiveTheme = (theme, focus = false) => {
+        const themeSwitcher = document.querySelector('#bd-theme')
+        if (!themeSwitcher) return
+        const activeThemeIcon = document.querySelector('.theme-icon-active use')
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+        const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
+
+        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+          element.classList.remove('active')
+          element.setAttribute('aria-pressed', 'false')
+          element.querySelector('svg.ms-auto').classList.add('d-none')
+        })
+
+        btnToActive.classList.add('active')
+        btnToActive.setAttribute('aria-pressed', 'true')
+        btnToActive.querySelector('svg.ms-auto').classList.remove('d-none')
+        activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+        
+        if (focus) themeSwitcher.focus()
+      }
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        const storedTheme = getStoredTheme()
+        if (storedTheme !== 'light' && storedTheme !== 'dark') setTheme(getPreferredTheme())
+      })
+
+      window.addEventListener('DOMContentLoaded', () => {
+        showActiveTheme(getPreferredTheme())
+        document.querySelectorAll('[data-bs-theme-value]')
+          .forEach(toggle => {
+            toggle.addEventListener('click', () => {
+              const theme = toggle.getAttribute('data-bs-theme-value')
+              setStoredTheme(theme)
+              setTheme(theme)
+              showActiveTheme(theme, true)
+            })
+          })
+      })
+    })()
+
+    /* Toggle button text logic */
+    document.querySelectorAll('.collapse').forEach(function(el) {
+      el.addEventListener('show.bs.collapse', function () {
+        const btn = document.querySelector(`[data-bs-target="#${this.id}"]`);
+        if(btn) btn.querySelector('.btn-text').innerText = 'Hide Abstract';
+      });
+      el.addEventListener('hide.bs.collapse', function () {
+        const btn = document.querySelector(`[data-bs-target="#${this.id}"]`);
+        if(btn) btn.querySelector('.btn-text').innerText = 'Show Abstract';
+      });
+    });
+  </script>
+</body>
+</html>

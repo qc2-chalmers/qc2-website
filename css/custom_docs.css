@@ -1,0 +1,29 @@
+/* Page background */
+:root {
+  --bs-body-bg: #f8fafc;
+  --bs-body-bg-rgb: 248,250,252;
+
+  --bd-violet: #2563eb;
+  --bd-violet-rgb: 37,99,235;
+}
+
+/* Navbar */
+.bd-navbar::after {
+  background-image: none;
+  background-color: #0f172a;
+}
+
+.bd-navbar .navbar-brand,
+.bd-navbar .nav-link {
+  color: #e5e7eb;
+}
+
+.bd-navbar .nav-link:hover {
+  color: #93c5fd;
+}
+
+/* Dark mode */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #020617;
+  --bs-body-bg-rgb: 2,6,23;
+}
