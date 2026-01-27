@@ -30,6 +30,7 @@
     [data-bs-theme="light"] body { background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
     [data-bs-theme="dark"] body { background-image: linear-gradient(135deg, #0f172a 0%, #020617 100%); }
 
+    /* Restoration of original Navbar styling */
     .bd-navbar {
       background-color: #0f172a !important;
       padding-top: 1.5rem !important;
@@ -46,6 +47,7 @@
     }
 
     .bd-navbar .nav-link:hover { color: #60a5fa !important; }
+    [data-bs-theme="dark"] .bd-navbar { background-color: #020617 !important; }
 
     .content-block {
       border: 1px solid var(--bs-border-color-translucent);
@@ -59,34 +61,73 @@
 
     [data-bs-theme="light"] .content-block { background-color: rgba(255, 255, 255, 0.85) !important; }
     [data-bs-theme="dark"] .content-block { background-color: rgba(15, 23, 42, 0.7) !important; }
-    [data-bs-theme="dark"] .bd-navbar { background-color: #020617 !important; }
 
     .wide-section { max-width: 1200px !important; }
 
-    /* Category Title Styling */
+    /* Category Title Styling - Using defined blue */
     .category-title {
-      border-bottom: 2px solid var(--qc2-blue);
+      border-bottom: 3px solid var(--qc2-blue);
       display: inline-block;
       padding-bottom: 0.5rem;
       margin-bottom: 2rem;
       font-weight: 700;
     }
 
-    /* People Card Styling */
+    /* Consistent Card Styling */
     .person-card {
-      border: none;
-      background: transparent;
-      transition: transform 0.3s ease;
+      border: 1px solid var(--bs-border-color-translucent);
+      background: rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      border-radius: 1rem;
     }
-    .person-card:hover { transform: translateY(-10px); }
+
+    .person-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--qc2-blue);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
     .person-img {
-      width: 160px;
-      height: 160px;
+      width: 140px;
+      height: 140px;
       object-fit: cover;
       border-radius: 50%;
       border: 4px solid var(--qc2-blue);
-      margin-bottom: 1.25rem;
+      margin: 0 auto 1.25rem;
+    }
+
+    .person-description {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    /* Reuse the btn-qc2 style for profile buttons for consistency */
+    .btn-profile {
+      background-color: var(--qc2-blue) !important; 
+      border: 1px solid #7dd3fc !important;       
+      padding: 0.5rem 1rem !important;           
+      font-size: 0.85rem !important;                  
+      font-weight: 600 !important;
+      color: #0369a1 !important;                   
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      width: 100%;
+      gap: 0.5rem; /* Space between text and emoji */
+    }
+
+    .btn-profile:hover {
+        filter: brightness(1.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .section-title-icon { width: 1em; height: 1em; vertical-align: -0.15em; margin-right: 0.75rem; fill: currentColor; }
@@ -182,83 +223,102 @@
         <svg class="section-title-icon"><use href="#people-fill"></use></svg>Meet the Team
       </h2>
 
-    <!-- STAFF SECTION -->
+      <!-- STAFF SECTION -->
       <h3 class="category-title h4">Staff</h3>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-5 mb-5">
-        
-        <!-- Member 1 -->
-        <div class="col text-center">
-          <div class="person-card">
-              <img src="images/people/giovanna_tancredi.jpeg" class="person-img shadow" alt="Giovanna Tancredi">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
+        <div class="col">
+          <div class="person-card text-center">
+              <img src="images/people/giovanna_tancredi.jpeg" class="person-img shadow-sm" alt="Giovanna Tancredi">
               <h5 class="fw-bold mb-1">Giovanna Tancredi</h5>
-              <p class="text-body-secondary small">Group Leader</p>
+              <p class="text-body-secondary small fw-semibold mb-2">Group Leader</p>
+              <div class="person-description text-body-secondary">
+                Research focus: Superconducting circuits, quantum control, and scaling up quantum processors.
+              </div>
+              <a href="profiles/giovanna_tancredi.html" class="btn-profile">More About Me 🔍</a>
           </div>
         </div>
 
-        <!-- Member 2 -->
-        <div class="col text-center">
-          <div class="person-card">
-              <img src="images/people/michele_faucci.png" class="person-img shadow" alt="Michele Faucci Giannelli">
+        <div class="col">
+          <div class="person-card text-center">
+              <img src="images/people/michele_faucci.png" class="person-img shadow-sm" alt="Michele Faucci Giannelli">
               <h5 class="fw-bold mb-1">Michele Faucci Giannelli</h5>
-              <p class="text-body-secondary small">Head of unit | Senior researcher</p>
+              <p class="text-body-secondary small fw-semibold mb-2">Senior Researcher</p>
+              <div class="person-description text-body-secondary">
+                Expert in experimental infrastructure, high-fidelity operations, and system calibration.
+              </div>
+              <a href="https://www.chalmers.se/en/persons/faucci/" class="btn-profile">More About Me 🔍</a>
           </div>
         </div>
 
-        <!-- Member 3 -->
-        <div class="col text-center">
-          <div class="person-card">
-              <img src="images/people/andreas_nylander.png" class="person-img shadow" alt="Andreas Nylander">
+        <div class="col">
+          <div class="person-card text-center">
+              <img src="images/people/andreas_nylander.png" class="person-img shadow-sm" alt="Andreas Nylander">
               <h5 class="fw-bold mb-1">Andreas Nylander</h5>
-              <p class="text-body-secondary small">Senior researcher</p>
+              <p class="text-body-secondary small fw-semibold mb-2">Senior Researcher</p>
+              <div class="person-description text-body-secondary">
+                Specializing in microwave engineering, cryogenic electronics, and hardware optimization.
+              </div>
+              <a href="profiles/andreas_nylander.html" class="btn-profile">More About Me 🔍</a>
           </div>
         </div>
-        
       </div>
 
       <!-- POSTDOCS SECTION -->
-    <h3 class="category-title h4">Postdocs</h3>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-5 mb-5">
-
-        <div class="col text-center">
-          <div class="person-card">
-            <img src="images/people/christian_krizan.png" class="person-img shadow" alt="Christian Krizan">
+      <h3 class="category-title h4">Postdocs</h3>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
+        <div class="col">
+          <div class="person-card text-center">
+            <img src="images/people/christian_krizan.png" class="person-img shadow-sm" alt="Christian Krizan">
             <h5 class="fw-bold mb-1">Christian Krizan</h5>
-            <p class="text-body-secondary small"></p>
+            <p class="text-body-secondary small fw-semibold mb-2">Postdoctoral Fellow</p>
+            <div class="person-description text-body-secondary">
+                Investigating novel qubit designs and microwave engineering for quantum coherence.
+            </div>
+            <a href="profiles/christian_krizan.html" class="btn-profile">More About Me 🔍</a>
           </div>
         </div>
       
-        <div class="col text-center">
-          <div class="person-card">
-            <img src="images/people/ingrid_strandberg.png" class="person-img shadow" alt="Ingrid Strandberg">
-            <h5 class="fw-bold mb-1">Ingrid Strandbergß</h5>
-            <p class="text-body-secondary small"></p>
+        <div class="col">
+          <div class="person-card text-center">
+            <img src="images/people/ingrid_strandberg.png" class="person-img shadow-sm" alt="Ingrid Strandberg">
+            <h5 class="fw-bold mb-1">Ingrid Strandberg</h5>
+            <p class="text-body-secondary small fw-semibold mb-2">Postdoctoral Fellow</p>
+            <div class="person-description text-body-secondary">
+                Theory and simulation of open quantum systems and noise mitigation strategies.
+            </div>
+            <a href="profiles/ingrid_strandberg.html" class="btn-profile">More About Me 🔍</a>
           </div>
         </div>
- 
-        
-    </div>
+      </div>
 
       <!-- PHD STUDENTS SECTION -->
       <h3 class="category-title h4">PhD Students</h3>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-5 mb-5">
-        <div class="col text-center">
-          <div class="person-card">
-            <img src="images/phd1.png" class="person-img shadow" alt="Name">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
+        <div class="col">
+          <div class="person-card text-center">
+            <img src="images/placeholder_user.png" class="person-img shadow-sm" alt="Name">
             <h5 class="fw-bold mb-1">Student Name</h5>
-            <p class="text-body-secondary small">PhD Candidate</p>
+            <p class="text-body-secondary small fw-semibold mb-2">PhD Candidate</p>
+            <div class="person-description text-body-secondary">
+              Placeholder for research description regarding thesis topics and group contributions.
+            </div>
+            <a href="#" class="btn-profile">More About Me 🔍</a>
           </div>
         </div>
       </div>
 
       <!-- MASTER STUDENTS SECTION -->
       <h3 class="category-title h4">Master Students</h3>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-5">
-
-        <div class="col text-center">
-          <div class="person-card">
-            <img src="images/people/JuliusAndersson.jpg" class="person-img shadow" alt="Julius Andersson">
-            <h5 class="fw-bold mb-1">Julius Andersson</h5>
-            <p class="text-body-secondary small">Master Student</p>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        <div class="col">
+          <div class="person-card text-center">
+            <img src="images/placeholder_user.png" class="person-img shadow-sm" alt="Name">
+            <h5 class="fw-bold mb-1">Student Name</h5>
+            <p class="text-body-secondary small fw-semibold mb-2">Master Student</p>
+            <div class="person-description text-body-secondary">
+              Placeholder for project description regarding current research projects.
+            </div>
+            <a href="#" class="btn-profile">More About Me 🔍</a>
           </div>
         </div>
 
@@ -278,7 +338,6 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   
   <script>
-    /* Theme logic (Embedded for reliability) */
     (() => {
       'use strict'
       const getStoredTheme = () => localStorage.getItem('theme')
