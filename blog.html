@@ -95,6 +95,21 @@
       align-items: center;
       border-radius: 0.5rem;
     }
+
+    .footer-logo-container {
+      background-color: #ffffff; 
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 15px;
+      /* Subtle border for light mode */
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .footer-logo-img {
+      max-height: 40px;
+      display: block;
+    }
   </style>
 
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
@@ -174,18 +189,16 @@
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
-        <!-- Blog Post 1 -->
         <div class="col">
           <div class="card blog-card h-100 p-3">
-            <img src="images/blog/farn_paper.png" class="blog-img shadow-sm" alt="Post 4">
+            <img src="images/blog/farn_webpage.png" class="blog-img shadow-sm" alt="Post 1">
             <div class="card-body p-0">
-              <span class="badge badge-date">February 11, 2026</span>
-              <h4 class="card-title fw-bold h5">New preprint out!</h4>
+              <span class="badge badge-date">Jan 20, 2026</span>
+              <h4 class="card-title fw-bold h5">New webpage 🌐 </h4>
               <p class="card-text small text-body-secondary">
-                Real-time adaptive tracking of fluctuating relaxation rates
-                in superconducting qubits
+                Our new webpage is online ✨ 
               </p>
-              <a href="https://arxiv.org/abs/2506.09576" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
+              <a href="www.chalmersqc2.com" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
             </div>
           </div>
         </div>
@@ -193,30 +206,15 @@
         <!-- Blog Post 1 -->
         <div class="col">
           <div class="card blog-card h-100 p-3">
-            <img src="images/blog/farn_boardgames.png" class="blog-img shadow-sm" alt="Post 3">
+            <img src="images/blog/farn_paper.png" class="blog-img shadow-sm" alt="Post 4">
             <div class="card-body p-0">
               <span class="badge badge-date">February 11, 2026</span>
-              <h4 class="card-title fw-bold h5">Boardgame night!</h4>
+              <h4 class="card-title fw-bold h5">New preprint out 🗞️</h4>
               <p class="card-text small text-body-secondary">
-                Feel free to join a boardgame session on February 11th! We meet at 5pm in the coffee room.
+                We have a new preprint published by the group: "Real-time adaptive tracking of fluctuating relaxation rates
+                in superconducting qubits".
               </p>
-              <a href="#" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Blog Post 1 -->
-        <div class="col">
-          <div class="card blog-card h-100 p-3">
-            <img src="images/blog/farn_webpage.png" class="blog-img shadow-sm" alt="Post 1">
-            <div class="card-body p-0">
-              <span class="badge badge-date">Jan 20, 2026</span>
-              <h4 class="card-title fw-bold h5">New webpage!</h4>
-              <p class="card-text small text-body-secondary">
-                We have a new webpage!! It will be full of nice links and texts that will help 
-                everyone to know our amazing group 🥹
-              </p>
-              <a href="#" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
+              <a href="https://arxiv.org/abs/2506.09576" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
             </div>
           </div>
         </div>
@@ -227,11 +225,10 @@
             <img src="images/blog/mascotte.png" class="blog-img shadow-sm" alt="Post 2">
             <div class="card-body p-0">
               <span class="badge badge-date">Dec 15, 2025</span>
-              <h4 class="card-title fw-bold h5">Farn is our new mascotte!</h4>
+              <h4 class="card-title fw-bold h5">Farn is our new mascotte 🎉</h4>
               <p class="card-text small text-body-secondary">
                 We give a warm welcome to Farn, our new mascotte! Farn joins the group after a long sailing across the oceans.
               </p>
-              <a href="#" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
             </div>
           </div>
         </div>
@@ -243,7 +240,16 @@
 
   <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
     <div class="container py-4 text-body-secondary">
-      <small>© 2026 QC2 @ Chalmers University of Technology</small>
+      
+      <div class="footer-logo-container shadow-sm">
+        <img src="images/wacqt_logo.png" alt="Sponsor Name" class="footer-logo-img">
+      </div>
+      
+      <div class="mt-2">
+        <small>© 2026 QC2 @ Chalmers University of Technology</small><br>
+        <small>Supported by the Wallenberg Foundation</small>
+      </div>
+      
     </div>
   </footer>
 

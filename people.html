@@ -148,6 +148,21 @@
       align-items: center;
       border-radius: 0.5rem;
     }
+
+    .footer-logo-container {
+      background-color: #ffffff; 
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 15px;
+      /* Subtle border for light mode */
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .footer-logo-img {
+      max-height: 40px;
+      display: block;
+    }
   </style>
 
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
@@ -544,7 +559,16 @@
 
   <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
     <div class="container py-4 text-body-secondary">
-      <small>© 2026 QC2 @ Chalmers University of Technology</small>
+      
+      <div class="footer-logo-container shadow-sm">
+        <img src="images/wacqt_logo.png" alt="Sponsor Name" class="footer-logo-img">
+      </div>
+      
+      <div class="mt-2">
+        <small>© 2026 QC2 @ Chalmers University of Technology</small><br>
+        <small>Supported by the Wallenberg Foundation</small>
+      </div>
+      
     </div>
   </footer>
 

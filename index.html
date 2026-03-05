@@ -148,6 +148,23 @@
       max-height: 100%; 
       object-fit: contain; 
     }
+
+  /* Footer logo container - provides constant contrast */
+    .footer-logo-container {
+      background-color: #ffffff; 
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 15px;
+      /* Subtle border for light mode */
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .footer-logo-img {
+      max-height: 40px;
+      display: block;
+    }
+
   </style>
 
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
@@ -368,12 +385,37 @@
       </ul>
     </section>
 
-    <section id="jobs" class="content-block wide-section mx-auto text-md-center">
-      <h2 class="display-5 mb-3 fw-semibold lh-sm">
-        <svg class="section-title-icon"><use href="#person-badge"></use></svg>Vacancies & Jobs
-      </h2>
-      <p class="lead fw-normal">Join us at Chalmers! We are looking for talented PhDs and Postdocs.</p>
-    </section>
+  <section id="jobs" class="content-block wide-section mx-auto">
+    <h2 class="display-5 mb-4 fw-semibold text-center">
+      <svg class="section-title-icon"><use href="#person-badge"></use></svg>Vacancies & Jobs
+    </h2>
+    
+    <ul class="list-unstyled mb-0">
+      <li class="p-3 mb-2 border rounded shadow-sm bg-body-tertiary d-flex align-items-center justify-content-between">
+        
+        <div class="me-3">
+          <strong class="d-block">Open Postdoc Position in Experimental Quantum Computing</strong>
+          <small class="text-body-secondary">Application deadline: April 30th, 2026</small>
+        </div>
+
+        <a href="https://web103.reachmee.com/ext/I003/304/job?site=5&lang=UK&validator=a72aeedd63ec10de71e46f8d91d0d57c&ref=https%3A%2F%2Fwww.google.com%2F&job_id=14585" class="btn btn-outline-primary btn-sm flex-shrink-0">
+          Read More
+        </a>
+      </li>
+
+      <li class="p-3 mb-2 border rounded shadow-sm bg-body-tertiary d-flex align-items-center justify-content-between">
+        
+        <div class="me-3">
+          <strong class="d-block">Doctoral student in characterization of large-scale quantum computers</strong>
+          <small class="text-body-secondary">Application deadline: March 8th, 2026</small>
+        </div>
+
+        <a href="https://web103.reachmee.com/ext/I003/304/job?site=5&lang=UK&validator=a72aeedd63ec10de71e46f8d91d0d57c&ref=https%3A%2F%2Fwww.google.com%2F&job_id=14471" class="btn btn-outline-primary btn-sm flex-shrink-0">
+          Read More
+        </a>
+      </li>      
+    </ul>
+  </section>
 
 <!-- COLLABORATIONS -->
     <section id="collaborations" class="content-block wide-section mx-auto text-md-center">
@@ -433,8 +475,16 @@
 
   <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
     <div class="container py-4 text-body-secondary">
-      <small>© 2026 QC2 @ Chalmers University of Technology</small>
-      <small>   |   Supported by Wallenberg fundation</small>
+      
+      <div class="footer-logo-container shadow-sm">
+        <img src="images/wacqt_logo.png" alt="Sponsor Name" class="footer-logo-img">
+      </div>
+      
+      <div class="mt-2">
+        <small>© 2026 QC2 @ Chalmers University of Technology</small><br>
+        <small>Supported by the Wallenberg Foundation</small>
+      </div>
+      
     </div>
   </footer>
 
