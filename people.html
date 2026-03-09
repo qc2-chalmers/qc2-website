@@ -163,6 +163,10 @@
       max-height: 40px;
       display: block;
     }
+
+    /* Footer Logo Styling */
+    .collab-box { width: 250px; height: 120px; background-color: var(--qc2-blue) !important; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); }
+    .collab-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
   </style>
 
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
@@ -185,8 +189,7 @@
   <header class="navbar navbar-expand-lg bd-navbar sticky-top">
     <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
       <a class="navbar-brand d-flex align-items-center gap-2 p-0 me-0 me-lg-4" href="index.html">
-        <img src="images/chalmers_logo_white.png" alt="Chalmers" height="50">
-        <span class="fw-semibold">QC2 @ Chalmers</span>
+        <span class="fw-semibold">QC2 Lab</span>
       </a>
       <div class="d-flex align-items-center">
         <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar">
@@ -201,12 +204,10 @@
         <div class="offcanvas-body p-4 pt-0 p-lg-0">
           <hr class="d-lg-none text-white-50">
           <ul class="navbar-nav flex-row flex-wrap ms-md-auto align-items-center">
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="index.html#projects">Projects</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="index.html#publications">Publications</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="publications.html">Publications</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="blog.html">News</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="#">People</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="index.html#jobs">Jobs</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="index.html#collaborations">Collaborators</a></li>
             <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
               <div class="vr d-none d-lg-flex h-100 mx-lg-3 text-white"></div>
               <hr class="d-lg-none my-2 text-white-50">
@@ -478,10 +479,10 @@
 
         <div class="col">
           <div class="person-card text-center">
-            <img src="images/people/" class="person-img shadow-sm" alt="Axel Andersson">
+            <img src="images/people/axel_andersson.JPG" class="person-img shadow-sm" alt="Axel Andersson">
             <h5 class="fw-bold mb-1">Axel Andersson</h5>
             <div class="person-description text-body-secondary">
-              Placeholder for research description regarding thesis topics and group contributions.
+              With a background in computer engineering and applied mathematics, my research is focused on the experimental implementation of early fault-tolerant quantum computing.
             </div>
             <a href="https://www.chalmers.se/en/persons/axean/" class="btn-profile">More About Me 🔍</a>
           </div>
@@ -533,10 +534,10 @@
         
         <div class="col">
           <div class="person-card text-center">
-            <img src="images/people/joel_arvid_sandas.jpeg" class="person-img shadow-sm" alt="Joel Arvid Sandås">
+            <img src="images/people/joel_arvid_sandas.JPG" class="person-img shadow-sm" alt="Joel Arvid Sandås">
             <h5 class="fw-bold mb-1">Joel Arvid Sandås</h5>
             <div class="person-description text-body-secondary">
-              Autocalibration for parametric CZ-gates
+              Parametric CZ-gate calibrations on a large superconducting quantum device.
             </div>
             <a href="https://www.chalmers.se/en/persons/sandas/" class="btn-profile">More About Me 🔍</a>
           </div>
@@ -559,16 +560,13 @@
 
   <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
     <div class="container py-4 text-body-secondary">
-      
-      <div class="footer-logo-container shadow-sm">
-        <img src="images/wacqt_logo.png" alt="Sponsor Name" class="footer-logo-img">
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
+        <a href="https://european-union.europa.eu/..." target="_blank"><div class="collab-box shadow-sm"><img src="images/euroHPC_logo.png" alt="EuroHPC"></div></a>
+        <a href="https://www.chalmers.se/en/centres/wacqt/" target="_blank"><div class="collab-box shadow-sm"><img src="images/wacqt_logo.png" alt="WACQT"></div></a>
+        <a href="https://quantera.eu" target="_blank"><div class="collab-box shadow-sm"><img src="images/quantera_logo.png" alt="QuantERA"></div></a>
+        <a href="https://opensuperqplus.eu" target="_blank"><div class="collab-box shadow-sm"><img src="images/osq_logo.png" alt="OpenSuperQ"></div></a>
       </div>
-      
-      <div class="mt-2">
-        <small>© 2026 QC2 @ Chalmers University of Technology</small><br>
-        <small>Supported by the Wallenberg Foundation</small>
-      </div>
-      
+      <div class="mt-2"><small>© 2026 QC2 @ Chalmers University of Technology</small></div>
     </div>
   </footer>
 

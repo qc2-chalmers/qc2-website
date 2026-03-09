@@ -4,16 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="QC2 @ Chalmers News and Blog">
+  <meta name="description" content="QC2 @ Chalmers Research Group Publications">
   <meta name="author" content="QC2 Team">
 
-  <title>QC2 · News & Blog</title>
+  <title>QC2 · Publications</title>
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/docs.css" rel="stylesheet">
 
   <style>
-    /* Theme-aware Color Palette (Same as index.html) */
+    /* Theme-aware Color Palette */
     :root {
       --bd-violet: #2563eb;
       --bd-violet-rgb: 37, 99, 235;
@@ -30,16 +30,18 @@
     [data-bs-theme="light"] body { background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
     [data-bs-theme="dark"] body { background-image: linear-gradient(135deg, #0f172a 0%, #020617 100%); }
 
+    /* Navbar styling */
     .bd-navbar {
       background-color: #0f172a !important;
       padding-top: 1.5rem !important;
       padding-bottom: 1.5rem !important;
     }
-
     .bd-navbar::after { background-image: none !important; background-color: #0f172a !important; }
     .bd-navbar .nav-link, .bd-navbar .navbar-brand { color: rgba(255, 255, 255, 0.9) !important; }
     .bd-navbar .nav-link:hover { color: #60a5fa !important; }
+    [data-bs-theme="dark"] .bd-navbar { background-color: #020617 !important; }
 
+    /* Content block */
     .content-block {
       border: 1px solid var(--bs-border-color-translucent);
       border-radius: 1rem;
@@ -49,76 +51,43 @@
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
-
     [data-bs-theme="light"] .content-block { background-color: rgba(255, 255, 255, 0.85) !important; }
     [data-bs-theme="dark"] .content-block { background-color: rgba(15, 23, 42, 0.7) !important; }
-    [data-bs-theme="dark"] .bd-navbar { background-color: #020617 !important; }
 
     .wide-section { max-width: 1200px !important; }
 
-    /* Blog Specific Styling */
-    .blog-card {
-      border: none;
-      background: transparent;
-      transition: transform 0.3s ease;
-    }
-    .blog-card:hover { transform: translateY(-5px); }
+    /* Publication Card Styling */
+    .pub-card { margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--bs-border-color); }
+    .pub-img { width: 100%; height: 250px; object-fit: cover; border-radius: 0.75rem; border: 1px solid var(--bs-border-color-translucent); }
     
-    .blog-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid var(--bs-border-color-translucent);
-    }
-
-    .badge-date {
-      background-color: var(--qc2-blue) !important;
-      color: #0369a1 !important;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
     .section-title-icon { width: 1em; height: 1em; vertical-align: -0.15em; margin-right: 0.75rem; fill: currentColor; }
     
     .btn-qc2 {
       background-color: var(--qc2-blue) !important; 
       border: 1px solid #7dd3fc !important;       
-      padding: 0.6rem 1.2rem !important;           
-      font-size: 1rem !important;                  
+      padding: 0.6rem 1.2rem !important;
+      font-size: 1rem !important;
       font-weight: 600 !important;
-      color: #0369a1 !important;                   
+      color: #0369a1 !important;
       transition: all 0.2s ease;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       border-radius: 0.5rem;
     }
-
-    .footer-logo-container {
-      background-color: #ffffff; 
-      padding: 10px 20px;
-      border-radius: 8px;
-      display: inline-block;
-      margin-bottom: 15px;
-      /* Subtle border for light mode */
-      border: 1px solid rgba(0,0,0,0.1);
+    .btn-outline-primary {
+      background-color: var(--qc2-blue) !important; 
+      border: 1px solid #7dd3fc !important;       
+      padding: 0.6rem 1.2rem !important;
+      font-weight: 600 !important;
+      color: #0369a1 !important;
     }
-    
-    .footer-logo-img {
-      max-height: 40px;
-      display: block;
-    }
+    .btn-icon { width: 1.1em; height: 1.1em; vertical-align: -0.2em; margin-right: 0.4rem; fill: currentColor; }
 
     /* Footer Logo Styling */
     .collab-box { width: 250px; height: 120px; background-color: var(--qc2-blue) !important; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); }
     .collab-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
   </style>
-
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
 </head>
 
 <body>
@@ -128,9 +97,11 @@
     <symbol id="moon-stars-fill" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" /><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" /></symbol>
     <symbol id="sun-fill" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" /></symbol>
     <symbol id="three-dots" viewBox="0 0 16 16"><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" /></symbol>
-    <symbol id="newspaper" viewBox="0 0 16 16"><path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .303-.204.627-.514.79-.241.125-.503.158-.738.158h-11a1.5 1.5 0 0 1-1.5-1.5zM1.5 2a.5.5 0 0 0-.5.5v10.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V2.5a.5.5 0 0 0-.5-.5z"/><path d="M2 3h10v2H2zm0 3h4v3H2zm5 0h5v1H7zm0 2h5v1H7zm-5 4h10v1H2z"/></symbol>
+    <symbol id="book-half" viewBox="0 0 16 16"><path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></symbol>
     <symbol id="house-fill" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/><path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/></symbol>
+    <symbol id="journal-text" viewBox="0 0 16 16"><path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/><path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/></symbol>
   </svg>
+
 
   <header class="navbar navbar-expand-lg bd-navbar sticky-top">
     <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
@@ -150,7 +121,7 @@
         <div class="offcanvas-body p-4 pt-0 p-lg-0">
           <hr class="d-lg-none text-white-50">
           <ul class="navbar-nav flex-row flex-wrap ms-md-auto align-items-center">
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="publications.html">Publications</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="#">Publications</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="blog.html">News</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="people.html">People</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="index.html#jobs">Jobs</a></li>
@@ -176,96 +147,61 @@
   </header>
 
   <main class="container-xxl bd-gutter mt-5">
-    
     <div class="d-flex justify-content-between align-items-center mb-4 wide-section mx-auto">
-        <a href="index.html" class="btn-qc2 shadow-sm">
-            <svg class="section-title-icon me-2" style="width:1.2em; height:1.2em;"><use href="#house-fill"></use></svg> Back to Home
-        </a>
+        <a href="index.html" class="btn-qc2 shadow-sm"><svg class="btn-icon"><use href="#house-fill"></use></svg> Back to Home</a>
     </div>
 
     <section class="content-block wide-section mx-auto">
-      <h2 class="display-5 mb-5 fw-semibold text-center">
-        <svg class="section-title-icon"><use href="#newspaper"></use></svg>Latest News & Blog
-      </h2>
-
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-
-        <div class="col">
-          <div class="card blog-card h-100 p-3">
-            <img src="images/blog/farn_going_to_aps.png" class="blog-img shadow-sm" alt="Post 1">
-            <div class="card-body p-0">
-              <span class="badge badge-date">March 16-20, 2026</span>
-              <h4 class="card-title fw-bold h5">Meet us at APS March meeting 🌎 </h4>
-              <p class="card-text small text-body-secondary">
-                Some of us will be presenting our group's work at the APS March Meeting 2026 in Denver!  
-              </p>
-              <a href="https://summit.aps.org/?utm_source=Google+Ads&utm_medium=Search+Ads&utm_campaign=Global+Physics+Summit+Awareness+-+Sept+2025+ROW&utm_content=Ad+1&campaignid=23031439103&adgroupid=189483977230&adid=774691309832&gad_source=1&gad_campaignid=23031439103&gbraid=0AAAAA9c2li1h8EJSv80FCXpDSyU4EWOTZ&gclid=Cj0KCQjw37nNBhDkARIsAEBGI8OjIfert-VDmjZzBFDwg6HT8CEC5tPsTSDT77xsxZ6hmnDMfAB4Py4aAnlUEALw_wcB" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
+      <h2 class="display-5 mb-5 fw-semibold text-center"><svg class="section-title-icon"><use href="#book-half"></use></svg>QC2 Lab archive</h2>
+      
+        <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Electrical post-fabrication tuning of aluminum Josephson junctions at room temperature</h3>
+            
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Christian Križan, Maurizio Toselli, Irshad Ahmad, Hadi Khaksaran, Marcus Rommel, Nermin Trnjanin, Janka Biznárová, Mamta Dahiya, Emil Hogedal, Halldór Jakobsson, Andreas Nylander, Jonas Bylander, Per Delsing, Giovanna Tancredi
+                </p>
+                <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2602.20002" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
             </div>
-          </div>
-        </div>  
-
-        <!-- Blog Post 1 -->
-        <div class="col">
-          <div class="card blog-card h-100 p-3">
-            <img src="images/blog/farn_paper.png" class="blog-img shadow-sm" alt="Post 4">
-            <div class="card-body p-0">
-              <span class="badge badge-date">February 23, 2026</span>
-              <h4 class="card-title fw-bold h5">New preprint out 🗞️</h4>
-              <p class="card-text small text-body-secondary">
-                We have a new preprint published by the group: "Electrical post-fabrication tuning of aluminum Josephson junctions at room temperature".
-              </p>
-              <a href="https://arxiv.org/abs/2602.20002" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
             </div>
-          </div>
+            
+            <div class="col-md-4">
+            <img src="images/pub-1.png" class="pub-img shadow-sm" alt="Paper Image" style="width: 100%; height: 200px; object-fit: cover;">
+            </div>
         </div>
+        </article>
 
-        <div class="col">
-          <div class="card blog-card h-100 p-3">
-            <img src="images/blog/farn_webpage.png" class="blog-img shadow-sm" alt="Post 1">
-            <div class="card-body p-0">
-              <span class="badge badge-date">Jan 20, 2026</span>
-              <h4 class="card-title fw-bold h5">New webpage 🌐 </h4>
-              <p class="card-text small text-body-secondary">
-                Our new webpage is online ✨ 
-              </p>
-              <a href="www.chalmersqc2.com" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
+
+        <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Demonstrating and Benchmarking Classical Shadows for Lindblad Tomography</h3>
+            
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                Rune Thinggaard Birke, Johann Bock Severin, Malthe A. Marciniak, Emil Hogedal, Andreas Nylander, Irshad Ahmad, Amr Osman, Janka Biznárová, Marcus Rommel, Anita Fadavi Roudsari, Jonas Bylander, Giovanna Tancredi, Daniel Stilck França, Albert Werner, Christopher W. Warren, Jacob Hastrup, Svend Krøjer, Morten Kjaergaard.
+                </p>
+                <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2602.14694" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Blog Post 1 -->
-        <div class="col">
-          <div class="card blog-card h-100 p-3">
-            <img src="images/blog/farn_paper.png" class="blog-img shadow-sm" alt="Post 4">
-            <div class="card-body p-0">
-              <span class="badge badge-date">February 11, 2026</span>
-              <h4 class="card-title fw-bold h5">New preprint out 🗞️</h4>
-              <p class="card-text small text-body-secondary">
-                We have a new preprint published by the group: "Real-time adaptive tracking of fluctuating relaxation rates
-                in superconducting qubits".
-              </p>
-              <a href="https://arxiv.org/abs/2506.09576" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
             </div>
-          </div>
-        </div>
-
-        <!-- Blog Post 2 -->
-        <div class="col">
-          <div class="card blog-card h-100 p-3">
-            <img src="images/blog/mascotte.png" class="blog-img shadow-sm" alt="Post 2">
-            <div class="card-body p-0">
-              <span class="badge badge-date">Dec 15, 2025</span>
-              <h4 class="card-title fw-bold h5">Farn is our new mascotte 🎉</h4>
-              <p class="card-text small text-body-secondary">
-                We give a warm welcome to Farn, our new mascotte! Farn joins the group after a long sailing across the oceans.
-              </p>
+            
+            <div class="col-md-4">
+            <img src="images/papers/thomography.png" class="pub-img shadow-sm" alt="Paper Image" style="width: 100%; height: 200px; object-fit: cover;">
             </div>
-          </div>
         </div>
+        </article>
 
-      </div>
     </section>
-
   </main>
 
   <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
@@ -281,9 +217,7 @@
   </footer>
 
   <script src="js/bootstrap.bundle.min.js"></script>
-  
   <script>
-    /* Theme logic (Shared across all pages) */
     (() => {
       'use strict'
       const getStoredTheme = () => localStorage.getItem('theme')
