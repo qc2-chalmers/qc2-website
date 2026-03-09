@@ -24,10 +24,16 @@
     [data-bs-theme="light"] body { background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
     [data-bs-theme="dark"] body { background-image: linear-gradient(135deg, #0f172a 0%, #020617 100%); }
 
-    .bd-navbar { background-color: #0f172a !important; padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+    /* Navbar styling */
+    .bd-navbar { background-color: #0f172a !important; padding: 1.5rem 0 !important; }
     .bd-navbar::after { background-image: none !important; background-color: #0f172a !important; }
     .bd-navbar .nav-link, .bd-navbar .navbar-brand { color: rgba(255, 255, 255, 0.9) !important; }
     .bd-navbar .nav-link:hover { color: #60a5fa !important; }
+    /* Increase navbar link font size */
+    .bd-navbar .nav-link {
+      font-size: 1.1rem !important; /* Adjust this value (e.g., 1.1rem, 1.25rem) */
+      font-weight: 500 !important;
+    }
     [data-bs-theme="dark"] .bd-navbar { background-color: #020617 !important; }
 
     .content-block { border: 1px solid var(--bs-border-color-translucent); border-radius: 1rem; padding: 2.5rem 2rem; margin-bottom: 3rem; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
@@ -64,32 +70,58 @@
   </svg>
 
   <header class="navbar navbar-expand-lg bd-navbar sticky-top">
-    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
       <a class="navbar-brand d-flex align-items-center gap-2 p-0 me-0 me-lg-4" href="index.html">
-        <span class="fw-semibold">QC2 Lab</span>
+        <img src="images/qc2_logo.png" alt="QC2 Lab Logo" style="height: 65px; width: auto;">
       </a>
-      <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar">
-        <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>
-      </button>
-      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar">
+      <div class="d-flex align-items-center">
+        <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-label="Toggle navigation">
+          <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>
+        </button>
+      </div>
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" data-bs-scroll="true">
         <div class="offcanvas-header px-4 pb-0">
           <h5 class="offcanvas-title text-white">Menu</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#bdNavbar"></button>
         </div>
         <div class="offcanvas-body p-4 pt-0 p-lg-0">
-          <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item"><a class="nav-link py-2 px-0 px-lg-2" href="#">Publications</a></li>
-            <li class="nav-item"><a class="nav-link py-2 px-0 px-lg-2" href="blog.html">News</a></li>
-            <li class="nav-item"><a class="nav-link py-2 px-0 px-lg-2" href="people.html">People</a></li>
-            <li class="nav-item"><a class="nav-link py-2 px-0 px-lg-2" href="index.html#jobs">Jobs</a></li>
+          <hr class="d-lg-none text-white-50">
+          <ul class="navbar-nav flex-row flex-wrap ms-md-auto align-items-center">
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="publications.html">Publications</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="blog.html">News</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="people.html">People</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="#jobs">Jobs</a></li>
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-3 text-white"></div>
+              <hr class="d-lg-none my-2 text-white-50">
+            </li>
             <li class="nav-item dropdown">
-              <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" data-bs-toggle="dropdown">
+              <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
                 <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+                <span class="d-lg-none ms-2">Toggle theme</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><button class="dropdown-item" data-bs-theme-value="light"><svg class="bi me-2"><use href="#sun-fill"></use></svg>Light</button></li>
-                <li><button class="dropdown-item" data-bs-theme-value="dark"><svg class="bi me-2"><use href="#moon-stars-fill"></use></svg>Dark</button></li>
-                <li><button class="dropdown-item active" data-bs-theme-value="auto"><svg class="bi me-2"><use href="#circle-half"></use></svg>Auto</button></li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#sun-fill"></use></svg>
+                        Light
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#moon-stars-fill"></use></svg>
+                        Dark
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
+                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#circle-half"></use></svg>
+                        Auto
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                    </button>
+                </li>
               </ul>
             </li>
           </ul>
@@ -122,7 +154,7 @@
             </div>
             </div>
             <div class="col-md-4">
-            <img src="images/papers/christian_paper.png" class="pub-img" alt="Paper Image">
+            <img src="images/papers/website teaser.png" class="pub-img" alt="Paper Image">
             </div>
         </div>
       </article>
@@ -133,7 +165,7 @@
             <h3 class="fw-bold mb-3">Demonstrating and Benchmarking Classical Shadows for Lindblad Tomography</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                Rune Thinggaard Birke, Johann Bock Severin, Malthe A. Marciniak, Emil Hogedal, Andreas Nylander, Irshad Ahmad, Amr Osman, Janka Biznárová, Marcus Rommel, Anita Fadavi Roudsari, Jonas Bylander, Giovanna Tancredi, Daniel Stilck França, Albert Werner, Christopher W. Warren, Jacob Hastrup, Svend Krøjer, Morten Kjaergaard.
+                Rune Thinggaard Birke, Johann Bock Severin, Malthe A. Marciniak, Emil Hogedal, Andreas Nylander, Irshad Ahmad, Amr Osman, Janka Biznárová, Marcus Rommel, Anita Fadavi Roudsari, Jonas Bylander, Giovanna Tancredi, Daniel Stilck França, Albert Werner, Christopher W. Warren, Jacob Hastrup, Svend Krøjer, Morten Kjaergaard
                 </p>
                 <div style="width: fit-content;">
                 <a href="https://arxiv.org/abs/2602.14694" target="_blank" class="btn btn-outline-primary btn-sm">
@@ -169,18 +201,108 @@
         </div>
       </article>
 
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Quantum Process Tomography with Digital Twins of Error Matrices</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Tangyou Huang, Akshay Gaikwad, Ilya Moskalenko, Anuj Aggarwal, Tahereh Abad, Marko Kuzmanovic, Yu-Han Chang, Ognjen Stanisavljevic, Emil Hogedal, Christopher Warren, Irshad Ahmad, Janka Biznárová, Amr Osman, Mamta Dahiya, Marcus Rommel, Anita Fadavi Rousari, Andreas Nylander, Liangyu Chen, Jonas Bylander, Gheorghe Sorin Paraoanu, Anton Frisk Kockum, Giovanna Tancredi                </p>
+                <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2505.07725" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/qpt_paper.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Neural-network-based design and implementation of fast and robust quantum gates</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Marko Kuzmanović, Ilya Moskalenko, Yu-Han Chang, Ognjen Stanisavljević, Christopher Warren, Emil Hogedal, Anuj Aggarwal, Irshad Ahmad, Janka Biznárová, Mamta Dahiya, Marcus Rommel, Andreas Nylander, Giovanna Tancredi, Gheorghe Sorin Paraoanu                <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2505.02054" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/nn_paper.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Mitigating transients in flux-control signals in a superconducting quantum processor</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Anuj Aggarwal, Jorge Fernández-Pendás, Tahereh Abad, Daryoush Shiri, Halldór Jakobsson, Marcus Rommel, Andreas Nylander, Emil Hogedal, Amr Osman, Janka Biznárová, Robert Rehammar, Michele Faucci Giannelli, Anita Fadavi Roudsari, Jonas Bylander, Giovanna Tancredi                <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2503.08645" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/mitigating_transient.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Quantum SWAP gate realized with CZ and iSWAP gates in a superconducting architecture</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Christian Križan, Janka Biznárová, Liangyu Chen, Emil Hogedal, Amr Osman, Christopher W. Warren, Sandoko Kosen, Hang-Xi Li, Tahereh Abad, Anuj Aggarwal, Marco Caputo, Jorge Fernández-Pendás, Akshay Gaikwad, Leif Grönberg, Andreas Nylander, Robert Rehammar, Marcus Rommel, Olga I. Yuzephovich, Anton Frisk Kockum, Joonas Govenius, Giovanna Tancredi, Jonas Bylander                <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2412.15022" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/conditional_and_cross_Ramsey.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
     </section>
   </main>
 
   <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
+    <h4 class="fw-semibold mb-4 text-body-secondary">A warm thank you to our sponsors</h4>
     <div class="container py-4 text-body-secondary">
+      
       <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
-        <a href="https://european-union.europa.eu/..." target="_blank"><div class="collab-box shadow-sm"><img src="images/euroHPC_logo.png" alt="EuroHPC"></div></a>
-        <a href="https://www.chalmers.se/en/centres/wacqt/" target="_blank"><div class="collab-box shadow-sm"><img src="images/wacqt_logo.png" alt="WACQT"></div></a>
-        <a href="https://quantera.eu" target="_blank"><div class="collab-box shadow-sm"><img src="images/quantera_logo.png" alt="QuantERA"></div></a>
-        <a href="https://opensuperqplus.eu" target="_blank"><div class="collab-box shadow-sm"><img src="images/osq_logo.png" alt="OpenSuperQ"></div></a>
+        <a href="https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-high-performance-computing-joint-undertaking-eurohpc-ju_en" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/euroHPC_logo.png" alt="Logo 1"></div>
+        </a>
+        <a href="https://www.chalmers.se/en/centres/wacqt/" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/wacqt_logo.png" alt="Logo 2"></div>
+        </a>
+        <a href="https://quantera.eu" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/quantera_logo.png" alt="Logo 3"></div>
+        </a>
+        <a href="https://opensuperqplus.eu" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/osq_logo.png" alt="Logo 4"></div>
+        </a>
       </div>
-      <div class="mt-2"><small>© 2026 QC2 @ Chalmers University of Technology</small></div>
+      
+      <div class="mt-2">
+        <small>© 2026 - Made with ​💙​ by QC2 Lab </small><br>
+      </div>
     </div>
   </footer>
 

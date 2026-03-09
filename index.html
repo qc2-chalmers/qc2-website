@@ -18,152 +18,91 @@
       --bd-violet: #2563eb;
       --bd-violet-rgb: 37, 99, 235;
       --bd-violet-bg: #2563eb;
-      --qc2-blue: #e0f2fe; /* Your requested light blue */
+      --qc2-blue: #e0f2fe; 
     }
 
-    /* Navbar styling: Dark Slate */
-    .bd-navbar {
-      background-color: #0f172a !important;
-      padding-top: 1.5rem !important;
-      padding-bottom: 1.5rem !important;
+    body {
+      background-attachment: fixed;
+      background-size: cover;
+      transition: background 0.5s ease;
+      background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
     }
 
-    .bd-navbar::after {
-      background-image: none !important;
-      background-color: #0f172a !important;
-    }
+    [data-bs-theme="dark"] body { background-image: linear-gradient(135deg, #0f172a 0%, #020617 100%) !important; }
 
-    .bd-navbar .nav-link, .bd-navbar .navbar-brand {
-      color: rgba(255, 255, 255, 0.9) !important;
+    /* Navbar styling */
+    .bd-navbar { background-color: #0f172a !important; padding: 1.5rem 0 !important; }
+    .bd-navbar::after { background-image: none !important; background-color: #0f172a !important; }
+    .bd-navbar .nav-link, .bd-navbar .navbar-brand { color: rgba(255, 255, 255, 0.9) !important; }
+    .bd-navbar .nav-link:hover { color: #60a5fa !important; }
+    /* Increase navbar link font size */
+    .bd-navbar .nav-link {
+      font-size: 1.1rem !important; /* Adjust this value (e.g., 1.1rem, 1.25rem) */
+      font-weight: 500 !important;
     }
+    [data-bs-theme="dark"] .bd-navbar { background-color: #020617 !important; }
 
-    .bd-navbar .nav-link:hover {
-      color: #60a5fa !important;
-    }
-
-    /* Block Styling for Sections */
+    /* Content Blocks */
     .content-block {
-      border: 1px solid var(--bs-border-color-translucent);
-      border-radius: 1rem;
-      padding: 3rem 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      border: 1px solid var(--bs-border-color);
+      border-radius: 1.25rem;
+      padding: 3rem 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
+    [data-bs-theme="light"] .content-block { background-color: #ffffff !important; border-color: rgba(0,0,0,0.1); }
+    [data-bs-theme="dark"] .content-block { background-color: rgba(30, 41, 59, 0.8) !important; border-color: rgba(255,255,255,0.15); }
 
-    /* Theme-specific Overrides */
-    [data-bs-theme="light"] .content-block { 
-      background-color: #ffffff; 
-    }
-    [data-bs-theme="dark"] .content-block { 
-      background-color: rgba(255, 255, 255, 0.03); 
-    }
-    [data-bs-theme="dark"] .bd-navbar { 
-      background-color: #020617 !important; 
-    }
-
-    /* Layout Width */
-    .wide-section { 
-      max-width: 1200px !important; 
-    }
-
-    /* Dates styling */
-    .badge.bg-primary {
-      background-color: var(--qc2-blue) !important;
-      color: #0369a1 !important; /* Dark blue text for readability */
-      font-weight: 600;
-    }
-
-    /* Big Blue Buttons (Show/Hide & Read Paper) */
-    .btn-outline-primary, .btn-outline-secondary {
+    /* STANDARDIZED BUTTON STYLE */
+    .btn-qc2 {
       background-color: var(--qc2-blue) !important; 
       border: 1px solid #7dd3fc !important;       
-      padding: 0.6rem 1.2rem !important;           /* Increased size */
-      font-size: 1rem !important;                  /* Increased font */
+      padding: 0.6rem 1.2rem !important;
+      font-size: 1rem !important;
       font-weight: 600 !important;
-      color: #0369a1 !important;                   /* Dark blue text */
-      transition: all 0.2s ease;
-    }
-
-    .btn-outline-primary:hover, .btn-outline-secondary:hover {
-      filter: brightness(0.9);
-      transform: translateY(-2px);
       color: #0369a1 !important;
-    }
-
-    /* Publications List Tuning */
-    .pub-list { 
-      list-style: none; 
-      padding: 0; 
-      margin-top: 0.5rem; 
-    }
-    .pub-item { 
-      padding: 1.5rem 0; 
-      border-bottom: 1px solid var(--bs-border-color); 
-      text-align: left; 
-    }
-    .pub-item:last-child { 
-      border-bottom: none; 
-    }
-
-    /* Text & Icons */
-    .abstract-text { 
-      text-align: justify; 
-      line-height: 1.6; 
-      font-size: 0.95rem; 
-    }
-
-    .section-title-icon {
-      width: 1em; 
-      height: 1em; 
-      vertical-align: -0.15em;
-      margin-right: 0.75rem; 
-      fill: currentColor;
-    }
-
-    .btn-icon { 
-      width: 1.1em; 
-      height: 1.1em; 
-      vertical-align: -0.2em; 
-      margin-right: 0.4rem; 
-      fill: currentColor; 
-    }
-
-    /* Ensure the collab-box is responsive and consistent */
-    .collab-box {
-      width: 250px;
-      height: 120px;
-      background-color: var(--qc2-blue) !important;
-      border-radius: 0.75rem;
-      display: flex;
+      border-radius: 0.5rem !important; /* Forces consistent corners */
+      transition: all 0.2s ease !important;
+      text-decoration: none;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 1.5rem;
-      border: 1px solid rgba(0,0,0,0.05);
+      cursor: pointer;
     }
-
-    .collab-box img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-  /* Footer logo container - provides constant contrast */
-    .footer-logo-container {
-      background-color: #ffffff; 
-      padding: 10px 20px;
-      border-radius: 8px;
-      display: inline-block;
-      margin-bottom: 15px;
-      /* Subtle border for light mode */
-      border: 1px solid rgba(0,0,0,0.1);
-    }
+    .btn-qc2:hover { filter: brightness(0.9); transform: translateY(-2px); color: #0369a1 !important; }
     
-    .footer-logo-img {
-      max-height: 40px;
-      display: block;
+    /* Apply these properties to standard bootstrap buttons as well */
+    .btn-primary, .btn-outline-primary, .btn-outline-secondary {
+      background-color: var(--qc2-blue) !important; 
+      border: 1px solid #7dd3fc !important;       
+      color: #0369a1 !important;
+      border-radius: 0.5rem !important;
+      font-weight: 600 !important;
     }
 
-  </style>
+    /* Layout & Components */
+    .wide-section { max-width: 1200px !important; }
+    .img-fluid { max-height: 500px; width: 100%; object-fit: cover; }
+    .badge.bg-primary { background-color: var(--qc2-blue) !important; color: #0369a1 !important; font-weight: 600; }
+    .pub-list { list-style: none; padding: 0; margin-top: 0.5rem; }
+    .pub-item { padding: 1.5rem 0; border-bottom: 1px solid var(--bs-border-color); text-align: left; }
+    .pub-item:last-child { border-bottom: none; }
+    .abstract-text { text-align: justify; line-height: 1.6; font-size: 0.95rem; }
+    .section-title-icon { width: 1em; height: 1em; vertical-align: -0.15em; margin-right: 0.75rem; fill: currentColor; }
+    .btn-icon { width: 1.1em; height: 1.1em; vertical-align: -0.2em; margin-right: 0.4rem; fill: currentColor; }
+
+    /* Carousel */
+    #qc2Carousel { max-width: 100%; border-color: var(--bs-border-color-translucent); }
+    .carousel-inner .carousel-item img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: center; }
+    .carousel-control-prev-icon, .carousel-control-next-icon { background-color: var(--bs-primary) !important; border: 3px solid rgba(255,255,255,0.8); border-radius: 50%; width: 3rem; height: 3rem; }
+
+    /* Collaborators & Footer */
+    .collab-box { width: 250px; height: 120px; background-color: var(--qc2-blue) !important; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); }
+    .collab-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .footer-logo-container { background-color: #ffffff; padding: 10px 20px; border-radius: 8px; display: inline-block; margin-bottom: 15px; border: 1px solid rgba(0,0,0,0.1); }
+    .footer-logo-img { max-height: 40px; display: block; }
+</style>
 
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
   <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -188,12 +127,13 @@
     <symbol id="journal-text" viewBox="0 0 16 16"><path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/><path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/></symbol>
     <symbol id="target" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></symbol>
     <symbol id="people-fill" viewBox="0 0 16 16"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></symbol>
+    <symbol id="camera-fill" viewBox="0 0 16 16"><path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/></symbol> 
   </svg>
 
   <header class="navbar navbar-expand-lg bd-navbar sticky-top">
     <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
-      <a class="navbar-brand d-flex align-items-center gap-2 p-0 me-0 me-lg-4" href="#" aria-label="QC2 @ Chalmers">
-        <span class="fw-semibold">QC2 Lab</span>
+      <a class="navbar-brand d-flex align-items-center gap-2 p-0 me-0 me-lg-4" href="index.html">
+        <img src="images/qc2_logo.png" alt="QC2 Lab Logo" style="height: 65px; width: auto;">
       </a>
       <div class="d-flex align-items-center">
         <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-label="Toggle navigation">
@@ -254,9 +194,9 @@
   <main class="container-xxl bd-gutter mt-5">
     <div class="col-md-10 mx-auto text-center mb-5">
       <img src="images/qc2_intro.png" width="100%" alt="QC2 Chalmers" class="mb-4">
-      <h1 class="mb-3 fw-semibold lh-1">Welcome to the QC2 webpage!</h1>
+      <h1 class="mb-3 fw-semibold lh-1">Welcome webpage of the QC2 Lab!</h1>
       <p class="lead">
-        Supported by the Wallenberg foundations and based at Chalmers, we are a research group developing 
+        Supported by the Wallenberg foundations and based at Chalmers Microtechnology and Nanoscience department, we are a research group developing 
         a scalable 100-qubit superconducting quantum processor. We integrate theoretical research with 
         hardware engineering to improve qubit performance and system integration. Through our quantum testbed,
         we bridge the gap between academic research and industrial application, fostering a specialized workforce and a 
@@ -264,8 +204,23 @@
       </p>
     </div>
 
+    <section class="content-block wide-section mx-auto text-center">
+      <h2 class="fw-semibold mb-4 d-flex align-items-center justify-content-center">
+        <svg class="section-title-icon"><use href="#people-fill"></use></svg> Meet the group
+      </h2>
+      
+      <img src="images/group_photo.png" class="img-fluid rounded-4 shadow-sm mb-4" alt="QC2 Group Photo" style="max-height: 500px; width: 100%; object-fit: cover;">
+      
+      <div class="mt-3">
+        <p class="mb-4 text-body-secondary">To know more about our team members, click below.</p>
+        <a href="people.html" class="btn btn-qc2">
+          View Team Members
+        </a>
+      </div>
+    </section>
+
   <section id="publications" class="content-block wide-section mx-auto text-md-center">
-    <h2 class="display-5 mb-1 fw-semibold lh-sm">
+    <h2 class="display-5 mb-4 fw-semibold lh-sm">
       <svg class="section-title-icon"><use href="#book-half"></use></svg>Latest publications
     </h2>    
     <ul class="pub-list">
@@ -328,9 +283,7 @@
 
     <div class="mt-4 p-4 border rounded bg-body-tertiary">
       <p class="mb-3">To have an overview of all the publications of the QC2 lab since its foundations, click below.</p>
-      <a href="publications.html" class="btn btn-primary px-4 py-2">
-        View All Publications
-      </a>
+      <a href="publications.html" class="btn btn-qc2">View All Publications</a>
     </div>
   </section>
 
@@ -395,9 +348,42 @@
     </ul>
   </section>
 
+  <section class="wide-section mx-auto my-5">
+    <div class="text-center mb-4">
+      <h3 class="fw-semibold d-flex align-items-center justify-content-center">
+        <svg class="section-title-icon"><use href="#camera-fill"></use></svg> 
+        Some pictures from our lab
+      </h3>
+    </div>
+
+    <div id="qc2Carousel" class="carousel slide carousel-fade shadow border rounded-4 overflow-hidden" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active"><img src="images/carousel/carousel_1.jpg" class="d-block w-100" alt="Lab View"></div>
+        <div class="carousel-item"><img src="images/carousel/carousel_2.png" class="d-block w-100" alt="Team"></div>
+        <div class="carousel-item"><img src="images/carousel/carousel_3.png" class="d-block w-100" alt="Chip"></div>
+      </div>
+      
+      <button class="carousel-control-prev" type="button" data-bs-target="#qc2Carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon shadow-sm" aria-hidden="true" style="filter: drop-shadow(0 0 2px rgba(0,0,0,0.5)); transform: scale(1.5);"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#qc2Carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon shadow-sm" aria-hidden="true" style="filter: drop-shadow(0 0 2px rgba(0,0,0,0.5)); transform: scale(1.5);"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
   </main>
 
   <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
+    <h4 class="fw-semibold mb-4 text-body-secondary">A warm thank you to our sponsors</h4>
     <div class="container py-4 text-body-secondary">
       
       <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
@@ -416,8 +402,7 @@
       </div>
       
       <div class="mt-2">
-        <small>© 2026 QC2 @ Chalmers University of Technology</small><br>
-        <small>Supported by the Wallenberg Foundation</small>
+        <small>© 2026 - Made with ​💙​ by QC2 Lab </small><br>
       </div>
     </div>
   </footer>

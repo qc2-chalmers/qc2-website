@@ -36,9 +36,16 @@
       padding-bottom: 1.5rem !important;
     }
 
+    /* Navbar styling */
+    .bd-navbar { background-color: #0f172a !important; padding: 1.5rem 0 !important; }
     .bd-navbar::after { background-image: none !important; background-color: #0f172a !important; }
     .bd-navbar .nav-link, .bd-navbar .navbar-brand { color: rgba(255, 255, 255, 0.9) !important; }
     .bd-navbar .nav-link:hover { color: #60a5fa !important; }
+    /* Increase navbar link font size */
+    .bd-navbar .nav-link {
+      font-size: 1.1rem !important; /* Adjust this value (e.g., 1.1rem, 1.25rem) */
+      font-weight: 500 !important;
+    }
 
     .content-block {
       border: 1px solid var(--bs-border-color-translucent);
@@ -135,7 +142,7 @@
   <header class="navbar navbar-expand-lg bd-navbar sticky-top">
     <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
       <a class="navbar-brand d-flex align-items-center gap-2 p-0 me-0 me-lg-4" href="index.html">
-        <span class="fw-semibold">QC2 Lab</span>
+        <img src="images/qc2_logo.png" alt="QC2 Lab Logo" style="height: 65px; width: auto;">
       </a>
       <div class="d-flex align-items-center">
         <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar">
@@ -269,14 +276,27 @@
   </main>
 
   <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
+    <h4 class="fw-semibold mb-4 text-body-secondary">A warm thank you to our sponsors</h4>
     <div class="container py-4 text-body-secondary">
+      
       <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
-        <a href="https://european-union.europa.eu/..." target="_blank"><div class="collab-box shadow-sm"><img src="images/euroHPC_logo.png" alt="EuroHPC"></div></a>
-        <a href="https://www.chalmers.se/en/centres/wacqt/" target="_blank"><div class="collab-box shadow-sm"><img src="images/wacqt_logo.png" alt="WACQT"></div></a>
-        <a href="https://quantera.eu" target="_blank"><div class="collab-box shadow-sm"><img src="images/quantera_logo.png" alt="QuantERA"></div></a>
-        <a href="https://opensuperqplus.eu" target="_blank"><div class="collab-box shadow-sm"><img src="images/osq_logo.png" alt="OpenSuperQ"></div></a>
+        <a href="https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-high-performance-computing-joint-undertaking-eurohpc-ju_en" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/euroHPC_logo.png" alt="Logo 1"></div>
+        </a>
+        <a href="https://www.chalmers.se/en/centres/wacqt/" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/wacqt_logo.png" alt="Logo 2"></div>
+        </a>
+        <a href="https://quantera.eu" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/quantera_logo.png" alt="Logo 3"></div>
+        </a>
+        <a href="https://opensuperqplus.eu" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/osq_logo.png" alt="Logo 4"></div>
+        </a>
       </div>
-      <div class="mt-2"><small>© 2026 QC2 @ Chalmers University of Technology</small></div>
+      
+      <div class="mt-2">
+        <small>© 2026 - Made with ​💙​ by QC2 Lab </small><br>
+      </div>
     </div>
   </footer>
 
