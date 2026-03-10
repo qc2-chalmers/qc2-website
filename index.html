@@ -108,7 +108,13 @@
 
     /* Carousel */
     #qc2Carousel { max-width: 100%; border-color: var(--bs-border-color-translucent); }
-    .carousel-inner .carousel-item img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: center; }
+    /* Update this specific block in your <style> */
+    .carousel-inner .carousel-item img { 
+        width: 100%; 
+        aspect-ratio: 16 / 9; 
+        object-fit: cover; /* This eliminates the black bars */
+        object-position: center; 
+    }    
     .carousel-control-prev-icon, .carousel-control-next-icon { background-color: var(--bs-primary) !important; border: 3px solid rgba(255,255,255,0.8); border-radius: 50%; width: 3rem; height: 3rem; }
 
     /* Container for the 7 logos */
@@ -401,16 +407,20 @@
     </div>
 
     <div id="qc2Carousel" class="carousel slide carousel-fade shadow border rounded-4 overflow-hidden" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="2"></button>
-      </div>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
 
       <div class="carousel-inner">
-        <div class="carousel-item active"><img src="images/carousel/carousel_1.jpg" class="d-block w-100" alt="Lab View"></div>
-        <div class="carousel-item"><img src="images/carousel/carousel_2.png" class="d-block w-100" alt="Team"></div>
-        <div class="carousel-item"><img src="images/carousel/carousel_3.png" class="d-block w-100" alt="Chip"></div>
+        <div class="carousel-item active"><img src="images/carousel/carousel1.png" class="d-block w-100" alt="Lab View"></div>
+        <div class="carousel-item"><img src="images/carousel/carousel2.png" class="d-block w-100" alt="Team"></div>
+        <div class="carousel-item"><img src="images/carousel/carousel3.png" class="d-block w-100" alt="Chip"></div>
+        <div class="carousel-item"><img src="images/carousel/carousel4.png" class="d-block w-100" alt="Chip2"></div>
+        <div class="carousel-item"><img src="images/carousel/carousel5.jpg" class="d-block w-100" alt="Chip3"></div>
       </div>
       
       <button class="carousel-control-prev" type="button" data-bs-target="#qc2Carousel" data-bs-slide="prev">
