@@ -43,7 +43,7 @@
 
     /* Fix mobile offcanvas menu color */
     .offcanvas-lg, .offcanvas-md, .offcanvas-sm {
-      background-color: #020617 !important; /* Matches your dark navbar color */
+      background-color: #0f172a !important; /* Matches your dark navbar color */
     }
 
     /* Ensure text inside the mobile menu remains readable */
@@ -171,9 +171,39 @@
       display: block;
     }
 
-    /* Footer Logo Styling */
-    .collab-box { width: 250px; height: 120px; background-color: var(--qc2-blue) !important; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); }
-    .collab-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    /* Container for the 7 logos */
+    .sponsors-container {
+      display: flex;
+      flex-wrap: wrap;       
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;           
+      margin-top: 2rem;
+    }
+
+    /* Individual logo boxes */
+    .collab-box {
+      width: 170px;          
+      height: 90px;         
+      background-color: #deefff !important; 
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: 1px solid rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .collab-box:hover {
+      transform: scale(1.05); 
+    }
+
+    .collab-box img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+    }
   </style>
 
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
@@ -573,6 +603,15 @@
     <div class="container py-4 text-body-secondary">
       
       <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
+        <a href="https://www.vinnova.se/en/" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/vinnova_logo.png" alt="Logo 1"></div>
+        </a>
+        <a href="https://www.vr.se/english.html/" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/vetenskapsradet_logo.png" alt="Logo 2"></div>
+        </a>
+        <a href="https://kaw.wallenberg.org/en" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/kaw_logo.png" alt="Logo 3"></div>
+        </a>
         <a href="https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-high-performance-computing-joint-undertaking-eurohpc-ju_en" target="_blank" class="text-decoration-none">
           <div class="collab-box shadow-sm"><img src="images/euroHPC_logo.png" alt="Logo 1"></div>
         </a>
