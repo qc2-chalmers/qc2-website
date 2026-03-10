@@ -41,6 +41,21 @@
       font-weight: 500 !important;
     }
 
+    /* Fix mobile offcanvas menu color */
+    .offcanvas-lg, .offcanvas-md, .offcanvas-sm {
+      background-color: #020617 !important; /* Matches your dark navbar color */
+    }
+
+    /* Ensure text inside the mobile menu remains readable */
+    .offcanvas-body .nav-link {
+      color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    /* Style the close button in mobile view to be visible against dark bg */
+    .btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+
     .content-block {
       border: 1px solid var(--bs-border-color-translucent);
       border-radius: 1rem;
@@ -474,7 +489,7 @@
             <img src="images/people/axel_andersson.JPG" class="person-img shadow-sm" alt="Axel Andersson">
             <h5 class="fw-bold mb-1">Axel Andersson</h5>
             <div class="person-description text-body-secondary">
-              With a background in computer engineering and applied mathematics, my research is focused on the experimental implementation of early fault-tolerant quantum computing.
+              Implementing early fault-tolerant protocols on superconducting quantum processors.
             </div>
             <a href="https://www.chalmers.se/en/persons/axean/" class="btn-profile">More About Me 🔍</a>
           </div>
@@ -539,10 +554,13 @@
         <h3 class="category-title h4">Master Students</h3>
       <div class="content-block" style="padding: 1.5rem;">
         <ul class="list-unstyled mb-0">
-          <li class="py-2 border-bottom">Student Name A</li>
-          <li class="py-2 border-bottom">Student Name B</li>
-          <li class="py-2 border-bottom">Student Name C</li>
-          <li class="py-2">Student Name D</li>
+          <li class="py-2 border-bottom">Carl Svensson</li>
+          <li class="py-2 border-bottom">Wirunwit Worawirat</li>
+          <li class="py-2 border-bottom">David Gudowska</li>
+          <li class="py-2 border-bottom">Julius Ömer Andersson</li>
+          <li class="py-2 border-bottom">Alex Jernstedt</li>
+          <li class="py-2 border-bottom">Job Winkel</li>
+          <li class="py-2">Filip Eriksson</li>
         </ul>
       </div>
 

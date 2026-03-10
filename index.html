@@ -40,6 +40,20 @@
       font-size: 1.1rem !important; /* Adjust this value (e.g., 1.1rem, 1.25rem) */
       font-weight: 500 !important;
     }
+   /* Fix mobile offcanvas menu color */
+    .offcanvas-lg, .offcanvas-md, .offcanvas-sm {
+      background-color: #020617 !important; /* Matches your dark navbar color */
+    }
+
+    /* Ensure text inside the mobile menu remains readable */
+    .offcanvas-body .nav-link {
+      color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    /* Style the close button in mobile view to be visible against dark bg */
+    .btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
     [data-bs-theme="dark"] .bd-navbar { background-color: #020617 !important; }
 
     /* Content Blocks */
