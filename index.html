@@ -97,7 +97,12 @@
 
     /* Layout & Components */
     .wide-section { max-width: 1200px !important; }
-    .img-fluid { max-height: 500px; width: 100%; object-fit: cover; }
+    /* Update your existing img-fluid rule */
+    .img-fluid { 
+      max-height: 500px; 
+      width: 100%; 
+      object-fit: contain; /* Change from 'cover' to 'contain' */
+    }    
     .badge.bg-primary { background-color: var(--qc2-blue) !important; color: #0369a1 !important; font-weight: 600; }
     .pub-list { list-style: none; padding: 0; margin-top: 0.5rem; }
     .pub-item { padding: 1.5rem 0; border-bottom: 1px solid var(--bs-border-color); text-align: left; }
@@ -259,8 +264,8 @@
         <svg class="section-title-icon"><use href="#people-fill"></use></svg> Meet the group
       </h2>
       
-      <img src="images/group_photo.png" class="img-fluid rounded-4 shadow-sm mb-4" alt="QC2 Group Photo" style="max-height: 500px; width: 100%; object-fit: cover;">
-      
+      <img src="images/group_photo.JPG" class="img-fluid rounded-4 shadow-sm mb-4" alt="QC2 Group Photo" style="max-height: 800px; width: 100%; object-fit: contain;">
+
       <div class="mt-3">
         <p class="mb-4 text-body-secondary">To know more about our team members, click below.</p>
         <a href="people.html" class="btn btn-qc2">
