@@ -42,7 +42,7 @@
 
     .wide-section { max-width: 1200px !important; }
 
-    .pub-card { margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--bs-border-color); }
+    .pub-card { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: none !important; }
     /* Updated image class to 'contain' so images aren't cropped */
     .pub-img { width: 100%; height: 200px; object-fit: contain; border-radius: 0.75rem; border: 1px solid var(--bs-border-color-translucent); background-color: rgba(0,0,0,0.03); padding: 0.5rem; }
     
@@ -54,6 +54,29 @@
 
     .collab-box { width: 250px; height: 120px; background-color: var(--qc2-blue) !important; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); }
     .collab-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+    /* Year Separator */
+    .year-separator {
+    display: flex;
+    align-items: center;
+    margin: 4rem 0 2rem 0;
+    color: var(--bs-secondary);
+    }
+
+    .year-separator::before,
+    .year-separator::after {
+    content: "";
+    flex: 1;
+    height: 3px;
+    background: var(--bs-border-color);
+    margin: 0 1rem;
+    }
+
+    .year-separator span {
+    font-weight: 700;
+    font-size: 1.75rem;
+    letter-spacing: 0.1rem;
+    }
   </style>
 </head>
 
@@ -138,6 +161,8 @@
     <section class="content-block wide-section mx-auto">
       <h2 class="display-5 mb-5 fw-semibold text-center"><svg class="section-title-icon"><use href="#book-half"></use></svg>QC2 Lab archive</h2>
       
+    <div class="year-separator"><span>2026</span></div>
+
       <article class="pub-card">
         <div class="row g-4 align-items-start">
             <div class="col-md-8">
@@ -179,6 +204,8 @@
             </div>
         </div>
       </article>
+
+    <div class="year-separator"><span>2025</span></div>
 
       <article class="pub-card">
         <div class="row g-4 align-items-start">
@@ -259,6 +286,8 @@
         </div>
       </article>
 
+    <div class="year-separator"><span>2024</span></div>
+
       <article class="pub-card">
         <div class="row g-4 align-items-start">
             <div class="col-md-8">
@@ -274,6 +303,219 @@
             </div>
             <div class="col-md-4">
             <img src="images/papers/conditional_and_cross_Ramsey.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Fast unconditional reset and leakage reduction in fixed-frequency transmon qubits</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Liangyu Chen, Simon Pettersson Fors, Zixian Yan, Anaida Ali, Tahereh Abad, Amr Osman, Eleftherios Moschandreou, Benjamin Lienhard, Sandoko Kosen, Hang-Xi Li, Daryoush Shiri, Tong Liu, Stefan Hill, Abdullah-Al Amin, Robert Rehammar, Mamta Dahiya, Andreas Nylander, Marcus Rommel, Anita Fadavi Roudsari, Marco Caputo, Grönberg Leif, Joonas Govenius, Miroslav Dobsicek, Michele Faucci Giannelli, Anton Frisk Kockum, Jonas Bylander, Giovanna Tancredi                <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2409.16748" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/reset_lyangiu.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Quantum synchronization in one-dimensional topological systems</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Tong Liu, Laura García-Álvarez, Giovanna Tancredi                <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2409.12581" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/synchronization.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">A small footprint travelling-wave parametric amplifier with a high Signal-to-Noise Ratio improvement in a wide band</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Hampus Renberg Nilsson, Liangyu Chen, Giovanna Tancredi, Robert Rehammar, Daryoush Shiri, Filip Nilsson, Amr Osman, Vitaly Shumeiko, Per Delsing                <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2408.16366" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/par_amplifier.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Dispersive Qubit Readout with Intrinsic Resonator Reset</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    M. Jerger, F. Motzoi, Y. Gao, C. Dickel, L. Buchmann, A. Bengtsson, G. Tancredi, C.W. Warren, J. Bylander, D. DiVincenzo, R. Barends, P. A. Bushev                <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2406.04891" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/disp_ro_with_q_reset.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Signal crosstalk in a flip-chip quantum processor</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Sandoko Kosen, Hang-Xi Li, Marcus Rommel, Robert Rehammar, Marco Caputo, Leif Grönberg, Jorge Fernández-Pendás, Anton Frisk Kockum, Janka Biznárová, Liangyu Chen, Christian Križan, Andreas Nylander, Amr Osman, Anita Fadavi Roudsari, Daryoush Shiri, Giovanna Tancredi, Joonas Govenius, Jonas Bylander                <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2403.00285" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/signal_crosstalk_in_flip_chip.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+    <div class="year-separator"><span>2023</span></div>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Experimentally verified, fast analytic and numerical design of superconducting resonators in flip-chip architectures</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Hang-Xi Li, Daryoush Shiri, Sandoko Kosen, Marcus Rommel, Lert Chayanun, Andreas Nylander, Robert Rehammar, Giovanna Tancredi, Marco Caputo, Kestutis Grigoras, Leif Grönberg, Joonas Govenius, Jonas Bylander    <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2305.05502" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/res_in_flip_flop.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Mitigation of frequency collisions in superconducting quantum processors</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Amr Osman, Jorge Fernàndez-Pendàs, Christopher Warren, Sandoko Kosen, Marco Scigliuzzo, Anton Frisk Kockum, Giovanna Tancredi, Anita Fadavi Roudsari, Jonas Bylander    <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2303.04663" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/mit_freq_collisions.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+    <div class="year-separator"><span>2022</span></div>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Three-wave mixing traveling-wave parametric amplifier with periodic variation of the circuit parameters</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Three-wave mixing traveling-wave parametric amplifier with periodic variation of the circuit parameters    <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2209.07551" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/three_wave_amp.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Transmon qubit readout fidelity at the threshold for quantum error correction without a quantum-limited amplifier</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Liangyu Chen, Hang-Xi Li, Yong Lu, Christopher W. Warren, Christian J. Križan, Sandoko Kosen, Marcus Rommel, Shahnawaz Ahmed, Amr Osman, Janka Biznárová, Anita Fadavi Roudsari, Benjamin Lienhard, Marco Caputo, Kestutis Grigoras, Leif Grönberg, Joonas Govenius, Anton Frisk Kockum, Per Delsing, Jonas Bylander, Giovanna Tancredi    <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2208.05879" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/ro_fidelity_at_qec_thresh.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Extensive characterization of a family of efficient three-qubit gates at the coherence limit</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Christopher W. Warren, Jorge Fernández-Pendás, Shahnawaz Ahmed, Tahereh Abad, Andreas Bengtsson, Janka Biznárová, Kamanasish Debnath, Xiu Gu, Christian Križan, Amr Osman, Anita Fadavi Roudsari, Per Delsing, Göran Johansson, Anton Frisk Kockum, Giovanna Tancredi, Jonas Bylander    <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2207.02938" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/characterization_3q_gates.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Measurement and control of a superconducting quantum processor with a fully-integrated radio-frequency system on a chip</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Mats O. Tholén, Riccardo Borgani, Giuseppe Ruggero Di Carlo, Andreas Bengtsson, Christian Križan, Marina Kudra, Giovanna Tancredi, Jonas Bylander, Per Delsing, Simone Gasparinetti, David B. Haviland    <div style="width: fit-content;">
+                <a href="https://arxiv.org/abs/2205.15253" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/rfsoc_control.png" class="pub-img" alt="Paper Image">
             </div>
         </div>
       </article>
