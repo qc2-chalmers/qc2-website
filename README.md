@@ -1,4 +1,4 @@
-![QC2 Lab Logo](images/qc2_logo.png)
+<img src="images/qc2_logo.png" alt="QC2 Lab Logo" width="200">
 
 Welcome to the official webpage of the **QC2 LAB** based at Chalmers University of Technology. 
 
