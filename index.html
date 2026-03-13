@@ -65,7 +65,7 @@
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
-    [data-bs-theme="light"] .content-block { background-color: #ffffff !important; border-color: rgba(0,0,0,0.1); }
+    [data-bs-theme="light"] .content-block { background-color: #ffffff51 !important; border-color: rgba(0,0,0,0.1); }
     [data-bs-theme="dark"] .content-block { background-color: rgba(30, 41, 59, 0.8) !important; border-color: rgba(255,255,255,0.15); }
 
     /* STANDARDIZED BUTTON STYLE */
@@ -269,37 +269,29 @@
     </nav>
   </header>
 
-  <main class="container-xxl bd-gutter mt-5">
+<main class="container-xxl bd-gutter mt-5">
 
-    <div class="col-md-10 mx-auto text-center mb-5">
-      <img src="images/qc2_intro.png" width="100%" alt="QC2 Chalmers" class="mb-4">
-      <h1 class="mb-3 fw-semibold lh-1">Welcome webpage of the QC2 Lab!</h1>
-      
-      <p class="lead mb-4">
+  <div class="wide-section mx-auto text-center mb-5" style="max-width: 1200px !important;">
+    <h1 class="mb-3 fw-semibold lh-1">Welcome webpage of the QC2 Lab!</h1>
+
+    <img src="images/group_photo.JPG" class="img-fluid rounded-4 shadow-sm mb-4" alt="QC2 Group Photo" 
+         style="max-height: 850px; width: 100%; object-fit: contain;">
+    
+    <section id="mission" class="content-block wide-section mx-auto text-md-center">
+      <h2 class="display-5 mb-4 fw-semibold lh-sm">
+        <svg class="section-title-icon"><use href="#target"></use></svg>Our mission
+      </h2> 
+      <p class="lead mb-4 px-lg-5">
         We are a team of physicists and engineers specialized in superconducting circuits for quantum computing applications and enabling technologies. Our work focuses on developing fast, high-fidelity quantum gates and qubit readout, improving qubit coherence through device design and fabrication, while advancing the development of large-scale quantum processors.
       </p>
 
-      <hr class="w-25 mx-auto mb-4" style="opacity: 0.5; border-top: 2px solid #3678a4;">
+      <img src="images/qc2_intro.png" width="100%" alt="QC2 Chalmers" class="mb-4">
 
       <p class="lead">
         We are based at the Microtechnology and Nanoscience Department (MC2) at Chalmers University of Technology, where we have access to state-of-the-art laboratories and clean room.
       </p>
-    </div>
-
-    <section class="content-block wide-section mx-auto text-center">
-      <h2 class="fw-semibold mb-4 d-flex align-items-center justify-content-center">
-        <svg class="section-title-icon"><use href="#people-fill"></use></svg> Meet the group
-      </h2>
-      
-      <img src="images/group_photo.JPG" class="img-fluid rounded-4 shadow-sm mb-4" alt="QC2 Group Photo" style="max-height: 800px; width: 100%; object-fit: contain;">
-
-      <div class="mt-3">
-        <p class="mb-4 text-body-secondary">To know more about our team members, click below.</p>
-        <a href="people.html" class="btn btn-qc2">
-          View Team Members
-        </a>
-      </div>
     </section>
+  </div>
 
   <section id="publications" class="content-block wide-section mx-auto text-md-center">
     <h2 class="display-5 mb-4 fw-semibold lh-sm">
