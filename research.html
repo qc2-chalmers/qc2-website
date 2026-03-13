@@ -6,13 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="QC2 @ Chalmers Research Group">
   <meta name="author" content="QC2 Team">
-
-  <title>QC2 · Home Page</title>
+  <title>QC2 · Research Interests</title>
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/docs.css" rel="stylesheet">
 
-<style>
+  <style>  
     /* Theme-aware Color Palette */
     :root {
       --bd-violet: #2563eb;
@@ -83,6 +82,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      min-width: 180px;
     }
     .btn-qc2:hover { filter: brightness(0.9); transform: translateY(-2px); color: #0369a1 !important; }
     
@@ -104,46 +104,32 @@
       object-fit: contain; /* Change from 'cover' to 'contain' */
     }    
     .badge.bg-primary { background-color: var(--qc2-blue) !important; color: #0369a1 !important; font-weight: 600; }
-    .pub-list { list-style: none; padding: 0; margin-top: 0.5rem; }
-    .pub-item { padding: 1.5rem 0; border-bottom: 1px solid var(--bs-border-color); text-align: left; }
-    .pub-item:last-child { border-bottom: none; }
-    .abstract-text { text-align: justify; line-height: 1.6; font-size: 0.95rem; }
+
+    /* Update the research-card img rule */
+    .research-card img {
+    width: 100%;
+    max-height: 500px; /* Adjust this value for how "big" you want it */
+    object-fit: cover;
+    border-radius: 1rem !important;
+    margin-bottom: 1.5rem;
+    background-color: #eff5ff !important; 
+    border: 1px solid rgb(201, 215, 255);
+    }
+    /* Dark mode: Deeper Navy Blue background */
+    [data-bs-theme="dark"] .research-card img {
+      background-color: rgba(136, 152, 193, 0.6) !important; 
+      border-color: rgb(103, 112, 161);
+    }
+    .research-card:hover { transform: translateY(-5px); }
+
+    /* Ensure the cards are separated nicely */
+    .research-row {
+    margin-bottom: 4rem;
+    }
     .section-title-icon { width: 1em; height: 1em; vertical-align: -0.15em; margin-right: 0.75rem; fill: currentColor; }
+
     .btn-icon { width: 1.1em; height: 1.1em; vertical-align: -0.2em; margin-right: 0.4rem; fill: currentColor; }
 
-    /* Carousel */
-    #qc2Carousel { max-width: 100%; border-color: var(--bs-border-color-translucent); }
-    .carousel-inner {
-        height: 500px; /* Imposta l'altezza che desideri per il carosello */
-        background-color: transparent;
-    }
-
-    .carousel-item {
-        height: 500px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .carousel-item::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-image: var(--bg-image);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat; /* Aggiungi questo */
-        filter: blur(20px) brightness(0.8);
-        transform: scale(1.1);
-        z-index: 1;
-    }
-
-    .carousel-item img {
-        position: relative;
-        z-index: 2;
-        height: 100%;
-        width: 100%;
-        object-fit: contain; /* Mantiene l'immagine intera */
-    }
     /* Container for the 7 logos */
     .sponsors-container {
       display: flex;
@@ -179,16 +165,16 @@
     }
     .footer-logo-container { background-color: #ffffff; padding: 10px 20px; border-radius: 8px; display: inline-block; margin-bottom: 15px; border: 1px solid rgba(0,0,0,0.1); }
     .footer-logo-img { max-height: 40px; display: block; }
-</style>
-
-  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  
+  </style>
 </head>
 
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="images/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="images/favicon/favicon.ico">
+
 <body>
-  <!-- SVG ICON SYMBOLS -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -229,7 +215,7 @@
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="publications.html">Publications</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="blog.html">News</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="people.html">People</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="#jobs">Jobs</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="index.html#jobs">Jobs</a></li>
             <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
               <div class="vr d-none d-lg-flex h-100 mx-lg-3 text-white"></div>
               <hr class="d-lg-none my-2 text-white-50">
@@ -269,245 +255,251 @@
     </nav>
   </header>
 
+
   <main class="container-xxl bd-gutter mt-5">
+    <section class="content-block mx-auto">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-semibold"><svg class="section-title-icon"><use href="#target"></use></svg>Research Interests</h2>
+      </div>
 
-    <div class="col-md-10 mx-auto text-center mb-5">
-      <img src="images/qc2_intro.png" width="100%" alt="QC2 Chalmers" class="mb-4">
-      <h1 class="mb-3 fw-semibold lh-1">Welcome webpage of the QC2 Lab!</h1>
-      
-      <p class="lead mb-4">
-        We are a team of physicists and engineers specialized in superconducting circuits for quantum computing applications and enabling technologies. Our work focuses on developing fast, high-fidelity quantum gates and qubit readout, improving qubit coherence through device design and fabrication, while advancing the development of large-scale quantum processors.
-      </p>
+    <div class="row g-5">
+            <div class="col-12 research-row">
+                <div class="card research-card bg-body-tertiary p-4 rounded-4">
+                <h3 class="fw-bold mb-3">Fabrication</h3>
+                
+                <img src="images/research/qubits.png" alt="Qubit Design">
+                
+                <div class="card-body p-0 text-center">
+                    <p class="lead text-secondary">
+                        small description here.
+                    </p>
+                    
+                    <div class="collapse mb-3" id="r1">
+                    <div class="pt-3 border-top text-secondary">
+                        wider description here.
+                    </div>
+                    </div>
+                    
+                    <button class="btn btn-qc2" data-bs-toggle="collapse" data-bs-target="#r1">Read More</button>
+                </div>
+                </div>
+            </div>
+        </div>
 
-      <hr class="w-25 mx-auto mb-4" style="opacity: 0.5; border-top: 2px solid #3678a4;">
+    <div class="row g-5">
+            <div class="col-12 research-row">
+                <div class="card research-card bg-body-tertiary p-4 rounded-4">
+                <h3 class="fw-bold mb-3">Measurement</h3>
+                
+                <img src="images/research/qubits.png" alt="Qubit Design">
+                
+                <div class="card-body p-0 text-center">
+                    <p class="lead text-secondary">
+                        small description here.
+                    </p>
+                    
+                    <div class="collapse mb-3" id="r2">
+                    <div class="pt-3 border-top text-secondary">
+                        wider description here.
+                    </div>
+                    </div>
+                    
+                    <button class="btn btn-qc2" data-bs-toggle="collapse" data-bs-target="#r2">Read More</button>
+                </div>
+                </div>
+            </div>
+        </div>
 
-      <p class="lead">
-        We are based at the Microtechnology and Nanoscience Department (MC2) at Chalmers University of Technology, where we have access to state-of-the-art laboratories and clean room.
-      </p>
-    </div>
 
-    <section class="content-block wide-section mx-auto text-center">
-      <h2 class="fw-semibold mb-4 d-flex align-items-center justify-content-center">
-        <svg class="section-title-icon"><use href="#people-fill"></use></svg> Meet the group
-      </h2>
-      
-      <img src="images/group_photo.JPG" class="img-fluid rounded-4 shadow-sm mb-4" alt="QC2 Group Photo" style="max-height: 800px; width: 100%; object-fit: contain;">
+    <div class="row g-5">
+            <div class="col-12 research-row">
+                <div class="card research-card bg-body-tertiary p-4 rounded-4">
+                <h3 class="fw-bold mb-3">Frequency trimming</h3>
+                
+                <img src="images/research/qubits.png" alt="Qubit Design">
+                
+                <div class="card-body p-0 text-center">
+                    <p class="lead text-secondary">
+                        small description here.
+                    </p>
+                    
+                    <div class="collapse mb-3" id="r3">
+                    <div class="pt-3 border-top text-secondary">
+                        wider description here.
+                    </div>
+                    </div>
+                    
+                    <button class="btn btn-qc2" data-bs-toggle="collapse" data-bs-target="#r3">Read More</button>
+                </div>
+                </div>
+            </div>
+        </div>
 
-      <div class="mt-3">
-        <p class="mb-4 text-body-secondary">To know more about our team members, click below.</p>
-        <a href="people.html" class="btn btn-qc2">
-          View Team Members
-        </a>
+
+    <div class="row g-5">
+            <div class="col-12 research-row">
+                <div class="card research-card bg-body-tertiary p-4 rounded-4">
+                <h3 class="fw-bold mb-3">TWPA development</h3>
+                
+                <img src="images/research/qubits.png" alt="Qubit Design">
+                
+                <div class="card-body p-0 text-center">
+                    <p class="lead text-secondary">
+                        small description here.
+                    </p>
+                    
+                    <div class="collapse mb-3" id="r4">
+                    <div class="pt-3 border-top text-secondary">
+                        wider description here.
+                    </div>
+                    </div>
+                    
+                    <button class="btn btn-qc2" data-bs-toggle="collapse" data-bs-target="#r4">Read More</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5">
+        <div class="col-12 research-row">
+            <div class="card research-card bg-body-tertiary p-4 rounded-4 shadow-sm">
+            <h3 class="fw-bold mb-3 display-6">Software Stack & Control Orchestration</h3>
+            
+            <img src="images/research/software.png" alt="QC2 Software Architecture" class="rounded-4 border shadow-sm">
+            
+            <div class="card-body p-0 text-center">
+                <p class="fs-4 text-secondary mb-4 px-lg-5">
+                Quantum hardware is only as capable as the software that drives it. At the QC2 Lab, we are engineering 
+                a vertically integrated software suite designed to provide a high-reliability characterization ecosystem 
+                while bridging the gap between abstract quantum applications and precise pulse-level control. 
+                </p>
+                
+                <div class="collapse mb-5" id="r5">
+                <div class="pt-4 border-top text-start px-lg-4">
+                    
+                    <div class="mb-5">
+                    <h4 class="fw-bold text-primary-emphasis mb-3">1. A Standardized Library of Calibration Nodes</h4>
+                    <p class="fs-5 text-secondary">
+                        The foundation of our control logic rests on a robust set of experimental primitives. Before 
+                        deploying high-level algorithms, the system must possess a reliable understanding of the physical 
+                        qubits. To this end, we have developed a comprehensive library of calibration and characterization 
+                        nodes that cover fundamental protocols, from T₁/T₂ relaxation measurements to complex verification 
+                        sequences. This library is specifically engineered for seamless integration with 
+                        <strong>Qblox</strong> control hardware, ensuring deterministic execution and phase-stable 
+                        pulse generation across our superconducting arrays.
+                    </p>
+                    </div>
+
+                    <div class="mb-5">
+                    <h4 class="fw-bold text-primary-emphasis mb-3">2. Dynamic Real-Time Data Handling</h4>
+                    <p class="fs-5 text-secondary">
+                        Modern quantum computing demands a "living" hardware abstraction layer. We address this through 
+                        a high-performance data architecture built upon a <strong>Redis</strong> in-memory database. 
+                        This setup facilitates near-instantaneous read/write access to critical calibration parameters. 
+                        By tracking pulse amplitudes, phases, and frequencies in real-time, our control systems can 
+                        adapt dynamically to the device's state. This capability is vital for active feedback logic 
+                        and environmental drift compensation, maintaining an accurate physical model of the processor 
+                        throughout long-duration computations.
+                    </p>
+                    </div>
+
+                    <div class="mb-5">
+                    <h4 class="fw-bold text-primary-emphasis mb-3">3. Modular Orchestration & Research Playground</h4>
+                    <p class="fs-5 text-secondary">
+                        The final layer of our stack is <strong>Bragi</strong>, our custom orchestration engine. 
+                        Through Bragi’s flexible API, we manage the execution of complex experimental workflows, 
+                        supporting two primary operational modes:
+                    </p>
+                    <ul class="fs-5 text-secondary mb-4">
+                        <li class="mb-3">
+                        <strong>Fabrication Pipelines:</strong> Standardized, "gold-standard" workflows designed for 
+                        rigorous device bring-up and periodic recalibration. These pipelines serve as reliable 
+                        diagnostic tools for benchmarking fabrication yields and maintaining long-term hardware stability.
+                        </li>
+                        <li>
+                        <strong>Research Playground:</strong> A flexible "sandbox" where researchers can prototype 
+                        novel physics experiments. By allowing users to drag-and-drop custom nodes or optimize the 
+                        calibration graph itself in real-time, Bragi empowers the team to push the boundaries of 
+                        superconducting technology without the constraints of rigid, hard-coded procedures.
+                        </li>
+                    </ul>
+                    <p class="fs-5 text-secondary italic">
+                        This dual-layered approach fosters an environment where industrial-grade stability meets 
+                        unrestricted academic curiosity.
+                    </p>
+                    </div>
+
+                </div>
+                </div>
+                
+                <button class="btn btn-qc2 py-3 px-5 fs-5 shadow-sm" data-bs-toggle="collapse" data-bs-target="#r5">
+                Read More
+                </button>
+            </div>
+            </div>
+        </div>
+        </div>
+       
       </div>
     </section>
-
-  <section id="publications" class="content-block wide-section mx-auto text-md-center">
-    <h2 class="display-5 mb-4 fw-semibold lh-sm">
-      <svg class="section-title-icon"><use href="#book-half"></use></svg>Latest publications
-    </h2>    
-    <ul class="pub-list">
-
-      <li class="pub-item">
-          <span class="badge bg-primary mb-2">Feb 2026</span>
-          <h5 class="mb-3 fw-bold">Electrical post-fabrication tuning of aluminum Josephson junctions at room temperature</h5>
-          <div class="collapse mb-3" id="abstract2">
-          <div class="card card-body bg-body-tertiary border-0 abstract-text p-3">
-            Josephson junctions are a key element of superconducting quantum technology, serving as the core building blocks of 
-            superconducting qubits. We present an experimental study on room-temperature electrical tuning of aluminum junctions, 
-            showing that voltage pulses can controllably increase their resistance and adjust the Josephson energy while maintaining 
-            qubit quality factors above 1 million. We find that the rate of resistance increase scales exponentially with pulse 
-            amplitude during manipulation, after which the spontaneous resistance increase scales proportionally to the amount of 
-            manipulation. We show that this spontaneous increase halts at cryogenic temperatures, and resumes again at room temperature. 
-            Using our stepwise protocol, we achieve up to a 270% increase in junction resistance, corresponding to a reduction of 
-            nearly 2 GHz of the qubit transition frequency. These results establish the achievable range, relaxation behavior, and 
-            practical limits of electrical tuning, enabling post-fabrication mitigation of frequency crowding in quantum processors.              
-          </div>
-          </div>
-          <div class="d-flex gap-2 justify-content-md-center">
-              <button class="btn btn-sm btn-outline-secondary d-flex align-items-center toggle-abstract" type="button" data-bs-toggle="collapse" data-bs-target="#abstract2">
-                  <svg class="btn-icon"><use href="#target"></use></svg> <span class="btn-text">Show Abstract</span>
-              </button>
-              <a href="https://arxiv.org/abs/2505.07725" target="_blank" class="btn btn-sm btn-outline-primary d-flex align-items-center">
-                  <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-              </a>
-          </div>
-      </li>
-
-      <li class="pub-item">
-        <span class="badge bg-primary mb-2">June 2025</span>
-        <h5 class="mb-3 fw-bold">Real-time adaptive tracking of fluctuating relaxation rates in superconducting qubits</h5>
-        <div class="collapse mb-3" id="abstract1">
-        <div class="card card-body bg-body-tertiary border-0 abstract-text p-3">
-            The fidelity of operations on a solid-state quantum processor is fundamentally bounded by environmental decoherence. 
-            Characterizing environmental fluctuations is challenging because the acquisition time of nonadaptive experimental 
-            protocols limits temporal precision and can average out rapid features of the underlying dynamics. Here, we overcome 
-            this temporal-resolution limit by two orders of magnitude using a field-programmable gate-array (FPGA) powered classical 
-            controller that adaptively and continuously tracks the relaxation-time fluctuations of two fixed-frequency superconducting 
-            transmon qubits, which exhibit average relaxation times of approximately 0.17 ms and occasionally exceed 0.5 ms. We 
-            report events in which the relaxation time switches by nearly an order of magnitude over timescales of just tens of 
-            milliseconds, rather than minutes or hours as previously reported. Our real-time Bayesian estimation protocol estimates 
-            relaxation times within a few milliseconds, close to the decoherence timescale itself. Our statistical analysis further 
-            suggests that some of these fast fluctuations arise from two-level systems switching at rates up to 10 Hz, four orders of
-            magnitude faster than earlier reports. These results redefine the timescales relevant for calibration in superconducting 
-            quantum processing units, establish a reference for rapid relaxation-rate characterization in device screening, and 
-            improve our understanding of fast relaxation dynamics.          </div>
-        </div>
-        <div class="d-flex gap-2 justify-content-md-center">
-          <button class="btn btn-sm btn-outline-secondary d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#abstract1">
-            <svg class="btn-icon"><use href="#target"></use></svg> <span class="btn-text">Show Abstract</span>
-          </button>
-          <a href="https://arxiv.org/abs/2506.09576" target="_blank" class="btn btn-sm btn-outline-primary d-flex align-items-center">
-            <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-          </a>
-        </div>
-      </li>
-    </ul>
-
-    <div class="mt-4 p-4 border rounded bg-body-tertiary">
-      <p class="mb-3">To have an overview of all the publications of the QC2 lab since its foundations, click below.</p>
-      <a href="publications.html" class="btn btn-qc2">View All Publications</a>
-    </div>
-  </section>
-
-  <section id="jobs" class="content-block wide-section mx-auto">
-    <h2 class="display-5 mb-4 fw-semibold text-center">
-      <svg class="section-title-icon"><use href="#person-badge"></use></svg>Vacancies & Jobs
-    </h2>
-    
-    <ul class="list-unstyled mb-0">
-
-      <li class="p-3 mb-2 border rounded shadow-sm bg-body-tertiary d-flex align-items-center justify-content-between">
-        
-        <div class="me-3">
-          <strong class="d-block">Staff Scientist in experimental superconducting quantum computing</strong>
-          <small class="text-body-secondary">Application deadline: April 11th, 2026</small>
-        </div>
-
-        <a href="https://www.chalmers.se/en/about-chalmers/work-with-us/vacancies/?rmpage=job&rmjob=14583&rmlang=UK" class="btn btn-outline-primary btn-sm flex-shrink-0">
-          Read More
-        </a>
-      </li>
-
-      <li class="p-3 mb-2 border rounded shadow-sm bg-body-tertiary d-flex align-items-center justify-content-between">
-        
-        <div class="me-3">
-          <strong class="d-block">Doctoral student in characterization of large-scale quantum computers</strong>
-          <small class="text-body-secondary">Application deadline: March 8th, 2026</small>
-        </div>
-
-        <a href="https://web103.reachmee.com/ext/I003/304/job?site=5&lang=UK&validator=a72aeedd63ec10de71e46f8d91d0d57c&ref=https%3A%2F%2Fwww.google.com%2F&job_id=14471" class="btn btn-outline-primary btn-sm flex-shrink-0">
-          Read More
-        </a>
-      </li>  
-      
-      <li class="p-3 mb-2 border rounded shadow-sm bg-body-tertiary d-flex align-items-center justify-content-between">
-          <div class="me-3">
-            <strong class="d-block">Interested in joining our group?</strong>
-            <small class="text-body-secondary">If no positions above match your profile but you are interested in our research, please reach out to us.</small>
-          </div>
-
-          <a href="mailto:tancredi@chalmers.se" class="btn btn-outline-primary btn-sm flex-shrink-0 d-flex align-items-center">
-            <svg class="btn-icon" viewBox="0 0 16 16" style="margin-right: 0.4rem; fill: currentColor;">
-              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.897-5.383-3.23L8 9.549l-1.583-.949-5.383 3.23A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.72ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-            </svg>
-            Contact Us
-          </a>
-      </li>
-
-    </ul>
-  </section>
-
-  <section class="wide-section mx-auto my-5">
-    <div class="text-center mb-4">
-      <h3 class="fw-semibold d-flex align-items-center justify-content-center">
-        <svg class="section-title-icon"><use href="#camera-fill"></use></svg> 
-        Some pictures from our lab
-      </h3>
-    </div>
-
-    <div id="qc2Carousel" class="carousel slide carousel-fade shadow border rounded-4 overflow-hidden" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      <button type="button" data-bs-target="#qc2Carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-    </div>
-
-    <div class="carousel-inner">
-      <div class="carousel-item active" style="--bg-image: url('images/carousel/carousel1.png');">
-        <img src="images/carousel/carousel1.png" alt="Lab View">
-      </div>
-      <div class="carousel-item" style="--bg-image: url('images/carousel/carousel2.png');">
-        <img src="images/carousel/carousel2.png" alt="Team">
-      </div>
-      <div class="carousel-item" style="--bg-image: url('images/carousel/carousel3.png');">
-        <img src="images/carousel/carousel3.png" alt="Chip">
-      </div>
-      <div class="carousel-item" style="--bg-image: url('images/carousel/carousel4.png');">
-        <img src="images/carousel/carousel4.png" alt="Chip2">
-      </div>
-      <div class="carousel-item" style="--bg-image: url('images/carousel/carousel5.jpg');">
-        <img src="images/carousel/carousel5.jpg" alt="Chip3">
-      </div>
-    </div>
-      
-      <button class="carousel-control-prev" type="button" data-bs-target="#qc2Carousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon shadow-sm" aria-hidden="true" style="filter: drop-shadow(0 0 2px rgba(0,0,0,0.5)); transform: scale(1.5);"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#qc2Carousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon shadow-sm" aria-hidden="true" style="filter: drop-shadow(0 0 2px rgba(0,0,0,0.5)); transform: scale(1.5);"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </section>
-
   </main>
 
   <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
     <h4 class="fw-semibold mb-4 text-body-secondary">A warm thank you to our sponsors</h4>
     <div class="container py-4 text-body-secondary">
-      
       <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
         <a href="https://www.vinnova.se/en/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vinnova_logo.png" alt="Logo 1"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vinnova_logo.png" alt="Vinnova"></div>
         </a>
         <a href="https://www.vr.se/english.html" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vetenskapsradet_logo.png" alt="Logo 2"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vetenskapsradet_logo.png" alt="VR"></div>
         </a>
         <a href="https://kaw.wallenberg.org/en" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/kaw_logo.png" alt="Logo 3"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/kaw_logo.png" alt="KAW"></div>
         </a>
-        <a href="https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-high-performance-computing-joint-undertaking-eurohpc-ju_en" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/euroHPC_logo.png" alt="Logo 1"></div>
+        <a href="https://eurohpc-ju.europa.eu" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/euroHPC_logo.png" alt="EuroHPC"></div>
         </a>
         <a href="https://www.chalmers.se/en/centres/wacqt/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/wacqt_logo.png" alt="Logo 2"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/wacqt_logo.png" alt="WACQT"></div>
         </a>
         <a href="https://quantera.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/quantera_logo.png" alt="Logo 3"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/quantera_logo.png" alt="Quantera"></div>
         </a>
         <a href="https://opensuperqplus.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/osq_logo.png" alt="Logo 4"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/osq_logo.png" alt="OpenSuperQ"></div>
         </a>
         <a href="https://myfab.se/labs/myfab-chalmers/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/myfab_logo.png" alt="Logo 4"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/myfab_logo.png" alt="Myfab"></div>
         </a>
       </div>
-      
       <div class="mt-2">
-        <small>© 2026 - Made with ​💙​ by QC2 Lab </small><br>
+        <small>© 2026 - Made with ​💙​ by QC2 Lab </small>
       </div>
     </div>
   </footer>
 
   <script src="js/bootstrap.bundle.min.js"></script>
   
+    <script>
+    // Select all collapsible elements
+    document.querySelectorAll('.collapse').forEach(collapseEl => {
+        // Listen for the "shown" event (expanded)
+        collapseEl.addEventListener('shown.bs.collapse', function () {
+        const btn = document.querySelector(`[data-bs-target="#${this.id}"]`);
+        if (btn) btn.innerText = 'Hide Description';
+        });
+        
+        // Listen for the "hidden" event (collapsed)
+        collapseEl.addEventListener('hidden.bs.collapse', function () {
+        const btn = document.querySelector(`[data-bs-target="#${this.id}"]`);
+        if (btn) btn.innerText = 'Read More';
+        });
+    });
+    </script> 
+  
   <script>
-    /*!
-     * Self-contained Theme Logic (Alternative to color-modes.js)
-     */
+    /* Theme logic (Shared across all pages) */
     (() => {
       'use strict'
       const getStoredTheme = () => localStorage.getItem('theme')
@@ -517,7 +509,6 @@
         if (storedTheme) return storedTheme
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
       }
-
       const setTheme = theme => {
         if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
           document.documentElement.setAttribute('data-bs-theme', 'dark')
@@ -525,16 +516,15 @@
           document.documentElement.setAttribute('data-bs-theme', theme)
         }
       }
-
       setTheme(getPreferredTheme())
 
-      const showActiveTheme = (theme, focus = false) => {
-        const themeSwitcher = document.querySelector('#bd-theme')
-        if (!themeSwitcher) return
+      const showActiveTheme = (theme) => {
         const activeThemeIcon = document.querySelector('.theme-icon-active use')
         const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-        const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
+        if (!btnToActive || !activeThemeIcon) return
 
+        const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
+        
         document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
           element.classList.remove('active')
           element.setAttribute('aria-pressed', 'false')
@@ -545,40 +535,20 @@
         btnToActive.setAttribute('aria-pressed', 'true')
         btnToActive.querySelector('svg.ms-auto').classList.remove('d-none')
         activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-        
-        if (focus) themeSwitcher.focus()
       }
-
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        const storedTheme = getStoredTheme()
-        if (storedTheme !== 'light' && storedTheme !== 'dark') setTheme(getPreferredTheme())
-      })
 
       window.addEventListener('DOMContentLoaded', () => {
         showActiveTheme(getPreferredTheme())
-        document.querySelectorAll('[data-bs-theme-value]')
-          .forEach(toggle => {
-            toggle.addEventListener('click', () => {
-              const theme = toggle.getAttribute('data-bs-theme-value')
-              setStoredTheme(theme)
-              setTheme(theme)
-              showActiveTheme(theme, true)
-            })
+        document.querySelectorAll('[data-bs-theme-value]').forEach(toggle => {
+          toggle.addEventListener('click', () => {
+            const theme = toggle.getAttribute('data-bs-theme-value')
+            setStoredTheme(theme)
+            setTheme(theme)
+            showActiveTheme(theme)
           })
+        })
       })
     })()
-
-    /* Toggle button text logic */
-    document.querySelectorAll('.collapse').forEach(function(el) {
-      el.addEventListener('show.bs.collapse', function () {
-        const btn = document.querySelector(`[data-bs-target="#${this.id}"]`);
-        if(btn) btn.querySelector('.btn-text').innerText = 'Hide Abstract';
-      });
-      el.addEventListener('hide.bs.collapse', function () {
-        const btn = document.querySelector(`[data-bs-target="#${this.id}"]`);
-        if(btn) btn.querySelector('.btn-text').innerText = 'Show Abstract';
-      });
-    });
   </script>
 </body>
 </html>

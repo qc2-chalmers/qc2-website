@@ -78,8 +78,8 @@
 
     /* Individual logo boxes */
     .collab-box {
-      width: 170px;          
-      height: 90px;         
+      width: 250px;          
+      height: 100px;         
       background-color: #deefff !important; 
       border-radius: 0.75rem;
       display: flex;
@@ -122,8 +122,21 @@
     font-size: 1.75rem;
     letter-spacing: 0.1rem;
     }
+
+    /* Button specific formatting for DOI */
+    .btn-sm.d-inline-flex {
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
+        line-height: 1.2;
+        text-align: left;
+    }
   </style>
 </head>
+
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="images/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="images/favicon/favicon.ico">
 
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -137,10 +150,10 @@
     <symbol id="journal-text" viewBox="0 0 16 16"><path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/><path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/></symbol>
   </svg>
 
-  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <header class="navbar navbar-expand-lg bd-navbar sticky-top">
     <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
       <a class="navbar-brand d-flex align-items-center gap-2 p-0 me-0 me-lg-4" href="index.html">
-        <img src="images/qc2_logo.png" alt="QC2 Lab Logo" style="height: 65px; width: auto;">
+        <img src="images/qc2_logos/qc2_logo_light.png" alt="QC2 Lab Logo" style="height: 65px; width: auto;">
       </a>
       <div class="d-flex align-items-center">
         <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-label="Toggle navigation">
@@ -155,10 +168,11 @@
         <div class="offcanvas-body p-4 pt-0 p-lg-0">
           <hr class="d-lg-none text-white-50">
           <ul class="navbar-nav flex-row flex-wrap ms-md-auto align-items-center">
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="research.html">Research</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="publications.html">Publications</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="blog.html">News</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="people.html">People</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="#jobs">Jobs</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="index.html#jobs">Jobs</a></li>
             <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
               <div class="vr d-none d-lg-flex h-100 mx-lg-3 text-white"></div>
               <hr class="d-lg-none my-2 text-white-50">
@@ -216,10 +230,10 @@
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
                     Christian Križan, Maurizio Toselli, Irshad Ahmad, Hadi Khaksaran, Marcus Rommel, Nermin Trnjanin, Janka Biznárová, Mamta Dahiya, Emil Hogedal, Halldór Jakobsson, Andreas Nylander, Jonas Bylander, Per Delsing, Giovanna Tancredi
                 </p>
-                <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2602.20002" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2602.20002" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
                 </div>
             </div>
             </div>
@@ -237,10 +251,10 @@
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
                 Rune Thinggaard Birke, Johann Bock Severin, Malthe A. Marciniak, Emil Hogedal, Andreas Nylander, Irshad Ahmad, Amr Osman, Janka Biznárová, Marcus Rommel, Anita Fadavi Roudsari, Jonas Bylander, Giovanna Tancredi, Daniel Stilck França, Albert Werner, Christopher W. Warren, Jacob Hastrup, Svend Krøjer, Morten Kjaergaard
                 </p>
-                <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2602.14694" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2602.14694" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
                 </div>
             </div>
             </div>
@@ -260,10 +274,16 @@
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
                     Fabrizio Berritta, Jacob Benestad, Jan A. Krzywda, Oswin Krause, Malthe A. Marciniak, Svend Krøjer, Christopher W. Warren, Emil Hogedal, Andreas Nylander, Irshad Ahmad, Amr Osman, Janka Biznárová, Marcus Rommel, Anita Fadavi Roudsari, Jonas Bylander, Giovanna Tancredi, Jeroen Danon, Jacob Hastrup, Ferdinand Kuemmeth, Morten Kjaergaard
                 </p>
-                <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2506.09576" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2506.09576" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1103/gk1b-stl3" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1103/gk1b-stl3</span>
+                  </a>
                 </div>
             </div>
             </div>
@@ -280,10 +300,16 @@
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
                     Tangyou Huang, Akshay Gaikwad, Ilya Moskalenko, Anuj Aggarwal, Tahereh Abad, Marko Kuzmanovic, Yu-Han Chang, Ognjen Stanisavljevic, Emil Hogedal, Christopher Warren, Irshad Ahmad, Janka Biznárová, Amr Osman, Mamta Dahiya, Marcus Rommel, Anita Fadavi Rousari, Andreas Nylander, Liangyu Chen, Jonas Bylander, Gheorghe Sorin Paraoanu, Anton Frisk Kockum, Giovanna Tancredi                </p>
-                <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2505.07725" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2505.07725" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1103/dpgy-rtxr" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1103/dpgy-rtxr</span>
+                  </a>
                 </div>
             </div>
             </div>
@@ -299,10 +325,10 @@
             <h3 class="fw-bold mb-3">Neural-network-based design and implementation of fast and robust quantum gates</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Marko Kuzmanović, Ilya Moskalenko, Yu-Han Chang, Ognjen Stanisavljević, Christopher Warren, Emil Hogedal, Anuj Aggarwal, Irshad Ahmad, Janka Biznárová, Mamta Dahiya, Marcus Rommel, Andreas Nylander, Giovanna Tancredi, Gheorghe Sorin Paraoanu                <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2505.02054" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Marko Kuzmanović, Ilya Moskalenko, Yu-Han Chang, Ognjen Stanisavljević, Christopher Warren, Emil Hogedal, Anuj Aggarwal, Irshad Ahmad, Janka Biznárová, Mamta Dahiya, Marcus Rommel, Andreas Nylander, Giovanna Tancredi, Gheorghe Sorin Paraoanu                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2505.02054" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
                 </div>
             </div>
             </div>
@@ -318,10 +344,10 @@
             <h3 class="fw-bold mb-3">Mitigating transients in flux-control signals in a superconducting quantum processor</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Anuj Aggarwal, Jorge Fernández-Pendás, Tahereh Abad, Daryoush Shiri, Halldór Jakobsson, Marcus Rommel, Andreas Nylander, Emil Hogedal, Amr Osman, Janka Biznárová, Robert Rehammar, Michele Faucci Giannelli, Anita Fadavi Roudsari, Jonas Bylander, Giovanna Tancredi                <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2503.08645" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Anuj Aggarwal, Jorge Fernández-Pendás, Tahereh Abad, Daryoush Shiri, Halldór Jakobsson, Marcus Rommel, Andreas Nylander, Emil Hogedal, Amr Osman, Janka Biznárová, Robert Rehammar, Michele Faucci Giannelli, Anita Fadavi Roudsari, Jonas Bylander, Giovanna Tancredi                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2503.08645" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
                 </div>
             </div>
             </div>
@@ -339,10 +365,16 @@
             <h3 class="fw-bold mb-3">Quantum SWAP gate realized with CZ and iSWAP gates in a superconducting architecture</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Christian Križan, Janka Biznárová, Liangyu Chen, Emil Hogedal, Amr Osman, Christopher W. Warren, Sandoko Kosen, Hang-Xi Li, Tahereh Abad, Anuj Aggarwal, Marco Caputo, Jorge Fernández-Pendás, Akshay Gaikwad, Leif Grönberg, Andreas Nylander, Robert Rehammar, Marcus Rommel, Olga I. Yuzephovich, Anton Frisk Kockum, Joonas Govenius, Giovanna Tancredi, Jonas Bylander                <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2412.15022" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Christian Križan, Janka Biznárová, Liangyu Chen, Emil Hogedal, Amr Osman, Christopher W. Warren, Sandoko Kosen, Hang-Xi Li, Tahereh Abad, Anuj Aggarwal, Marco Caputo, Jorge Fernández-Pendás, Akshay Gaikwad, Leif Grönberg, Andreas Nylander, Robert Rehammar, Marcus Rommel, Olga I. Yuzephovich, Anton Frisk Kockum, Joonas Govenius, Giovanna Tancredi, Jonas Bylander                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2412.15022" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1088/1367-2630/adeba7" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1088/1367-2630/adeba7</span>
+                  </a>
                 </div>
             </div>
             </div>
@@ -358,10 +390,10 @@
             <h3 class="fw-bold mb-3">Fast unconditional reset and leakage reduction in fixed-frequency transmon qubits</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Liangyu Chen, Simon Pettersson Fors, Zixian Yan, Anaida Ali, Tahereh Abad, Amr Osman, Eleftherios Moschandreou, Benjamin Lienhard, Sandoko Kosen, Hang-Xi Li, Daryoush Shiri, Tong Liu, Stefan Hill, Abdullah-Al Amin, Robert Rehammar, Mamta Dahiya, Andreas Nylander, Marcus Rommel, Anita Fadavi Roudsari, Marco Caputo, Grönberg Leif, Joonas Govenius, Miroslav Dobsicek, Michele Faucci Giannelli, Anton Frisk Kockum, Jonas Bylander, Giovanna Tancredi                <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2409.16748" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Liangyu Chen, Simon Pettersson Fors, Zixian Yan, Anaida Ali, Tahereh Abad, Amr Osman, Eleftherios Moschandreou, Benjamin Lienhard, Sandoko Kosen, Hang-Xi Li, Daryoush Shiri, Tong Liu, Stefan Hill, Abdullah-Al Amin, Robert Rehammar, Mamta Dahiya, Andreas Nylander, Marcus Rommel, Anita Fadavi Roudsari, Marco Caputo, Grönberg Leif, Joonas Govenius, Miroslav Dobsicek, Michele Faucci Giannelli, Anton Frisk Kockum, Jonas Bylander, Giovanna Tancredi                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2409.16748" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
                 </div>
             </div>
             </div>
@@ -374,13 +406,45 @@
       <article class="pub-card">
         <div class="row g-4 align-items-start">
             <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Characterization of process-related interfacial dielectric loss in aluminum-on-silicon by resonator microwave measurements, materials analysis, and imaging</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Lert Chayanun, Janka Biznárová, Lunjie Zeng, Per Malmberg, Andreas Nylander, Amr Osman, Marcus Rommel, Pui Lam Tam, Eva Olsson, August Yurgens, Jonas Bylander, Anita Fadavi Roudsari               <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2403.00723" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1063/5.0208140" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1063/5.0208140</span>
+                  </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/charact_int_die.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
+
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
             <h3 class="fw-bold mb-3">Quantum synchronization in one-dimensional topological systems</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Tong Liu, Laura García-Álvarez, Giovanna Tancredi                <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2409.12581" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Tong Liu, Laura García-Álvarez, Giovanna Tancredi                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2409.12581" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1103/mr1f-v8cv" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1103/mr1f-v8cv</span>
+                  </a>
                 </div>
             </div>
             </div>
@@ -396,10 +460,10 @@
             <h3 class="fw-bold mb-3">A small footprint travelling-wave parametric amplifier with a high Signal-to-Noise Ratio improvement in a wide band</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Hampus Renberg Nilsson, Liangyu Chen, Giovanna Tancredi, Robert Rehammar, Daryoush Shiri, Filip Nilsson, Amr Osman, Vitaly Shumeiko, Per Delsing                <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2408.16366" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Hampus Renberg Nilsson, Liangyu Chen, Giovanna Tancredi, Robert Rehammar, Daryoush Shiri, Filip Nilsson, Amr Osman, Vitaly Shumeiko, Per Delsing                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2408.16366" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
                 </div>
             </div>
             </div>
@@ -415,10 +479,10 @@
             <h3 class="fw-bold mb-3">Dispersive Qubit Readout with Intrinsic Resonator Reset</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    M. Jerger, F. Motzoi, Y. Gao, C. Dickel, L. Buchmann, A. Bengtsson, G. Tancredi, C.W. Warren, J. Bylander, D. DiVincenzo, R. Barends, P. A. Bushev                <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2406.04891" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    M. Jerger, F. Motzoi, Y. Gao, C. Dickel, L. Buchmann, A. Bengtsson, G. Tancredi, C.W. Warren, J. Bylander, D. DiVincenzo, R. Barends, P. A. Bushev                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2406.04891" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
                 </div>
             </div>
             </div>
@@ -434,10 +498,16 @@
             <h3 class="fw-bold mb-3">Signal crosstalk in a flip-chip quantum processor</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Sandoko Kosen, Hang-Xi Li, Marcus Rommel, Robert Rehammar, Marco Caputo, Leif Grönberg, Jorge Fernández-Pendás, Anton Frisk Kockum, Janka Biznárová, Liangyu Chen, Christian Križan, Andreas Nylander, Amr Osman, Anita Fadavi Roudsari, Daryoush Shiri, Giovanna Tancredi, Joonas Govenius, Jonas Bylander                <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2403.00285" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Sandoko Kosen, Hang-Xi Li, Marcus Rommel, Robert Rehammar, Marco Caputo, Leif Grönberg, Jorge Fernández-Pendás, Anton Frisk Kockum, Janka Biznárová, Liangyu Chen, Christian Križan, Andreas Nylander, Amr Osman, Anita Fadavi Roudsari, Daryoush Shiri, Giovanna Tancredi, Joonas Govenius, Jonas Bylander                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2403.00285" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1103/PRXQuantum.5.030350" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1103/PRXQuantum.5.030350</span>
+                  </a>
                 </div>
             </div>
             </div>
@@ -455,10 +525,16 @@
             <h3 class="fw-bold mb-3">Experimentally verified, fast analytic and numerical design of superconducting resonators in flip-chip architectures</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Hang-Xi Li, Daryoush Shiri, Sandoko Kosen, Marcus Rommel, Lert Chayanun, Andreas Nylander, Robert Rehammar, Giovanna Tancredi, Marco Caputo, Kestutis Grigoras, Leif Grönberg, Joonas Govenius, Jonas Bylander    <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2305.05502" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Hang-Xi Li, Daryoush Shiri, Sandoko Kosen, Marcus Rommel, Lert Chayanun, Andreas Nylander, Robert Rehammar, Giovanna Tancredi, Marco Caputo, Kestutis Grigoras, Leif Grönberg, Joonas Govenius, Jonas Bylander    <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2305.05502" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1109/tqe.2023.3302371" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1109/tqe.2023.3302371</span>
+                  </a>
                 </div>
             </div>
             </div>
@@ -467,6 +543,32 @@
             </div>
         </div>
       </article>
+  
+ <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Mitigation of interfacial dielectric loss in aluminum-on-silicon superconducting qubits</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
+                    Janka Biznárová, Amr Osman, Emil Rehnman, Lert Chayanun, Christian Križan, Per Malmberg, Marcus Rommel, Christopher Warren, Per Delsing, August Yurgens, Jonas Bylander, Anita Fadavi Roudsari    <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2310.06797" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1038/s41534-024-00868-z" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1038/s41534-024-00868-z</span>
+                  </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/mit_int_dielectric.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+
 
       <article class="pub-card">
         <div class="row g-4 align-items-start">
@@ -474,10 +576,16 @@
             <h3 class="fw-bold mb-3">Mitigation of frequency collisions in superconducting quantum processors</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Amr Osman, Jorge Fernàndez-Pendàs, Christopher Warren, Sandoko Kosen, Marco Scigliuzzo, Anton Frisk Kockum, Giovanna Tancredi, Anita Fadavi Roudsari, Jonas Bylander    <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2303.04663" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Amr Osman, Jorge Fernàndez-Pendàs, Christopher Warren, Sandoko Kosen, Marco Scigliuzzo, Anton Frisk Kockum, Giovanna Tancredi, Anita Fadavi Roudsari, Jonas Bylander    <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2303.04663" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1103/PhysRevResearch.5.043001" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1103/PhysRevResearch.5.043001</span>
+                  </a>
                 </div>
             </div>
             </div>
@@ -495,10 +603,16 @@
             <h3 class="fw-bold mb-3">Three-wave mixing traveling-wave parametric amplifier with periodic variation of the circuit parameters</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Three-wave mixing traveling-wave parametric amplifier with periodic variation of the circuit parameters    <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2209.07551" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Hampus Renberg Nilsson, Liangyu Chen, Giovanna Tancredi, Robert Rehammar, Daryoush Shiri, Filip Nilsson, Amr Osman, Vitaly Shumeiko, Per Delsing    <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2209.07551" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1063/5.0127690" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1063/5.0127690</span>
+                  </a>
                 </div>
             </div>
             </div>
@@ -514,10 +628,16 @@
             <h3 class="fw-bold mb-3">Transmon qubit readout fidelity at the threshold for quantum error correction without a quantum-limited amplifier</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Liangyu Chen, Hang-Xi Li, Yong Lu, Christopher W. Warren, Christian J. Križan, Sandoko Kosen, Marcus Rommel, Shahnawaz Ahmed, Amr Osman, Janka Biznárová, Anita Fadavi Roudsari, Benjamin Lienhard, Marco Caputo, Kestutis Grigoras, Leif Grönberg, Joonas Govenius, Anton Frisk Kockum, Per Delsing, Jonas Bylander, Giovanna Tancredi    <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2208.05879" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Liangyu Chen, Hang-Xi Li, Yong Lu, Christopher W. Warren, Christian J. Križan, Sandoko Kosen, Marcus Rommel, Shahnawaz Ahmed, Amr Osman, Janka Biznárová, Anita Fadavi Roudsari, Benjamin Lienhard, Marco Caputo, Kestutis Grigoras, Leif Grönberg, Joonas Govenius, Anton Frisk Kockum, Per Delsing, Jonas Bylander, Giovanna Tancredi    <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2208.05879" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1038/s41534-023-00689-6" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1038/s41534-023-00689-6</span>
+                  </a>
                 </div>
             </div>
             </div>
@@ -533,10 +653,16 @@
             <h3 class="fw-bold mb-3">Extensive characterization of a family of efficient three-qubit gates at the coherence limit</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Christopher W. Warren, Jorge Fernández-Pendás, Shahnawaz Ahmed, Tahereh Abad, Andreas Bengtsson, Janka Biznárová, Kamanasish Debnath, Xiu Gu, Christian Križan, Amr Osman, Anita Fadavi Roudsari, Per Delsing, Göran Johansson, Anton Frisk Kockum, Giovanna Tancredi, Jonas Bylander    <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2207.02938" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Christopher W. Warren, Jorge Fernández-Pendás, Shahnawaz Ahmed, Tahereh Abad, Andreas Bengtsson, Janka Biznárová, Kamanasish Debnath, Xiu Gu, Christian Križan, Amr Osman, Anita Fadavi Roudsari, Per Delsing, Göran Johansson, Anton Frisk Kockum, Giovanna Tancredi, Jonas Bylander    <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2207.02938" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1038/s41534-023-00711-x" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1038/s41534-023-00711-x</span>
+                  </a>
                 </div>
             </div>
             </div>
@@ -552,10 +678,16 @@
             <h3 class="fw-bold mb-3">Measurement and control of a superconducting quantum processor with a fully-integrated radio-frequency system on a chip</h3>
             <div class="d-flex flex-column gap-3">
                 <p class="text-secondary fw-medium mb-0" style="color: #64748b !important;">
-                    Mats O. Tholén, Riccardo Borgani, Giuseppe Ruggero Di Carlo, Andreas Bengtsson, Christian Križan, Marina Kudra, Giovanna Tancredi, Jonas Bylander, Per Delsing, Simone Gasparinetti, David B. Haviland    <div style="width: fit-content;">
-                <a href="https://arxiv.org/abs/2205.15253" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <svg class="btn-icon"><use href="#journal-text"></use></svg> Read the Paper
-                </a>
+                    Mats O. Tholén, Riccardo Borgani, Giuseppe Ruggero Di Carlo, Andreas Bengtsson, Christian Križan, Marina Kudra, Giovanna Tancredi, Jonas Bylander, Per Delsing, Simone Gasparinetti, David B. Haviland    <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a href="https://arxiv.org/abs/2205.15253" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <svg class="btn-icon"><use href="#journal-text"></use></svg> Read on ArXiv
+                  </a>
+                  <a href="https://doi.org/10.1063/5.0101398" target="_blank" class="btn btn-qc2 btn-sm d-inline-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center">
+                        <svg class="btn-icon"><use href="#journal-text"></use></svg> Published Version
+                    </div>
+                    <span style="font-size: 0.7rem; opacity: 0.8; font-weight: 400; margin-left: 1.5rem;">DOI: https://doi.org/10.1063/5.0101398</span>
+                  </a>
                 </div>
             </div>
             </div>
@@ -574,25 +706,28 @@
       
       <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
         <a href="https://www.vinnova.se/en/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/vinnova_logo.png" alt="Logo 1"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vinnova_logo.png" alt="Logo 1"></div>
         </a>
-        <a href="https://www.vr.se/english.html/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/vetenskapsradet_logo.png" alt="Logo 2"></div>
+        <a href="https://www.vr.se/english.html" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vetenskapsradet_logo.png" alt="Logo 2"></div>
         </a>
         <a href="https://kaw.wallenberg.org/en" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/kaw_logo.png" alt="Logo 3"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/kaw_logo.png" alt="Logo 3"></div>
         </a>
         <a href="https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-high-performance-computing-joint-undertaking-eurohpc-ju_en" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/euroHPC_logo.png" alt="Logo 1"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/euroHPC_logo.png" alt="Logo 1"></div>
         </a>
         <a href="https://www.chalmers.se/en/centres/wacqt/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/wacqt_logo.png" alt="Logo 2"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/wacqt_logo.png" alt="Logo 2"></div>
         </a>
         <a href="https://quantera.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/quantera_logo.png" alt="Logo 3"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/quantera_logo.png" alt="Logo 3"></div>
         </a>
         <a href="https://opensuperqplus.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/osq_logo.png" alt="Logo 4"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/osq_logo.png" alt="Logo 4"></div>
+        </a>
+        <a href="https://myfab.se/labs/myfab-chalmers/" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/myfab_logo.png" alt="Logo 4"></div>
         </a>
       </div>
       

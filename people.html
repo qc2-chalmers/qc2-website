@@ -156,6 +156,17 @@
       border-radius: 0.5rem;
     }
 
+    /* Ensure the alumni section has some breathing room when expanded */
+    #alumniCollapse {
+      padding-top: 2rem;
+      transition: all 0.4s ease;
+    }
+
+    /* Optional: change button text when open (requires a tiny bit of JS or just keep it static) */
+    .btn-qc2[aria-expanded="true"] {
+      background-color: #7dd3fc !important; /* Slightly lighter when active */
+    }
+
     .footer-logo-container {
       background-color: #ffffff; 
       padding: 10px 20px;
@@ -183,8 +194,8 @@
 
     /* Individual logo boxes */
     .collab-box {
-      width: 170px;          
-      height: 90px;         
+      width: 250px;          
+      height: 100px;         
       background-color: #deefff !important; 
       border-radius: 0.75rem;
       display: flex;
@@ -206,10 +217,10 @@
     }
   </style>
 
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="images/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="images/favicon/favicon.ico">
 </head>
 
 <body>
@@ -224,16 +235,16 @@
   </svg>
 
   <header class="navbar navbar-expand-lg bd-navbar sticky-top">
-    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
       <a class="navbar-brand d-flex align-items-center gap-2 p-0 me-0 me-lg-4" href="index.html">
-        <img src="images/qc2_logo.png" alt="QC2 Lab Logo" style="height: 65px; width: auto;">
+        <img src="images/qc2_logos/qc2_logo_light.png" alt="QC2 Lab Logo" style="height: 65px; width: auto;">
       </a>
       <div class="d-flex align-items-center">
-        <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar">
+        <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-label="Toggle navigation">
           <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>
         </button>
       </div>
-      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar">
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" data-bs-scroll="true">
         <div class="offcanvas-header px-4 pb-0">
           <h5 class="offcanvas-title text-white">Menu</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#bdNavbar"></button>
@@ -241,23 +252,42 @@
         <div class="offcanvas-body p-4 pt-0 p-lg-0">
           <hr class="d-lg-none text-white-50">
           <ul class="navbar-nav flex-row flex-wrap ms-md-auto align-items-center">
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="research.html">Research</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="publications.html">Publications</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="blog.html">News</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="#">People</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="people.html">People</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="index.html#jobs">Jobs</a></li>
             <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
               <div class="vr d-none d-lg-flex h-100 mx-lg-3 text-white"></div>
               <hr class="d-lg-none my-2 text-white-50">
             </li>
             <li class="nav-item dropdown">
-              <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" data-bs-toggle="dropdown">
+              <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
                 <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
                 <span class="d-lg-none ms-2">Toggle theme</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"><svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>Light<svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button></li>
-                <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"><svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>Dark<svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button></li>
-                <li><button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"><svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>Auto<svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button></li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#sun-fill"></use></svg>
+                        Light
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#moon-stars-fill"></use></svg>
+                        Dark
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
+                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#circle-half"></use></svg>
+                        Auto
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                    </button>
+                </li>
               </ul>
             </li>
           </ul>
@@ -286,9 +316,9 @@
           <div class="person-card text-center">
               <img src="images/people/giovanna_tancredi.jpeg" class="person-img shadow-sm" alt="Giovanna Tancredi">
               <h5 class="fw-bold mb-1">Giovanna Tancredi</h5>
-              <p class="text-body-secondary small fw-semibold mb-2">PI</p>
+              <p class="text-body-secondary small fw-semibold mb-2">Group Leader & PI</p>
               <div class="person-description text-body-secondary">
-                Superconducting circuits, quantum control, and scaling up quantum processors.
+                Design and control of superconducting processors, with a strong interest in the scaling of quantum processors.
               </div>
               <a href="https://www.chalmers.se/en/persons/tancredi/" class="btn-profile">More About Me 🔍</a>
           </div>
@@ -436,7 +466,7 @@
             <img src="images/people/hadi_khaksaran.png" class="person-img shadow-sm" alt="Hadi Khaksaran">
             <h5 class="fw-bold mb-1">Hadi Khaksaran</h5>
             <div class="person-description text-body-secondary">
-                Placeholder for research description regarding thesis topics and group contributions..
+                Developing fabrication processes for superconducting through-silicon vias and integrating them into quantum processors.
             </div>
             <a href="https://www.chalmers.se/en/persons/hadikh/" class="btn-profile">More About Me 🔍</a>
           </div>
@@ -549,10 +579,10 @@
 
         <div class="col">
           <div class="person-card text-center">
-            <img src="images/people/emil_hogdale.png" class="person-img shadow-sm" alt="Emil Hogedal">
+            <img src="images/people/emil_hogedal.JPG" class="person-img shadow-sm" alt="Emil Hogedal">
             <h5 class="fw-bold mb-1">Emil Hogedal</h5>
             <div class="person-description text-body-secondary">
-              Placeholder for research description regarding thesis topics and group contributions.
+              Developing superconducting qubit hardware with a focus on faster, high‑fidelity readout and gate operations.
             </div>
             <a href="https://www.chalmers.se/en/persons/emilhog/" class="btn-profile">More About Me 🔍</a>
           </div>
@@ -588,11 +618,36 @@
           <li class="py-2 border-bottom">Wirunwit Worawirat</li>
           <li class="py-2 border-bottom">David Gudowska</li>
           <li class="py-2 border-bottom">Julius Ömer Andersson</li>
-          <li class="py-2 border-bottom">Alex Jernstedt</li>
+          <li class="py-2 border-bottom">Quan Trinh</li>
           <li class="py-2 border-bottom">Job Winkel</li>
           <li class="py-2">Filip Eriksson</li>
         </ul>
       </div>
+
+      <!-- <div class="text-center mt-5 mb-4">
+        <button class="btn-qc2 shadow-sm" type="button" data-bs-toggle="collapse" data-bs-target="#alumniCollapse" aria-expanded="false" aria-controls="alumniCollapse">
+          Show Alumni 🎓
+        </button>
+      </div> -->
+
+      <!-- <div class="collapse" id="alumniCollapse">
+        <h3 class="category-title h4">Alumni</h3>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
+          
+          <div class="col">
+            <div class="person-card text-center">
+                <img src="images/people/placeholder.png" class="person-img shadow-sm" alt="Alumni Name">
+                <h5 class="fw-bold mb-1">Alumni Name</h5>
+                <p class="text-body-secondary small fw-semibold mb-2">Former PhD Student</p>
+                <div class="person-description text-body-secondary">
+                  Briefly describe their current position or what they worked on at QC2.
+                </div>
+                <a href="#" class="btn-profile">LinkedIn Profile 🔗</a>
+            </div>
+          </div>
+          
+          </div>
+      </div> -->
 
     </section>
 
@@ -604,25 +659,28 @@
       
       <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
         <a href="https://www.vinnova.se/en/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/vinnova_logo.png" alt="Logo 1"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vinnova_logo.png" alt="Logo 1"></div>
         </a>
-        <a href="https://www.vr.se/english.html/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/vetenskapsradet_logo.png" alt="Logo 2"></div>
+        <a href="https://www.vr.se/english.html" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vetenskapsradet_logo.png" alt="Logo 2"></div>
         </a>
         <a href="https://kaw.wallenberg.org/en" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/kaw_logo.png" alt="Logo 3"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/kaw_logo.png" alt="Logo 3"></div>
         </a>
         <a href="https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-high-performance-computing-joint-undertaking-eurohpc-ju_en" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/euroHPC_logo.png" alt="Logo 1"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/euroHPC_logo.png" alt="Logo 1"></div>
         </a>
         <a href="https://www.chalmers.se/en/centres/wacqt/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/wacqt_logo.png" alt="Logo 2"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/wacqt_logo.png" alt="Logo 2"></div>
         </a>
         <a href="https://quantera.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/quantera_logo.png" alt="Logo 3"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/quantera_logo.png" alt="Logo 3"></div>
         </a>
         <a href="https://opensuperqplus.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/osq_logo.png" alt="Logo 4"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/osq_logo.png" alt="Logo 4"></div>
+        </a>
+        <a href="https://myfab.se/labs/myfab-chalmers/" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/myfab_logo.png" alt="Logo 4"></div>
         </a>
       </div>
       

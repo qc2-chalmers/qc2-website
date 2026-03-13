@@ -144,8 +144,8 @@
 
     /* Individual logo boxes */
     .collab-box {
-      width: 170px;          
-      height: 90px;         
+      width: 250px;          
+      height: 100px;         
       background-color: #deefff !important; 
       border-radius: 0.75rem;
       display: flex;
@@ -167,9 +167,10 @@
     }
   </style>
 
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="images/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="images/favicon/favicon.ico">
 </head>
 
 <body>
@@ -183,17 +184,17 @@
     <symbol id="house-fill" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/><path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/></symbol>
   </svg>
 
-  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
-    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+    <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
       <a class="navbar-brand d-flex align-items-center gap-2 p-0 me-0 me-lg-4" href="index.html">
-        <img src="images/qc2_logo.png" alt="QC2 Lab Logo" style="height: 65px; width: auto;">
+        <img src="images/qc2_logos/qc2_logo_light.png" alt="QC2 Lab Logo" style="height: 65px; width: auto;">
       </a>
       <div class="d-flex align-items-center">
-        <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar">
+        <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-label="Toggle navigation">
           <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>
         </button>
       </div>
-      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar">
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" data-bs-scroll="true">
         <div class="offcanvas-header px-4 pb-0">
           <h5 class="offcanvas-title text-white">Menu</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#bdNavbar"></button>
@@ -201,6 +202,7 @@
         <div class="offcanvas-body p-4 pt-0 p-lg-0">
           <hr class="d-lg-none text-white-50">
           <ul class="navbar-nav flex-row flex-wrap ms-md-auto align-items-center">
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="research.html">Research</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="publications.html">Publications</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="blog.html">News</a></li>
             <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="people.html">People</a></li>
@@ -210,14 +212,32 @@
               <hr class="d-lg-none my-2 text-white-50">
             </li>
             <li class="nav-item dropdown">
-              <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" data-bs-toggle="dropdown">
+              <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
                 <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
                 <span class="d-lg-none ms-2">Toggle theme</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"><svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>Light<svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button></li>
-                <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"><svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>Dark<svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button></li>
-                <li><button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"><svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>Auto<svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button></li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#sun-fill"></use></svg>
+                        Light
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#moon-stars-fill"></use></svg>
+                        Dark
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
+                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#circle-half"></use></svg>
+                        Auto
+                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                    </button>
+                </li>
               </ul>
             </li>
           </ul>
@@ -325,25 +345,28 @@
       
       <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
         <a href="https://www.vinnova.se/en/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/vinnova_logo.png" alt="Logo 1"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vinnova_logo.png" alt="Logo 1"></div>
         </a>
-        <a href="https://www.vr.se/english.html/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/vetenskapsradet_logo.png" alt="Logo 2"></div>
+        <a href="https://www.vr.se/english.html" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vetenskapsradet_logo.png" alt="Logo 2"></div>
         </a>
         <a href="https://kaw.wallenberg.org/en" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/kaw_logo.png" alt="Logo 3"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/kaw_logo.png" alt="Logo 3"></div>
         </a>
         <a href="https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-high-performance-computing-joint-undertaking-eurohpc-ju_en" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/euroHPC_logo.png" alt="Logo 1"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/euroHPC_logo.png" alt="Logo 1"></div>
         </a>
         <a href="https://www.chalmers.se/en/centres/wacqt/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/wacqt_logo.png" alt="Logo 2"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/wacqt_logo.png" alt="Logo 2"></div>
         </a>
         <a href="https://quantera.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/quantera_logo.png" alt="Logo 3"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/quantera_logo.png" alt="Logo 3"></div>
         </a>
         <a href="https://opensuperqplus.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/osq_logo.png" alt="Logo 4"></div>
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/osq_logo.png" alt="Logo 4"></div>
+        </a>
+        <a href="https://myfab.se/labs/myfab-chalmers/" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/myfab_logo.png" alt="Logo 4"></div>
         </a>
       </div>
       
