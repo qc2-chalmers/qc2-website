@@ -34,26 +34,10 @@
     .bd-navbar::after { background-image: none !important; background-color: #0f172a !important; }
     .bd-navbar .nav-link, .bd-navbar .navbar-brand { color: rgba(255, 255, 255, 0.9) !important; }
     .bd-navbar .nav-link:hover { color: #60a5fa !important; }
-    /* Increase navbar link font size */
     .bd-navbar .nav-link {
-      font-size: 1.1rem !important; /* Adjust this value (e.g., 1.1rem, 1.25rem) */
+      font-size: 1.1rem !important;
       font-weight: 500 !important;
     }
-   /* Fix mobile offcanvas menu color */
-    .offcanvas-lg, .offcanvas-md, .offcanvas-sm {
-      background-color: #0f172a !important; /* Matches your dark navbar color */
-    }
-
-    /* Ensure text inside the mobile menu remains readable */
-    .offcanvas-body .nav-link {
-      color: rgba(255, 255, 255, 0.9) !important;
-    }
-
-    /* Style the close button in mobile view to be visible against dark bg */
-    .btn-close {
-      filter: invert(1) grayscale(100%) brightness(200%);
-    }
-    [data-bs-theme="dark"] .bd-navbar { background-color: #020617 !important; }
 
     /* Content Blocks */
     .content-block {
@@ -75,7 +59,7 @@
       font-size: 1rem !important;
       font-weight: 600 !important;
       color: #0369a1 !important;
-      border-radius: 0.5rem !important; /* Forces consistent corners */
+      border-radius: 0.5rem !important;
       transition: all 0.2s ease !important;
       text-decoration: none;
       display: inline-flex;
@@ -85,62 +69,25 @@
       min-width: 180px;
     }
     .btn-qc2:hover { filter: brightness(0.9); transform: translateY(-2px); color: #0369a1 !important; }
-    
-    /* Apply these properties to standard bootstrap buttons as well */
-    .btn-primary, .btn-outline-primary, .btn-outline-secondary {
-      background-color: var(--qc2-blue) !important; 
-      border: 1px solid #7dd3fc !important;       
-      color: #0369a1 !important;
-      border-radius: 0.5rem !important;
-      font-weight: 600 !important;
-    }
 
-    /* Layout & Components */
-    .wide-section { max-width: 1200px !important; }
-    /* Update your existing img-fluid rule */
-    .img-fluid { 
-      max-height: 500px; 
-      width: 100%; 
-      object-fit: contain; /* Change from 'cover' to 'contain' */
-    }    
-    .badge.bg-primary { background-color: var(--qc2-blue) !important; color: #0369a1 !important; font-weight: 600; }
-
-    /* Update the research-card img rule */
+    /* Image and Card styling */
     .research-card img {
-    width: 100%;
-    max-height: 500px; /* Adjust this value for how "big" you want it */
-    object-fit: cover;
-    border-radius: 1rem !important;
-    margin-bottom: 1.5rem;
-    background-color: #eff5ff !important; 
-    border: 1px solid rgb(201, 215, 255);
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 1rem !important;
+      margin-bottom: 1.5rem;
+      background-color: #eff5ff !important; 
+      border: 1px solid rgb(201, 215, 255);
     }
-    /* Dark mode: Deeper Navy Blue background */
     [data-bs-theme="dark"] .research-card img {
       background-color: rgba(136, 152, 193, 0.6) !important; 
       border-color: rgb(103, 112, 161);
     }
-    .research-card:hover { transform: translateY(-5px); }
-
-    /* Ensure the cards are separated nicely */
-    .research-row {
-    margin-bottom: 4rem;
-    }
+    .research-row { margin-bottom: 4rem; }
     .section-title-icon { width: 1em; height: 1em; vertical-align: -0.15em; margin-right: 0.75rem; fill: currentColor; }
 
-    .btn-icon { width: 1.1em; height: 1.1em; vertical-align: -0.2em; margin-right: 0.4rem; fill: currentColor; }
-
-    /* Container for the 7 logos */
-    .sponsors-container {
-      display: flex;
-      flex-wrap: wrap;       
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;           
-      margin-top: 2rem;
-    }
-
-    /* Individual logo boxes */
+    /* Sponsors */
     .collab-box {
       width: 250px;          
       height: 100px;         
@@ -151,46 +98,19 @@
       justify-content: center;
       padding: 10px;
       border: 1px solid rgba(0,0,0,0.08);
-      transition: transform 0.2s;
     }
-
-    .collab-box:hover {
-      transform: scale(1.05); 
-    }
-
-    .collab-box img {
-      max-width: 90%;
-      max-height: 90%;
-      object-fit: contain;
-    }
-    .footer-logo-container { background-color: #ffffff; padding: 10px 20px; border-radius: 8px; display: inline-block; margin-bottom: 15px; border: 1px solid rgba(0,0,0,0.1); }
-    .footer-logo-img { max-height: 40px; display: block; }
-  
+    .collab-box:hover { transform: scale(1.05); }
+    .collab-box img { max-width: 90%; max-height: 90%; object-fit: contain; }
   </style>
 </head>
 
-  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="images/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="images/favicon/favicon.ico">
-
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="check2" viewBox="0 0 16 16">
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-    </symbol>
     <symbol id="circle-half" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" /></symbol>
     <symbol id="moon-stars-fill" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" /><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" /></symbol>
     <symbol id="sun-fill" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" /></symbol>
     <symbol id="three-dots" viewBox="0 0 16 16"><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" /></symbol>
-    <symbol id="newspaper" viewBox="0 0 16 16"><path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .303-.204.627-.514.79-.241.125-.503.158-.738.158h-11a1.5 1.5 0 0 1-1.5-1.5zM1.5 2a.5.5 0 0 0-.5.5v10.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V2.5a.5.5 0 0 0-.5-.5z"/><path d="M2 3h10v2H2zm0 3h4v3H2zm5 0h5v1H7zm0 2h5v1H7zm-5 4h10v1H2z"/></symbol>
-    <symbol id="code-square" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0m2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0"/></symbol>
-    <symbol id="book-half" viewBox="0 0 16 16"><path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></symbol>
-    <symbol id="person-badge" viewBox="0 0 16 16"><path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/><path d="M4.5 0A.5.5 0 0 0 4 .5V1h8V.5a.5.5 0 0 0-.5-.5zm-.5 1H3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zM2 3a1 1 0 0 1 1-1h1v1a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V2h1a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/></symbol>
-    <symbol id="journal-text" viewBox="0 0 16 16"><path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/><path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/></symbol>
     <symbol id="target" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></symbol>
-    <symbol id="people-fill" viewBox="0 0 16 16"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></symbol>
-    <symbol id="camera-fill" viewBox="0 0 16 16"><path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/></symbol> 
   </svg>
 
   <header class="navbar navbar-expand-lg bd-navbar sticky-top">
@@ -198,55 +118,29 @@
       <a class="navbar-brand d-flex align-items-center gap-2 p-0 me-0 me-lg-4" href="index.html">
         <img src="images/qc2_logos/qc2_logo_light.png" alt="QC2 Lab Logo" style="height: 65px; width: auto;">
       </a>
-      <div class="d-flex align-items-center">
-        <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-label="Toggle navigation">
-          <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>
-        </button>
-      </div>
-      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" data-bs-scroll="true">
+      <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar">
+        <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>
+      </button>
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" id="bdNavbar">
         <div class="offcanvas-header px-4 pb-0">
           <h5 class="offcanvas-title text-white">Menu</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#bdNavbar"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body p-4 pt-0 p-lg-0">
-          <hr class="d-lg-none text-white-50">
-          <ul class="navbar-nav flex-row flex-wrap ms-md-auto align-items-center">
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="research.html">Research</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="publications.html">Publications</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="blog.html">News</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="people.html">People</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="index.html#jobs">Jobs</a></li>
-            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
-              <div class="vr d-none d-lg-flex h-100 mx-lg-3 text-white"></div>
-              <hr class="d-lg-none my-2 text-white-50">
-            </li>
+          <ul class="navbar-nav ms-md-auto align-items-center">
+            <li class="nav-item"><a class="nav-link py-2 px-2" href="research.html">Research</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-2" href="publications.html">Publications</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-2" href="blog.html">News</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-2" href="people.html">People</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-2" href="index.html#jobs">Jobs</a></li>
             <li class="nav-item dropdown">
-              <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+              <button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" data-bs-toggle="dropdown">
                 <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
-                <span class="d-lg-none ms-2">Toggle theme</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
-                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#sun-fill"></use></svg>
-                        Light
-                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
-                    </button>
-                </li>
-                <li>
-                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
-                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#moon-stars-fill"></use></svg>
-                        Dark
-                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
-                    </button>
-                </li>
-                <li>
-                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
-                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#circle-half"></use></svg>
-                        Auto
-                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
-                    </button>
-                </li>
+                <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"><svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>Light</button></li>
+                <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"><svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>Dark</button></li>
+                <li><button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"><svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>Auto</button></li>
               </ul>
             </li>
           </ul>
@@ -255,298 +149,150 @@
     </nav>
   </header>
 
-
   <main class="container-xxl bd-gutter mt-5">
     <section class="content-block mx-auto">
       <div class="text-center mb-5">
         <h2 class="display-5 fw-semibold"><svg class="section-title-icon"><use href="#target"></use></svg>Research Interests</h2>
       </div>
 
-    <div class="row g-5">
-            <div class="col-12 research-row">
-                <div class="card research-card bg-body-tertiary p-4 rounded-4">
-                <h3 class="fw-bold mb-3">Fabrication</h3>
-                
-                <img src="images/research/qubits.png" alt="Qubit Design">
-                
-                <div class="card-body p-0 text-center">
-                    <p class="lead text-secondary">
-                        small description here.
-                    </p>
-                    
-                    <div class="collapse mb-3" id="r1">
-                    <div class="pt-3 border-top text-secondary">
-                        wider description here.
-                    </div>
-                    </div>
-                    
-                    <button class="btn btn-qc2" data-bs-toggle="collapse" data-bs-target="#r1">Read More</button>
-                </div>
-                </div>
-            </div>
-        </div>
-
-    <div class="row g-5">
-            <div class="col-12 research-row">
-                <div class="card research-card bg-body-tertiary p-4 rounded-4">
-                <h3 class="fw-bold mb-3">Measurement</h3>
-                
-                <img src="images/research/qubits.png" alt="Qubit Design">
-                
-                <div class="card-body p-0 text-center">
-                    <p class="lead text-secondary">
-                        small description here.
-                    </p>
-                    
-                    <div class="collapse mb-3" id="r2">
-                    <div class="pt-3 border-top text-secondary">
-                        wider description here.
-                    </div>
-                    </div>
-                    
-                    <button class="btn btn-qc2" data-bs-toggle="collapse" data-bs-target="#r2">Read More</button>
-                </div>
-                </div>
-            </div>
-        </div>
-
-
-    <div class="row g-5">
-            <div class="col-12 research-row">
-                <div class="card research-card bg-body-tertiary p-4 rounded-4">
-                <h3 class="fw-bold mb-3">Frequency trimming</h3>
-                
-                <img src="images/research/qubits.png" alt="Qubit Design">
-                
-                <div class="card-body p-0 text-center">
-                    <p class="lead text-secondary">
-                        small description here.
-                    </p>
-                    
-                    <div class="collapse mb-3" id="r3">
-                    <div class="pt-3 border-top text-secondary">
-                        wider description here.
-                    </div>
-                    </div>
-                    
-                    <button class="btn btn-qc2" data-bs-toggle="collapse" data-bs-target="#r3">Read More</button>
-                </div>
-                </div>
-            </div>
-        </div>
-
-
-    <div class="row g-5">
-            <div class="col-12 research-row">
-                <div class="card research-card bg-body-tertiary p-4 rounded-4">
-                <h3 class="fw-bold mb-3">TWPA development</h3>
-                
-                <img src="images/research/qubits.png" alt="Qubit Design">
-                
-                <div class="card-body p-0 text-center">
-                    <p class="lead text-secondary">
-                        small description here.
-                    </p>
-                    
-                    <div class="collapse mb-3" id="r4">
-                    <div class="pt-3 border-top text-secondary">
-                        wider description here.
-                    </div>
-                    </div>
-                    
-                    <button class="btn btn-qc2" data-bs-toggle="collapse" data-bs-target="#r4">Read More</button>
-                </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row g-5">
-        <div class="col-12 research-row">
-            <div class="card research-card bg-body-tertiary p-4 rounded-4 shadow-sm">
-            <h3 class="fw-bold mb-3 display-6">Software Stack & Control Orchestration</h3>
-            
-            <img src="images/research/software.png" alt="QC2 Software Architecture" class="rounded-4 border shadow-sm">
-            
+      <div class="row g-5 research-row">
+        <div class="col-12">
+          <div class="card research-card bg-body-tertiary p-4 rounded-4">
+            <h3 class="fw-bold mb-3">Control and Readout</h3>
+            <img src="images/carousel/carousel3.png" alt="Qubit Control">
             <div class="card-body p-0 text-center">
-                <p class="fs-4 text-secondary mb-4 px-lg-5">
+              <p class="fs-5 text-secondary px-lg-5">
+                We advance superconducting qubit performance through high-fidelity gate engineering and rapid, low-noise readout to bridge the gap toward fault-tolerant quantum computing.
+              </p>
+              <div class="collapse mb-3" id="r1">
+                <div class="pt-3 border-top text-secondary text-start px-lg-4">
+                  Part of our research focuses on the precise control and readout of superconducting qubits. In particular, we develop techniques for high-fidelity single- and two-qubit gates. Achieving high gate fidelities requires careful engineering of microwave control pulses, mitigation of crosstalk, the application of optimal control techniques, and optimization of the underlying device architecture.
+                  <br><br>
+                  In parallel, we develop fast and high-fidelity qubit readout schemes that enable rapid state discrimination while minimizing measurement-induced backaction. This includes the development of Purcell filters and travelling-wave Josephson parametric amplifiers (TWPAs).
+                  <br><br>
+                  By combining advances in pulse engineering, device design, and measurement techniques, our goal is to push the performance of superconducting qubit platforms toward the regime required for large-scale fault-tolerant quantum computation.
+                </div>
+              </div>
+              <button class="btn btn-qc2" data-bs-toggle="collapse" data-bs-target="#r1">Read More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-5 research-row">
+        <div class="col-12">
+          <div class="card research-card bg-body-tertiary p-4 rounded-4">
+            <h3 class="fw-bold mb-3">Fabrication</h3>
+            <img src="images/carousel/carousel1.png" alt="Qubit Fabrication">
+            <div class="card-body p-0 text-center">
+              <p class="fs-5 text-secondary px-lg-5">
+                We advance scalable quantum computing by optimizing Al-based nanofabrication and 3D integration to enhance qubit coherence, device yield, and high-density processor layouts.
+              </p>
+              <div class="collapse mb-3" id="r2">
+                <div class="pt-3 border-top text-secondary text-start px-lg-4">
+                  Our research also covers the development and optimization of nanofabrication processes for Al-based superconducting circuits, aimed at improving the performance of our quantum processors and travelling-wave parametric amplifiers (TWPAs).
+                  <br><br>
+                  We investigate material interfaces and optimize thin-film deposition techniques to enhance qubit coherence, reproducibility, and device yield. We also develop post-fabrication electrical tuning methods to control qubit frequencies and mitigate frequency uncertainty arising from fabrication variability.
+                  <br><br>
+                  Looking toward larger processors, we explore scalable integration strategies, including multilayer circuit architectures, 3D integration, and miniaturization, enabling denser interconnects and more complex quantum processor layouts. By combining process development with device design and characterization, we aim to establish scalable fabrication techniques for large-scale superconducting quantum processors.
+                </div>
+              </div>
+              <button class="btn btn-qc2" data-bs-toggle="collapse" data-bs-target="#r2">Read More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-5 research-row">
+        <div class="col-12">
+          <div class="card research-card bg-body-tertiary p-4 rounded-4 shadow-sm">
+            <h3 class="fw-bold mb-3">Software Stack & Control Orchestration</h3>
+            <img src="images/research/software.png" alt="Software Stack">
+            <div class="card-body p-0 text-center">
+              <p class="fs-5 text-secondary px-lg-5">
                 Quantum hardware is only as capable as the software that drives it. At the QC2 Lab, we are engineering 
-                a vertically integrated software suite designed to provide a high-reliability characterization ecosystem 
-                while bridging the gap between abstract quantum applications and precise pulse-level control. 
-                </p>
-                
-                <div class="collapse mb-5" id="r5">
+                a vertically integrated software suite designed to provide a high-reliability characterization ecosystem.
+              </p>
+              <div class="collapse mb-3" id="r3">
                 <div class="pt-4 border-top text-start px-lg-4">
-                    
-                    <div class="mb-5">
-                    <h4 class="fw-bold text-primary-emphasis mb-3">1. A Standardized Library of Calibration Nodes</h4>
-                    <p class="fs-5 text-secondary">
-                        The foundation of our control logic rests on a robust set of experimental primitives. Before 
-                        deploying high-level algorithms, the system must possess a reliable understanding of the physical 
-                        qubits. To this end, we have developed a comprehensive library of calibration and characterization 
-                        nodes that cover fundamental protocols, from T₁/T₂ relaxation measurements to complex verification 
-                        sequences. This library is specifically engineered for seamless integration with 
-                        <strong>Qblox</strong> control hardware, ensuring deterministic execution and phase-stable 
-                        pulse generation across our superconducting arrays.
+                  <div class="mb-5">
+                    <h4 class="fw-bold text-primary-emphasis fs-5 mb-3">1. A Standardized Library of Calibration Nodes</h4>
+                    <p class="text-secondary">
+                      The foundation of our control logic rests on a robust set of experimental primitives. Before deploying high-level algorithms, the system must possess a reliable understanding of the physical qubits. To this end, we have developed a comprehensive library of calibration and characterization nodes that cover fundamental protocols, from T₁/T₂ relaxation measurements to complex verification sequences. This library is specifically engineered for seamless integration with Qblox control hardware, ensuring deterministic execution and phase-stable pulse generation across our superconducting arrays.
                     </p>
-                    </div>
-
-                    <div class="mb-5">
-                    <h4 class="fw-bold text-primary-emphasis mb-3">2. Dynamic Real-Time Data Handling</h4>
-                    <p class="fs-5 text-secondary">
-                        Modern quantum computing demands a "living" hardware abstraction layer. We address this through 
-                        a high-performance data architecture built upon a <strong>Redis</strong> in-memory database. 
-                        This setup facilitates near-instantaneous read/write access to critical calibration parameters. 
-                        By tracking pulse amplitudes, phases, and frequencies in real-time, our control systems can 
-                        adapt dynamically to the device's state. This capability is vital for active feedback logic 
-                        and environmental drift compensation, maintaining an accurate physical model of the processor 
-                        throughout long-duration computations.
+                  </div>
+                  <div class="mb-5">
+                    <h4 class="fw-bold text-primary-emphasis fs-5 mb-3">2. Dynamic Real-Time Data Handling</h4>
+                    <p class="text-secondary">
+                      Modern quantum computing demands a "living" hardware abstraction layer. We address this through a high-performance data architecture built upon a Redis in-memory database. This setup facilitates near-instantaneous read/write access to critical calibration parameters. By tracking pulse amplitudes, phases, and frequencies in real-time, our control systems can adapt dynamically to the device's state. This capability is vital for active feedback logic and environmental drift compensation.
                     </p>
-                    </div>
-
-                    <div class="mb-5">
-                    <h4 class="fw-bold text-primary-emphasis mb-3">3. Modular Orchestration & Research Playground</h4>
-                    <p class="fs-5 text-secondary">
-                        The final layer of our stack is <strong>Bragi</strong>, our custom orchestration engine. 
-                        Through Bragi’s flexible API, we manage the execution of complex experimental workflows, 
-                        supporting two primary operational modes:
+                  </div>
+                  <div>
+                    <h4 class="fw-bold text-primary-emphasis fs-5 mb-3">3. Modular Orchestration & Research Playground</h4>
+                    <p class="text-secondary">
+                      The final layer of our stack is Bragi, our custom orchestration engine. Through Bragi’s flexible API, we manage complex workflows, supporting Fabrication Pipelines (standardized, "gold-standard" workflows for device bring-up) and a Research Playground (a flexible "sandbox" where researchers can prototype novel physics experiments). This dual-layered approach fosters an environment where industrial-grade stability meets unrestricted academic curiosity.
                     </p>
-                    <ul class="fs-5 text-secondary mb-4">
-                        <li class="mb-3">
-                        <strong>Fabrication Pipelines:</strong> Standardized, "gold-standard" workflows designed for 
-                        rigorous device bring-up and periodic recalibration. These pipelines serve as reliable 
-                        diagnostic tools for benchmarking fabrication yields and maintaining long-term hardware stability.
-                        </li>
-                        <li>
-                        <strong>Research Playground:</strong> A flexible "sandbox" where researchers can prototype 
-                        novel physics experiments. By allowing users to drag-and-drop custom nodes or optimize the 
-                        calibration graph itself in real-time, Bragi empowers the team to push the boundaries of 
-                        superconducting technology without the constraints of rigid, hard-coded procedures.
-                        </li>
-                    </ul>
-                    <p class="fs-5 text-secondary italic">
-                        This dual-layered approach fosters an environment where industrial-grade stability meets 
-                        unrestricted academic curiosity.
-                    </p>
-                    </div>
-
+                  </div>
                 </div>
-                </div>
-                
-                <button class="btn btn-qc2 py-3 px-5 fs-5 shadow-sm" data-bs-toggle="collapse" data-bs-target="#r5">
-                Read More
-                </button>
+              </div>
+              <button class="btn btn-qc2" data-bs-toggle="collapse" data-bs-target="#r3">Read More</button>
             </div>
-            </div>
+          </div>
         </div>
-        </div>
-       
       </div>
     </section>
   </main>
 
-  <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
+  <footer class="bd-footer py-5 mt-5 bg-body-tertiary text-center">
     <h4 class="fw-semibold mb-4 text-body-secondary">A warm thank you to our sponsors</h4>
-    <div class="container py-4 text-body-secondary">
+    <div class="container text-body-secondary">
       <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
-        <a href="https://www.vinnova.se/en/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vinnova_logo.png" alt="Vinnova"></div>
-        </a>
-        <a href="https://www.vr.se/english.html" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vetenskapsradet_logo.png" alt="VR"></div>
-        </a>
-        <a href="https://kaw.wallenberg.org/en" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/kaw_logo.png" alt="KAW"></div>
-        </a>
-        <a href="https://eurohpc-ju.europa.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/euroHPC_logo.png" alt="EuroHPC"></div>
-        </a>
-        <a href="https://www.chalmers.se/en/centres/wacqt/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/wacqt_logo.png" alt="WACQT"></div>
-        </a>
-        <a href="https://quantera.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/quantera_logo.png" alt="Quantera"></div>
-        </a>
-        <a href="https://opensuperqplus.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/osq_logo.png" alt="OpenSuperQ"></div>
-        </a>
-        <a href="https://myfab.se/labs/myfab-chalmers/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/myfab_logo.png" alt="Myfab"></div>
-        </a>
+        <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vinnova_logo.png" alt="Vinnova"></div>
+        <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vetenskapsradet_logo.png" alt="VR"></div>
+        <div class="collab-box shadow-sm"><img src="images/sponsors_logos/kaw_logo.png" alt="KAW"></div>
+        <div class="collab-box shadow-sm"><img src="images/sponsors_logos/euroHPC_logo.png" alt="EuroHPC"></div>
+        <div class="collab-box shadow-sm"><img src="images/sponsors_logos/wacqt_logo.png" alt="WACQT"></div>
+        <div class="collab-box shadow-sm"><img src="images/sponsors_logos/quantera_logo.png" alt="Quantera"></div>
+        <div class="collab-box shadow-sm"><img src="images/sponsors_logos/osq_logo.png" alt="OpenSuperQ"></div>
+        <div class="collab-box shadow-sm"><img src="images/sponsors_logos/myfab_logo.png" alt="Myfab"></div>
       </div>
-      <div class="mt-2">
-        <small>© 2026 - Made with ​💙​ by QC2 Lab </small>
-      </div>
+      <small>© 2026 - Made with ​💙​ by QC2 Lab </small>
     </div>
   </footer>
 
   <script src="js/bootstrap.bundle.min.js"></script>
-  
-    <script>
-    // Select all collapsible elements
-    document.querySelectorAll('.collapse').forEach(collapseEl => {
-        // Listen for the "shown" event (expanded)
-        collapseEl.addEventListener('shown.bs.collapse', function () {
-        const btn = document.querySelector(`[data-bs-target="#${this.id}"]`);
-        if (btn) btn.innerText = 'Hide Description';
-        });
-        
-        // Listen for the "hidden" event (collapsed)
-        collapseEl.addEventListener('hidden.bs.collapse', function () {
-        const btn = document.querySelector(`[data-bs-target="#${this.id}"]`);
-        if (btn) btn.innerText = 'Read More';
-        });
-    });
-    </script> 
-  
   <script>
-    /* Theme logic (Shared across all pages) */
     (() => {
       'use strict'
-      const getStoredTheme = () => localStorage.getItem('theme')
-      const setStoredTheme = theme => localStorage.setItem('theme', theme)
       const getPreferredTheme = () => {
-        const storedTheme = getStoredTheme()
+        const storedTheme = localStorage.getItem('theme')
         if (storedTheme) return storedTheme
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
       }
       const setTheme = theme => {
-        if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.setAttribute('data-bs-theme', 'dark')
-        } else {
-          document.documentElement.setAttribute('data-bs-theme', theme)
-        }
+        const actualTheme = (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : theme
+        document.documentElement.setAttribute('data-bs-theme', actualTheme)
       }
       setTheme(getPreferredTheme())
 
-      const showActiveTheme = (theme) => {
-        const activeThemeIcon = document.querySelector('.theme-icon-active use')
-        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-        if (!btnToActive || !activeThemeIcon) return
-
-        const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
-        
-        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-          element.classList.remove('active')
-          element.setAttribute('aria-pressed', 'false')
-          element.querySelector('svg.ms-auto').classList.add('d-none')
-        })
-
-        btnToActive.classList.add('active')
-        btnToActive.setAttribute('aria-pressed', 'true')
-        btnToActive.querySelector('svg.ms-auto').classList.remove('d-none')
-        activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-      }
-
       window.addEventListener('DOMContentLoaded', () => {
-        showActiveTheme(getPreferredTheme())
         document.querySelectorAll('[data-bs-theme-value]').forEach(toggle => {
           toggle.addEventListener('click', () => {
             const theme = toggle.getAttribute('data-bs-theme-value')
-            setStoredTheme(theme)
+            localStorage.setItem('theme', theme)
             setTheme(theme)
-            showActiveTheme(theme)
           })
         })
+
+        // Button text toggle fix
+        document.querySelectorAll('.collapse').forEach(collapseEl => {
+          collapseEl.addEventListener('shown.bs.collapse', () => {
+            document.querySelector(`[data-bs-target="#${collapseEl.id}"]`).innerText = 'Hide Description';
+          });
+          collapseEl.addEventListener('hidden.bs.collapse', () => {
+            document.querySelector(`[data-bs-target="#${collapseEl.id}"]`).innerText = 'Read More';
+          });
+        });
       })
     })()
   </script>
