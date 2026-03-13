@@ -34,9 +34,19 @@
     .bd-navbar::after { background-image: none !important; background-color: #0f172a !important; }
     .bd-navbar .nav-link, .bd-navbar .navbar-brand { color: rgba(255, 255, 255, 0.9) !important; }
     .bd-navbar .nav-link:hover { color: #60a5fa !important; }
+    /* Increase navbar link font size */
     .bd-navbar .nav-link {
-      font-size: 1.1rem !important;
+      font-size: 1.1rem !important; /* Adjust this value (e.g., 1.1rem, 1.25rem) */
       font-weight: 500 !important;
+    }
+   /* Fix mobile offcanvas menu color */
+    .offcanvas-lg, .offcanvas-md, .offcanvas-sm {
+      background-color: #0f172a !important; /* Matches your dark navbar color */
+    }
+
+    /* Ensure text inside the mobile menu remains readable */
+    .offcanvas-body .nav-link {
+      color: rgba(255, 255, 255, 0.9) !important;
     }
 
     /* Content Blocks */
