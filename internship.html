@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WACQT Summer Internship - Quantum Software & Calibration at QC2">
+  <meta name="author" content="QC2 Team">
+
+  <title>WACQT Summer Internship · QC2 Lab</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/docs.css" rel="stylesheet">
+
+  <style>
+    /* Theme-aware Color Palette */
+    :root {
+      --bd-violet: #2563eb;
+      --bd-violet-rgb: 37, 99, 235;
+      --qc2-blue: #e0f2fe; 
+    }
+
+    body {
+      background-attachment: fixed;
+      background-size: cover;
+      transition: background 0.5s ease;
+    }
+
+    [data-bs-theme="light"] body { background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+    [data-bs-theme="dark"] body { background-image: linear-gradient(135deg, #0f172a 0%, #020617 100%); }
+
+    .bd-navbar { background-color: #0f172a !important; padding: 1.5rem 0 !important; }
+    .bd-navbar::after { background-image: none !important; background-color: #0f172a !important; }
+    .bd-navbar .nav-link, .bd-navbar .navbar-brand { color: rgba(255, 255, 255, 0.9) !important; }
+    .bd-navbar .nav-link:hover { color: #60a5fa !important; }
+    .bd-navbar .nav-link {
+      font-size: 1.1rem !important;
+      font-weight: 500 !important;
+    }
+    .offcanvas-lg, .offcanvas-md, .offcanvas-sm {
+      background-color: #0f172a !important;
+    }
+    .offcanvas-body .nav-link {
+      color: rgba(255, 255, 255, 0.9) !important;
+    }
+    .btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+    [data-bs-theme="dark"] .bd-navbar { background-color: #020617 !important; }
+
+    .content-block {
+      border: 1px solid var(--bs-border-color);
+      border-radius: 1.25rem;
+      padding: 3rem 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    [data-bs-theme="light"] .content-block { background-color: #ffffff51 !important; border-color: rgba(0,0,0,0.1); }
+    [data-bs-theme="dark"] .content-block { background-color: rgba(30, 41, 59, 0.8) !important; border-color: rgba(255,255,255,0.15); }
+
+    .btn-qc2 {
+      background-color: var(--qc2-blue) !important; 
+      border: 2px solid #7dd3fc !important;       
+      padding: 0.6rem 1.2rem !important;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      color: #0369a1 !important;
+      border-radius: 0.5rem !important;
+      transition: all 0.2s ease !important;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .btn-qc2:hover { filter: brightness(0.9); transform: translateY(-2px); color: #0369a1 !important; }
+
+    .wide-section { max-width: 1200px !important; }
+    .section-title-icon { width: 1em; height: 1em; vertical-align: -0.15em; margin-right: 0.75rem; fill: currentColor; }
+    
+    .internship-section h2 {
+      color: #0369a1;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid #0369a1;
+      padding-bottom: 0.75rem;
+      font-size: 1.5rem;
+    }
+
+    .internship-section h3 {
+      color: #0369a1;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .internship-section ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .internship-section li {
+      margin-bottom: 0.35rem;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .internship-intro {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-heading svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #0369a1;
+      flex-shrink: 0;
+    }
+
+    .contact-box {
+      background-color: var(--qc2-blue);
+      border-left: 4px solid #0369a1;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo-container { background-color: #ffffff; padding: 10px 20px; border-radius: 8px; display: inline-block; margin-bottom: 15px; border: 1px solid rgba(0,0,0,0.1); }
+    .footer-logo-img { max-height: 40px; display: block; }
+
+    .collab-box {
+      width: 250px;          
+      height: 100px;         
+      background-color: #deefff !important; 
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: 1px solid rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+    .collab-box:hover { transform: scale(1.05); }
+    .collab-box img { max-width: 90%; max-height: 90%; object-fit: contain; }
+  </style>
+
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon.ico">
+</head>
+
+<body>
+  <!-- SVG ICON SYMBOLS -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check2" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" /></symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" /><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" /></symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" /></symbol>
+    <symbol id="three-dots" viewBox="0 0 16 16"><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" /></symbol>
+    <symbol id="house-fill" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/><path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/></symbol>
+    <symbol id="code-square" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0m2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0"/></symbol>
+    <symbol id="people-fill" viewBox="0 0 16 16"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></symbol>
+    <symbol id="briefcase-fill" viewBox="0 0 16 16"><path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.7 7.129-1.969-2.75a.5.5 0 1 0-.86.488L7.858 9.5 5.37 12.882a.5.5 0 0 0 .86.488l1.969-2.75 1.969 2.75a.5.5 0 0 0 .86-.488L8.358 9.5l2.488-3.371a.5.5 0 0 0-.86-.488l-1.97 2.75z"/></symbol>
+    <symbol id="file-earmark-text" viewBox="0 0 16 16"><path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/><path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2H12v.5a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5V1z"/></symbol>
+    <symbol id="chat-dots" viewBox="0 0 16 16"><path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/><path d="m14.046 12.868c.196-.392.201-.753.069-1.124l.748-1.049a.5.5 0 0 0-.182-.693l-.53-.265a6.47 6.47 0 0 0 1.079-1.897.5.5 0 0 0-.121-.645l-.559-.185a6.592 6.592 0 0 0 .367-2.734c0-3.314-2.686-6-6-6-3.314 0-6 2.686-6 6 0 3.314 2.686 6 6 6 .369 0 .729-.017 1.084-.05-.726.368-1.635.572-2.584.572-.859 0-1.69-.201-2.42-.56l-.45.975c-.168.432-.295.974-.371 1.529-.076.556.064 1.194.273 1.813.205.616.531 1.203 1.008 1.72.982 1.026 2.37 1.513 3.866 1.513 1.496 0 2.884-.487 3.866-1.513.477-.517.803-1.104 1.008-1.72.209-.619.35-1.257.273-1.813a4.997 4.997 0 0 0-.371-1.529l-.45-.975c.73.359 1.561.56 2.42.56 1.35 0 2.419-.418 2.419-1.302v-.001c0-.168-.046-.336-.136-.512l-.526-1.243z"/></symbol>
+  </svg>
+
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+      <a class="navbar-brand d-flex align-items-center gap-2 p-0 me-0 me-lg-4" href="index.html">
+        <img src="images/qc2_logos/qc2_logo_light.png" alt="QC2 Lab Logo" style="height: 65px; width: auto;">
+      </a>
+      <div class="d-flex align-items-center">
+        <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-label="Toggle navigation">
+          <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>
+        </button>
+      </div>
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" data-bs-scroll="true">
+        <div class="offcanvas-header px-4 pb-0">
+          <h5 class="offcanvas-title text-white">Menu</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#bdNavbar"></button>
+        </div>
+        <div class="offcanvas-body p-4 pt-0 p-lg-0">
+          <hr class="d-lg-none text-white-50">
+          <ul class="navbar-nav flex-row flex-wrap ms-md-auto align-items-center">
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="research.html">Research</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="publications.html">Publications</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="blog.html">News</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="people.html">People</a></li>
+            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="index.html#jobs">Jobs</a></li>
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-3 text-white"></div>
+              <hr class="d-lg-none my-2 text-white-50">
+            </li>
+            <li class="nav-item dropdown">
+              <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+                <span class="d-lg-none ms-2">Toggle theme</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                    <svg class="bi me-2 opacity-50 theme-icon"><use href="#sun-fill"></use></svg>
+                    Light
+                    <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                    <svg class="bi me-2 opacity-50 theme-icon"><use href="#moon-stars-fill"></use></svg>
+                    Dark
+                    <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
+                    <svg class="bi me-2 opacity-50 theme-icon"><use href="#circle-half"></use></svg>
+                    Auto
+                    <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container-xxl bd-gutter mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4 wide-section mx-auto">
+      <a href="index.html" class="btn-qc2 shadow-sm">
+        <svg class="section-title-icon me-2" style="width:1.2em; height:1.2em;"><use href="#house-fill"></use></svg> Back to Home
+      </a>
+    </div>
+
+    <section class="content-block wide-section mx-auto">
+      <h1 class="display-4 mb-4 fw-semibold" style="color: #0369a1;">WACQT Summer Internship: Quantum Software & Calibration</h1>
+
+      <div class="internship-intro">
+        <p class="lead mb-4">
+          We invite applications for <strong>WACQT summer internships</strong> focusing on the software and calibration of a 25-qubit quantum processor.
+        </p>
+        
+        <p class="mb-4">
+          You will work in the stimulating research environment in the Quantum Computer at Chalmers (<strong>QC2</strong>) group which is part of <strong>Wallenberg Centre for Quantum Technology (WACQT)</strong>, a long-term initiative aimed at advancing Swedish quantum technology. You will be part of a large team of researchers and will gain exposure to state-of-the-art quantum technology.
+        </p>
+
+      </div>
+
+      <div class="internship-section">
+        <h2 class="section-heading"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 7h6M7 11h10M7 15h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Project Descriptions</h2>
+        <p>
+          We are offering two distinct projects for this 10-week internship period. Both projects will be carried out within a collaborative, 
+          scientific software collaboration. You will be working on our software suite, which spans from calibration and control of our devices to 
+          higher level optimization and orchestration tools.
+        </p>
+
+        <h3>Project 1: Readout Optimization and Software Development</h3>
+        <p>
+          This project focuses on the automatic calibration package used to provide parameters for reliable gate operations. You will compare two existing algorithms used for readout and implement a new, combined solution to improve performance on the 25-qubit device. Automation is essential to avoid time-consuming and error-prone manual processes.
+        </p>
+
+        <h3>Project 2: Machine Learning for Quantum Transpilation</h3>
+        <p>
+          This project aims to bridge the gap between idealized quantum circuits and physical hardware constraints. 
+          You will develop a prototype Machine Learning (neural network) model to automate the transpilation 
+          process, translating theoretical circuits into hardware-compatible versions. 
+          You will work with the research group to formalize the model, test it on a 5-qubit scale, 
+          and eventually incorporate real-time calibration data to adjust transpilation strategies.
+        </p>
+      </div>
+
+      <div class="internship-section">
+        <h2 class="section-heading"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><circle cx="12" cy="8" r="4"/><path d="M12 14c-4 0-6 2-6 4v2h12v-2c0-2-2-4-6-4z"/></svg>Collaborative Software Development Environment</h2>
+        <p>
+          Both internship projects are embedded in a collaborative software development environment where you will gain valuable experience working with other researchers, engineers, and students. You will learn professional coding practices and how to interact effectively within a research team. Throughout the internship, you will become familiar with cooperative development tools such as <strong>GitHub</strong> or <strong>GitLab</strong>, which are essential for modern software development. This experience will prepare you for collaborative work in both academic and industrial research settings.
+        </p>
+      </div>
+
+      <div class="internship-section">
+        <h2 class="section-heading"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><circle cx="12" cy="8" r="4"/><path d="M12 14c-4 0-6 2-6 4v2h12v-2c0-2-2-4-6-4z"/></svg>About You</h2>
+        
+        <h3>Essential:</h3>
+        <ul>
+          <li>Bachelor's degree in Physics, Applied Physics, Nanotechnology, or equivalent.</li>
+          <li>Strong programming skills in high-level languages, specifically <strong>Python</strong>.</li>
+          <li>Good verbal and written communication skills in English.</li>
+          <li>A collaborative attitude and the ability to work both independently and as part of a team.</li>
+          <li>Self-motivated with a problem-solving analytical ability and attention to detail.</li>
+        </ul>
+
+        <h3>Desirable:</h3>
+        <ul>
+          <li>Courses in Quantum Physics or experience in quantum computing.</li>
+          <li>For Project 2, a background or strong interest in Machine Learning.</li>
+          <li>Expertise in experimental quantum computing, microwave quantum optics, or superconducting circuits.</li>
+        </ul>
+      </div>
+
+      <div class="internship-section">
+        <h2 class="section-heading"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Contract Terms & Benefits</h2>
+        <ul>
+          <li><strong>Duration:</strong> 10 weeks (Paid Internship).</li>
+          <li><strong>Location:</strong> Gothenburg, Sweden.</li>
+          <li><strong>Diversity:</strong> Chalmers actively works toward gender balance and excellence through initiatives like GENIE.</li>
+        </ul>
+      </div>
+
+      <div class="internship-section">
+        <h2 class="section-heading"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polyline points="13 2 13 9 20 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><line x1="9" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="18" x2="15" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Application Procedure</h2>
+        <p>
+          The application should be submitted as a PDF and include:
+        </p>
+        <ol>
+          <li>CV and Personal Letter.</li>
+          <li>Transcript of records.</li>
+          <li>Contact information for at least one reference.</li>
+        </ol>
+        
+        <div class="alert alert-info p-3 my-3 border-0" style="background-color: var(--qc2-blue); color: #0369a1;">
+          <strong>Application Deadline: April 30th, 2026.</strong>
+        </div>
+      </div>
+
+      <div class="internship-section">
+        <h2 class="section-heading"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><rect x="2" y="4" width="20" height="16" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M22 4L12 12 2 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>For Questions, Please Contact:</h2>
+        
+        <div class="contact-box">
+          <p class="mb-2"><strong>Project 1: Readout Optimization and Software Development</strong></p>
+          <p class="mb-0">Michele Faucci Giannelli</p>
+          <p><a href="mailto:faucci@chalmers.se" class="text-decoration-none fw-bold" style="color: #0369a1;">faucci@chalmers.se</a></p>
+        </div>
+
+        <div class="contact-box">
+          <p class="mb-2"><strong>Project 2: Machine Learning for Quantum Transpilation</strong></p>
+          <p class="mb-0">Matteo Robbiati</p>
+          <p><a href="mailto:robbiati@chalmers.se" class="text-decoration-none fw-bold" style="color: #0369a1;">robbiati@chalmers.se</a></p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+<footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
+    <h4 class="fw-semibold mb-4 text-body-secondary">Supported by</h4>
+    <div class="container py-4 text-body-secondary">
+      
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
+        <a href="https://www.vinnova.se/en/" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vinnova_logo.png" alt="Logo 1"></div>
+        </a>
+        <a href="https://www.vr.se/english.html" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vetenskapsradet_logo.png" alt="Logo 2"></div>
+        </a>
+        <a href="https://kaw.wallenberg.org/en" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/kaw_logo.png" alt="Logo 3"></div>
+        </a>
+        <a href="https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-high-performance-computing-joint-undertaking-eurohpc-ju_en" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/euroHPC_logo.png" alt="Logo 1"></div>
+        </a>
+        <a href="https://www.chalmers.se/en/centres/wacqt/" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/wacqt_logo.png" alt="Logo 2"></div>
+        </a>
+        <a href="https://quantera.eu" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/quantera_logo.png" alt="Logo 3"></div>
+        </a>
+        <a href="https://opensuperqplus.eu" target="_blank" class="text-decoration-none">
+          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/osq_logo.png" alt="Logo 4"></div>
+        </a>
+      </div>
+      
+      <div class="mt-2">
+        <small>© 2026 - Made with ​💙​ by QC2 Lab </small><br>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/color-modes.js"></script>
+</body>
+
+</html>
