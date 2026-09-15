@@ -4,19 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="QC2 @ Chalmers Alumni">
+  <meta name="description" content="QC2 @ Chalmers Theses">
   <meta name="author" content="QC2 Team">
 
-  <title>QC2 · Alumni</title>
+  <title>QC2 · Theses</title>
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/docs.css" rel="stylesheet">
 
   <style>
     :root {
-      --bd-violet: #2563eb;
-      --bd-violet-rgb: 37, 99, 235;
-      --bd-violet-bg: #2563eb;
       --qc2-blue: #e0f2fe;
     }
 
@@ -52,6 +49,7 @@
     [data-bs-theme="dark"] .content-block { background-color: rgba(15, 23, 42, 0.7) !important; }
 
     .wide-section { max-width: 1200px !important; }
+
     .category-title {
       border-bottom: 3px solid var(--qc2-blue);
       display: inline-block;
@@ -60,59 +58,46 @@
       font-weight: 700;
     }
 
-    .person-card {
+    .thesis-card {
       border: 1px solid var(--bs-border-color-translucent);
       background: rgba(255, 255, 255, 0.05);
-      transition: all 0.3s ease;
+      border-radius: 1rem;
       height: 100%;
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      padding: 1.5rem;
-      border-radius: 1rem;
+      transition: all 0.3s ease;
     }
 
-    .person-card:hover {
-      transform: translateY(-5px);
+    .thesis-card:hover {
+      transform: translateY(-4px);
       border-color: var(--qc2-blue);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.18);
     }
 
-    .person-img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid var(--qc2-blue);
-      margin: 0 auto 1.25rem;
+    .thesis-kicker {
+      color: #0369a1;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
     }
 
-    .person-description {
-      font-size: 0.9rem;
-      line-height: 1.5;
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
-      color: var(--bs-secondary-color);
-    }
-
-    .btn-profile {
-      background-color: var(--qc2-blue) !important;
-      border: 1px solid #7dd3fc !important;
-      padding: 0.5rem 1rem !important;
-      font-size: 0.85rem !important;
-      font-weight: 600 !important;
-      color: #0369a1 !important;
-      transition: all 0.2s ease;
-      text-decoration: none;
+    .thesis-title { font-weight: 700; margin-bottom: 0.75rem; }
+    .thesis-meta { color: var(--bs-secondary-color); font-size: 0.92rem; line-height: 1.55; margin-bottom: 1rem; }
+    .thesis-supervisor { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .thesis-chip {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      border-radius: 0.5rem;
-      width: 100%;
-      gap: 0.5rem;
+      gap: 0.35rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(224, 242, 254, 0.9);
+      color: #0369a1;
+      border: 1px solid rgba(125, 211, 252, 0.8);
+      font-size: 0.85rem;
+      font-weight: 600;
     }
-
-    .btn-profile:hover { filter: brightness(1.05); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    .section-title-icon { width: 1em; height: 1em; vertical-align: -0.15em; margin-right: 0.75rem; fill: currentColor; }
 
     .btn-qc2 {
       background-color: var(--qc2-blue) !important;
@@ -128,16 +113,8 @@
       border-radius: 0.5rem;
     }
 
-    .footer-logo-container {
-      background-color: #ffffff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      display: inline-block;
-      margin-bottom: 15px;
-      border: 1px solid rgba(0,0,0,0.1);
-    }
-
-    .footer-logo-img { max-height: 40px; display: block; }
+    .btn-qc2:hover { filter: brightness(1.05); transform: translateY(-2px); }
+    .section-title-icon { width: 1em; height: 1em; vertical-align: -0.15em; margin-right: 0.75rem; fill: currentColor; }
 
     .collab-box {
       width: 250px;
@@ -171,6 +148,7 @@
     <symbol id="three-dots" viewBox="0 0 16 16"><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" /></symbol>
     <symbol id="people-fill" viewBox="0 0 16 16"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></symbol>
     <symbol id="house-fill" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/><path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/></symbol>
+    <symbol id="book-half" viewBox="0 0 16 16"><path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></symbol>
   </svg>
 
   <header class="navbar navbar-expand-lg bd-navbar sticky-top">
@@ -249,44 +227,114 @@
 
     <section class="content-block wide-section mx-auto">
       <h2 class="display-5 mb-3 fw-semibold text-center">
-        <svg class="section-title-icon"><use href="#people-fill"></use></svg>Alumni
+        <svg class="section-title-icon"><use href="#book-half"></use></svg>Theses
       </h2>
-      <p class="lead text-center mb-5">Former members of the QC2 lab who contributed to our research, development, and training environment.</p>
+      <p class="lead text-center mb-4">A curated list of theses from the QC2 lab, ordered newest first within each degree level.</p>
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="person-card text-center">
-            <img src="images/people/christian_krizan.JPG" class="person-img shadow-sm" alt="Christian Krizan">
-            <h5 class="fw-bold mb-1">Christian Krizan</h5>
-            <p class="text-body-secondary small fw-semibold mb-2">Former Research Engineer</p>
-            <div class="person-description text-body-secondary">
-              Experimental QED research spanning quantum circuit compilation with larger gate sets, control interface hardware, and transition frequency manipulation for transmons.
+      <div class="mb-5">
+        <h3 class="category-title h4">PhD Theses</h3>
+        <div class="row row-cols-1 row-cols-lg-2 g-4">
+          <div class="col">
+            <div class="thesis-card">
+              <div class="thesis-kicker mb-2">Doctoral thesis · 2025</div>
+              <h4 class="thesis-title h5">Readout and Control Techniques Towards Scalable Superconducting Quantum Processors</h4>
+              <div class="thesis-meta">Author: Liangyu Chen</div>
+              <div class="thesis-supervisor"><span class="thesis-chip">Supervisor: Giovanna Tancredi</span></div>
+              <a class="btn btn-qc2 mt-auto" href="https://research.chalmers.se/en/publication/545201" target="_blank">Open thesis page</a>
             </div>
-            <a href="https://www.chalmers.se/en/persons/krizan/" class="btn-profile">More About Me 🔍</a>
+          </div>
+          <div class="col">
+            <div class="thesis-card">
+              <div class="thesis-kicker mb-2">Doctoral thesis · 2025</div>
+              <h4 class="thesis-title h5">Flip-chip Integrated Superconducting Quantum Processors</h4>
+              <div class="thesis-meta">Author: Hangxi Li</div>
+              <div class="thesis-supervisor"><span class="thesis-chip">Supervisor: Giovanna Tancredi</span></div>
+              <a class="btn btn-qc2 mt-auto" href="https://research.chalmers.se/en/publication/544309" target="_blank">Open thesis page</a>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div class="col">
-          <div class="person-card text-center">
-            <img src="images/people/snigda_mantry.jpg" class="person-img shadow-sm" alt="Snigdha Mantry">
-            <h5 class="fw-bold mb-1">Snigdha Mantry</h5>
-            <p class="text-body-secondary small fw-semibold mb-2">Former Research Engineer</p>
-            <div class="person-description text-body-secondary">
-              Understanding the impact of cosmic rays on superconducting qubits and mitigating radiation-induced errors in quantum processors.
+      <div>
+        <h3 class="category-title h4">Master Theses</h3>
+        <div class="row row-cols-1 row-cols-lg-2 g-4">
+          <div class="col">
+            <div class="thesis-card">
+              <div class="thesis-kicker mb-2">Master's thesis · 2026</div>
+              <h4 class="thesis-title h5">XY crosstalk in a 25-qubit flip-chip superconducting quantum processor</h4>
+              <div class="thesis-meta">Author: Hong Quan Trinh</div>
+              <div class="thesis-supervisor">
+                <span class="thesis-chip">Supervisor: Michele Faucci Giannelli</span>
+                <span class="thesis-chip">Co-supervisor: Bart Sorée</span>
+              </div>
+              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/47049ed5-3f5c-4545-9974-8d8772526305/full" target="_blank">Open thesis page</a>
             </div>
-            <a href="https://www.chalmers.se/en/persons/snigdha/" class="btn-profile">More About Me 🔍</a>
           </div>
-        </div>
-
-        <div class="col">
-          <div class="person-card text-center">
-            <img src="images/people/mamta_mamta.png" class="person-img shadow-sm" alt="Mamta Mamta">
-            <h5 class="fw-bold mb-1">Mamta Mamta</h5>
-            <p class="text-body-secondary small fw-semibold mb-2">Former Postdoc</p>
-            <div class="person-description text-body-secondary">
-              Developing an in-house flip-chip bump fabrication process and studying how this process influences qubit performance and device reliability.
+          <div class="col">
+            <div class="thesis-card">
+              <div class="thesis-kicker mb-2">Master's thesis · 2025</div>
+              <h4 class="thesis-title h5">Towards suppressing control-line crosstalk in superconducting quantum processors</h4>
+              <div class="thesis-meta">Author: Zakaria Mohamed</div>
+              <div class="thesis-supervisor"><span class="thesis-chip">Supervisor: Giovanna Tancredi</span></div>
+              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/1ce1729f-6534-4e4a-acfb-2ddbe43a72fe/full" target="_blank">Open thesis page</a>
             </div>
-            <a href="https://www.chalmers.se/en/persons/mammam/" class="btn-profile">More About Me 🔍</a>
+          </div>
+          <div class="col">
+            <div class="thesis-card">
+              <div class="thesis-kicker mb-2">Master's thesis · 2025</div>
+              <h4 class="thesis-title h5">Toward an automatic parallelized two-qubit-gate calibration</h4>
+              <div class="thesis-meta">Author: Joel Sandås</div>
+              <div class="thesis-supervisor"><span class="thesis-chip">Supervisor: Michele Faucci Giannelli</span></div>
+              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/417c86b3-c597-4b77-8899-0b0edda30fe4/full" target="_blank">Open thesis page</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="thesis-card">
+              <div class="thesis-kicker mb-2">Master's thesis · 2024</div>
+              <h4 class="thesis-title h5">Post-fabrication frequency tuning in superconducting transmon qubits</h4>
+              <div class="thesis-meta">Author: Maurizio Toselli</div>
+              <div class="thesis-supervisor">
+                <span class="thesis-chip">Supervisor: Giovanna Tancredi</span>
+                <span class="thesis-chip">Co-supervisor: Andreas Nylander</span>
+              </div>
+              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/8807d159-a881-466c-a554-3dcaa65d89ff/full" target="_blank">Open thesis page</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="thesis-card">
+              <div class="thesis-kicker mb-2">Master's thesis · 2024</div>
+              <h4 class="thesis-title h5">Implementation of qubit reset for fixed-frequency transmons in tunable-coupler architectures</h4>
+              <div class="thesis-meta">Author: Zixian Yan</div>
+              <div class="thesis-supervisor">
+                <span class="thesis-chip">Supervisor: Giovanna Tancredi</span>
+                <span class="thesis-chip">Co-supervisor: Liangyu Chen</span>
+              </div>
+              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/3d9b24d9-0cff-46ed-ab53-b1958d38bf51/full" target="_blank">Open thesis page</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="thesis-card">
+              <div class="thesis-kicker mb-2">Master's thesis · 2024</div>
+              <h4 class="thesis-title h5">Benchmarking the design, fabrication and shielding of superconducting qubits</h4>
+              <div class="thesis-meta">Author: Halldór Jakobsson</div>
+              <div class="thesis-supervisor">
+                <span class="thesis-chip">Supervisor: Giovanna Tancredi</span>
+                <span class="thesis-chip">Co-supervisor: Amr Osman</span>
+              </div>
+              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/e2df6494-b906-409d-b53b-cd065e74387a/full" target="_blank">Open thesis page</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="thesis-card">
+              <div class="thesis-kicker mb-2">Master's thesis · 2021</div>
+              <h4 class="thesis-title h5">Scalable signal mixer stages in quantum processors</h4>
+              <div class="thesis-meta">Authors: Linus Andersson, Robin Folkesson, Axel Jonasson, Sofia Reiner</div>
+              <div class="thesis-supervisor">
+                <span class="thesis-chip">Supervisor: Giovanna Tancredi</span>
+                <span class="thesis-chip">Co-supervisors: Simone Gasparinetti, Christian Križan</span>
+              </div>
+              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/4a5318e3-9e1a-4ea2-af45-9fc3a33f9f9a/full" target="_blank">Open thesis page</a>
+            </div>
           </div>
         </div>
       </div>
@@ -336,11 +384,13 @@
         document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
           element.classList.remove('active')
           element.setAttribute('aria-pressed', 'false')
-          element.querySelector('svg.ms-auto').classList.add('d-none')
+          const checkIcon = element.querySelector('svg.ms-auto')
+          if (checkIcon) checkIcon.classList.add('d-none')
         })
         btnToActive.classList.add('active')
         btnToActive.setAttribute('aria-pressed', 'true')
-        btnToActive.querySelector('svg.ms-auto').classList.remove('d-none')
+        const activeCheckIcon = btnToActive.querySelector('svg.ms-auto')
+        if (activeCheckIcon) activeCheckIcon.classList.remove('d-none')
         activeThemeIcon.setAttribute('href', svgOfActiveBtn)
       }
       window.addEventListener('DOMContentLoaded', () => {
