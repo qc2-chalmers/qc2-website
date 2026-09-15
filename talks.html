@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="QC2 @ Chalmers Theses">
+  <meta name="description" content="QC2 @ Chalmers Conference Talks">
   <meta name="author" content="QC2 Team">
 
-  <title>QC2 · Theses</title>
+  <title>QC2 · Talks</title>
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/docs.css" rel="stylesheet">
@@ -58,7 +58,7 @@
       font-weight: 700;
     }
 
-    .thesis-card {
+    .talk-card {
       border: 1px solid var(--bs-border-color-translucent);
       background: rgba(255, 255, 255, 0.05);
       border-radius: 1rem;
@@ -69,13 +69,13 @@
       transition: all 0.3s ease;
     }
 
-    .thesis-card:hover {
+    .talk-card:hover {
       transform: translateY(-4px);
       border-color: var(--qc2-blue);
       box-shadow: 0 10px 20px rgba(0,0,0,0.18);
     }
 
-    .thesis-kicker {
+    .talk-kicker {
       color: #0369a1;
       font-weight: 700;
       letter-spacing: 0.03em;
@@ -83,10 +83,10 @@
       font-size: 0.8rem;
     }
 
-    .thesis-title { font-weight: 700; margin-bottom: 0.75rem; }
-    .thesis-meta { color: var(--bs-secondary-color); font-size: 0.92rem; line-height: 1.55; margin-bottom: 1rem; }
-    .thesis-supervisor { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-    .thesis-chip {
+    .talk-title { font-weight: 700; margin-bottom: 0.75rem; }
+    .talk-meta { color: var(--bs-secondary-color); font-size: 0.92rem; line-height: 1.55; margin-bottom: 1rem; }
+    .talk-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .talk-chip {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
@@ -146,9 +146,10 @@
     <symbol id="moon-stars-fill" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" /><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" /></symbol>
     <symbol id="sun-fill" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" /></symbol>
     <symbol id="three-dots" viewBox="0 0 16 16"><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" /></symbol>
+    <symbol id="newspaper" viewBox="0 0 16 16"><path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .303-.204.627-.514.79-.241.125-.503.158-.738.158h-11a1.5 1.5 0 0 1-1.5-1.5zM1.5 2a.5.5 0 0 0-.5.5v10.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V2.5a.5.5 0 0 0-.5-.5z"/><path d="M2 3h10v2H2zm0 3h4v3H2zm5 0h5v1H7zm0 2h5v1H7zm-5 4h10v1H2z"/></symbol>
+    <symbol id="journal-text" viewBox="0 0 16 16"><path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/><path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/></symbol>
     <symbol id="people-fill" viewBox="0 0 16 16"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></symbol>
     <symbol id="house-fill" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/><path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/></symbol>
-    <symbol id="book-half" viewBox="0 0 16 16"><path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></symbol>
   </svg>
 
   <header class="navbar navbar-expand-lg bd-navbar sticky-top">
@@ -228,113 +229,94 @@
 
     <section class="content-block wide-section mx-auto">
       <h2 class="display-5 mb-3 fw-semibold text-center">
-        <svg class="section-title-icon"><use href="#book-half"></use></svg>Theses
+        <svg class="section-title-icon"><use href="#journal-text"></use></svg>Conference Talks
       </h2>
-      <p class="lead text-center mb-4">A curated list of theses from the QC2 lab, ordered newest first within each degree level.</p>
+      <p class="lead text-center mb-4">Conference talks, invited talks, panels, and group presentations from the QC2 lab.</p>
 
       <div class="mb-5">
-        <h3 class="category-title h4">PhD Theses</h3>
+        <h3 class="category-title h4">2026</h3>
         <div class="row row-cols-1 row-cols-lg-2 g-4">
           <div class="col">
-            <div class="thesis-card">
-              <div class="thesis-kicker mb-2">Doctoral thesis · 2025</div>
-              <h4 class="thesis-title h5">Readout and Control Techniques Towards Scalable Superconducting Quantum Processors</h4>
-              <div class="thesis-meta">Author: Liangyu Chen</div>
-              <div class="thesis-supervisor"><span class="thesis-chip">Supervisor: Giovanna Tancredi</span></div>
-              <a class="btn btn-qc2 mt-auto" href="https://research.chalmers.se/en/publication/545201" target="_blank">Open thesis page</a>
+            <div class="talk-card">
+              <div class="talk-kicker mb-2">Conference talk · 2026</div>
+              <h4 class="talk-title h5">Multi-pole Purcell filters for fast qubit readout</h4>
+              <div class="talk-meta">Conference talk from the QC2 group in 2026.</div>
             </div>
           </div>
           <div class="col">
-            <div class="thesis-card">
-              <div class="thesis-kicker mb-2">Doctoral thesis · 2025</div>
-              <h4 class="thesis-title h5">Flip-chip Integrated Superconducting Quantum Processors</h4>
-              <div class="thesis-meta">Author: Hangxi Li</div>
-              <div class="thesis-supervisor"><span class="thesis-chip">Supervisor: Giovanna Tancredi</span></div>
-              <a class="btn btn-qc2 mt-auto" href="https://research.chalmers.se/en/publication/544309" target="_blank">Open thesis page</a>
+            <div class="talk-card">
+              <div class="talk-kicker mb-2">Conference talk · 2026</div>
+              <h4 class="talk-title h5">Bring up and calibration software solution developed at Chalmers University</h4>
+              <div class="talk-meta">Conference talk from the QC2 group in 2026.</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="talk-card">
+              <div class="talk-kicker mb-2">Conference talk · 2026</div>
+              <h4 class="talk-title h5">Growth and characterization of aluminum thin films for superconducting quantum devices</h4>
+              <div class="talk-meta">Conference talk from the QC2 group in 2026.</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="talk-card">
+              <div class="talk-kicker mb-2">SQA · 2026</div>
+              <h4 class="talk-title h5"><a class="text-decoration-none" href="https://www.sqa-conference.org/app?day=2&picked=2026-09-15" target="_blank" rel="noopener noreferrer">Quantum Process Tomography with Digital Twins of Error Matrices</a></h4>
+              <div class="talk-meta">Tangyou Huang gave this talk at SQA.</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="talk-card">
+              <div class="talk-kicker mb-2">OpenSuperQ+ annual meeting · 2026</div>
+              <h4 class="talk-title h5">QC2 hosting the OpenSuperQ+ annual meeting</h4>
+              <div class="talk-meta">Group-hosted conference meeting in 2026.</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="talk-card">
+              <div class="talk-kicker mb-2">WTC · 2026</div>
+              <h4 class="talk-title h5"><a class="text-decoration-none" href="https://worldtechconference.ai/programme/?day=25--june&arena=a" target="_blank" rel="noopener noreferrer">WTC conference panel</a></h4>
+              <div class="talk-meta">Michele Faucci Giannelli was invited as a panelist at the WTC conference.</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="talk-card">
+              <div class="talk-kicker mb-2">VLQ inauguration · 2026</div>
+              <h4 class="talk-title h5"><a class="text-decoration-none" href="https://youtu.be/d7nO4844nNY?t=4080" target="_blank" rel="noopener noreferrer">VLQ inauguration in Ostrava</a></h4>
+              <div class="talk-meta">Michele Faucci Giannelli was invited to the inauguration of VLQ in Ostrava.</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="talk-card">
+              <div class="talk-kicker mb-2">Talk at 3rd workshop in quantum computing in Milano · 2026</div>
+              <h4 class="talk-title h5"><a class="text-decoration-none" href="https://agenda.infn.it/event/48148/contributions/283958/" target="_blank" rel="noopener noreferrer">Chalmers automatic calibration, a software framework to build collaborations</a></h4>
+              <div class="talk-meta">Invited talk by Michele Faucci Giannelli to share our work on automatic calibration and establish partnership with other institutions.</div>
             </div>
           </div>
         </div>
       </div>
 
       <div>
-        <h3 class="category-title h4">Master Theses</h3>
+        <h3 class="category-title h4">2025</h3>
         <div class="row row-cols-1 row-cols-lg-2 g-4">
           <div class="col">
-            <div class="thesis-card">
-              <div class="thesis-kicker mb-2">Master's thesis · 2026</div>
-              <h4 class="thesis-title h5">XY crosstalk in a 25-qubit flip-chip superconducting quantum processor</h4>
-              <div class="thesis-meta">Author: Hong Quan Trinh</div>
-              <div class="thesis-supervisor">
-                <span class="thesis-chip">Supervisor: Michele Faucci Giannelli</span>
-                <span class="thesis-chip">Co-supervisor: Bart Sorée</span>
-              </div>
-              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/47049ed5-3f5c-4545-9974-8d8772526305/full" target="_blank">Open thesis page</a>
+            <div class="talk-card">
+              <div class="talk-kicker mb-2">APS March Meeting · 2025</div>
+              <h4 class="talk-title h5">Characterization of simultaneous parametric gate operations on a 25-qubit processor</h4>
+              <div class="talk-meta">APS March Meeting 2025.</div>
             </div>
           </div>
           <div class="col">
-            <div class="thesis-card">
-              <div class="thesis-kicker mb-2">Master's thesis · 2025</div>
-              <h4 class="thesis-title h5">Towards suppressing control-line crosstalk in superconducting quantum processors</h4>
-              <div class="thesis-meta">Author: Zakaria Mohamed</div>
-              <div class="thesis-supervisor"><span class="thesis-chip">Supervisor: Giovanna Tancredi</span></div>
-              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/1ce1729f-6534-4e4a-acfb-2ddbe43a72fe/full" target="_blank">Open thesis page</a>
+            <div class="talk-card">
+              <div class="talk-kicker mb-2">APS March Meeting · 2025</div>
+              <h4 class="talk-title h5">Fast parametric two-qubit gates for fixed-frequency qubits and tunable couplers, part 2: experiment and Tergite Autocalibration</h4>
+              <div class="talk-meta">APS March Meeting 2025.</div>
             </div>
           </div>
           <div class="col">
-            <div class="thesis-card">
-              <div class="thesis-kicker mb-2">Master's thesis · 2025</div>
-              <h4 class="thesis-title h5">Toward an automatic parallelized two-qubit-gate calibration</h4>
-              <div class="thesis-meta">Author: Joel Sandås</div>
-              <div class="thesis-supervisor"><span class="thesis-chip">Supervisor: Michele Faucci Giannelli</span></div>
-              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/417c86b3-c597-4b77-8899-0b0edda30fe4/full" target="_blank">Open thesis page</a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="thesis-card">
-              <div class="thesis-kicker mb-2">Master's thesis · 2024</div>
-              <h4 class="thesis-title h5">Post-fabrication frequency tuning in superconducting transmon qubits</h4>
-              <div class="thesis-meta">Author: Maurizio Toselli</div>
-              <div class="thesis-supervisor">
-                <span class="thesis-chip">Supervisor: Giovanna Tancredi</span>
-                <span class="thesis-chip">Co-supervisor: Andreas Nylander</span>
-              </div>
-              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/8807d159-a881-466c-a554-3dcaa65d89ff/full" target="_blank">Open thesis page</a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="thesis-card">
-              <div class="thesis-kicker mb-2">Master's thesis · 2024</div>
-              <h4 class="thesis-title h5">Implementation of qubit reset for fixed-frequency transmons in tunable-coupler architectures</h4>
-              <div class="thesis-meta">Author: Zixian Yan</div>
-              <div class="thesis-supervisor">
-                <span class="thesis-chip">Supervisor: Giovanna Tancredi</span>
-                <span class="thesis-chip">Co-supervisor: Liangyu Chen</span>
-              </div>
-              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/3d9b24d9-0cff-46ed-ab53-b1958d38bf51/full" target="_blank">Open thesis page</a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="thesis-card">
-              <div class="thesis-kicker mb-2">Master's thesis · 2024</div>
-              <h4 class="thesis-title h5">Benchmarking the design, fabrication and shielding of superconducting qubits</h4>
-              <div class="thesis-meta">Author: Halldór Jakobsson</div>
-              <div class="thesis-supervisor">
-                <span class="thesis-chip">Supervisor: Giovanna Tancredi</span>
-                <span class="thesis-chip">Co-supervisor: Amr Osman</span>
-              </div>
-              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/e2df6494-b906-409d-b53b-cd065e74387a/full" target="_blank">Open thesis page</a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="thesis-card">
-              <div class="thesis-kicker mb-2">Master's thesis · 2021</div>
-              <h4 class="thesis-title h5">Scalable signal mixer stages in quantum processors</h4>
-              <div class="thesis-meta">Authors: Linus Andersson, Robin Folkesson, Axel Jonasson, Sofia Reiner</div>
-              <div class="thesis-supervisor">
-                <span class="thesis-chip">Supervisor: Giovanna Tancredi</span>
-                <span class="thesis-chip">Co-supervisors: Simone Gasparinetti, Christian Križan</span>
-              </div>
-              <a class="btn btn-qc2 mt-auto" href="https://odr.chalmers.se/items/4a5318e3-9e1a-4ea2-af45-9fc3a33f9f9a/full" target="_blank">Open thesis page</a>
+            <div class="talk-card">
+              <div class="talk-kicker mb-2">APS March Meeting · 2025</div>
+              <h4 class="talk-title h5">A new calibration and characterization tool for superconducting quantum processors</h4>
+              <div class="talk-meta">APS March Meeting 2025.</div>
             </div>
           </div>
         </div>
