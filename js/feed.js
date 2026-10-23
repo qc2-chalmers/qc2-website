@@ -3,7 +3,7 @@
 (function () {
   const feed = document.querySelector('[data-feed]');
   if (!feed) return;
-  const key = feed.dataset.feed;
+  const key = feed.dataset.feed; // only used to clear old saved preferences
   const hadRow = feed.classList.contains('row');
   const buttons = document.querySelectorAll('.view-switch [data-view]');
   const slides = Array.from(feed.querySelectorAll(':scope > .feed-slide'));
@@ -39,7 +39,6 @@
     buttons.forEach(b => b.classList.toggle('active', b.dataset.view === view));
     feed.scrollTop = 0;
     if (on) { feed.focus(); updateCounter(); }
-    try { localStorage.setItem(key, view); } catch (e) {}
   }
 
   buttons.forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
@@ -53,7 +52,6 @@
   });
 
   feed.tabIndex = 0;
-  let saved = null;
-  try { saved = localStorage.getItem(key); } catch (e) {}
-  if (saved === 'feed') setView('feed');
+  // Always start in grid view; clear any preference saved by earlier versions
+  try { localStorage.removeItem(key); } catch (e) {}
 })();
