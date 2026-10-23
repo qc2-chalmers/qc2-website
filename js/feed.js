@@ -17,7 +17,8 @@
 
   const ui = document.createElement('div');
   ui.className = 'feed-ui';
-  ui.innerHTML = '<div class="feed-counter"></div>' +
+  ui.innerHTML = '<button type="button" class="feed-back">▦ Back to grid view</button>' +
+    '<div class="feed-counter"></div>' +
     '<div class="feed-arrows"><button type="button" data-dir="-1" aria-label="Previous">▲</button>' +
     '<button type="button" data-dir="1" aria-label="Next">▼</button></div>';
   document.body.appendChild(ui);
@@ -42,6 +43,7 @@
   }
 
   buttons.forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+  ui.querySelector('.feed-back').addEventListener('click', () => setView('grid'));
   ui.querySelectorAll('[data-dir]').forEach(b => b.addEventListener('click', () => move(+b.dataset.dir)));
   feed.addEventListener('scroll', () => { if (isOn()) updateCounter(); }, { passive: true });
   document.addEventListener('keydown', e => {

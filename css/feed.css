@@ -9,14 +9,7 @@
 body.feed-open { overflow: hidden; }
 /* backdrop-filter would make the section the containing block of the fixed overlay */
 body.feed-open .content-block { backdrop-filter: none; -webkit-backdrop-filter: none; }
-body.feed-open .view-switch {
-  position: fixed; top: 0.75rem; left: 50%; transform: translateX(-50%);
-  z-index: 1060; margin: 0; padding: 0.3rem; border-radius: 2rem;
-  background: rgba(var(--bs-body-bg-rgb), 0.75);
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--bs-border-color-translucent);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
-}
+body.feed-open .view-switch { display: none; }
 body.feed-open .feed-ui { display: block; }
 
 [data-feed].feed-on {
@@ -123,3 +116,14 @@ body.feed-open .feed-ui { display: block; }
 @media (max-width: 767px) { .feed-arrows { display: none !important; } }
 
 [data-feed].feed-on .badge-date { align-self: flex-start; }
+
+.feed-back {
+  position: fixed; top: 0.75rem; left: 50%; transform: translateX(-50%);
+  z-index: 1060; padding: 0.45rem 1.2rem; border-radius: 2rem;
+  background: rgba(var(--bs-body-bg-rgb), 0.75);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--bs-border-color-translucent);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  color: var(--bs-body-color); font-weight: 600; white-space: nowrap; cursor: pointer;
+}
+.feed-back:hover { background: #0369a1; border-color: #0369a1; color: #fff; }
