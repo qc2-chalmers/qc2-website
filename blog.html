@@ -79,20 +79,40 @@
 
     /* Blog Specific Styling */
     .blog-card {
-      border: none;
-      background: transparent;
-      transition: transform 0.3s ease;
+      border: 1px solid var(--bs-border-color-translucent);
+      border-radius: 1rem;
+      background: var(--bs-body-bg);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
     }
-    .blog-card:hover { transform: translateY(-5px); }
-    
+    .blog-card:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2); }
+    .blog-card .card-body { display: flex; flex-direction: column; flex: 1 1 auto; }
+    .blog-card .card-text { flex-grow: 1; margin-bottom: 1rem; }
+
     .blog-img {
       width: 100%;
       height: 200px;
       object-fit: cover;
+      object-position: center top;
       border-radius: 0.75rem;
       margin-bottom: 1rem;
       border: 1px solid var(--bs-border-color-translucent);
     }
+
+    .blog-more {
+      align-self: flex-start;
+      margin-top: auto;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid #7dd3fc;
+      border-radius: 2rem;
+      background-color: var(--qc2-blue);
+      color: #0369a1;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .blog-more:hover { background-color: #0369a1; border-color: #0369a1; color: #fff; }
 
     .badge-date {
       background-color: var(--qc2-blue) !important;
@@ -267,6 +287,49 @@
 
         <div class="col">
           <div class="card blog-card h-100 p-3">
+            <img src="images/papers/rio.png" class="blog-img shadow-sm" alt="Optimal robust single-qubit gates preprint figure">
+            <div class="card-body p-0">
+              <span class="badge badge-date">October 2026</span>
+              <h4 class="card-title fw-bold h5">New preprint out 🗞️</h4>
+              <p class="card-text small text-body-secondary">
+                We have a new preprint published by the group: "Optimal robust single-qubit gates in superconducting quantum processors".
+              </p>
+              <a href="https://arxiv.org/abs/2610.24212" target="_blank" class="btn btn-sm blog-more">Read more →</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col">
+          <div class="card blog-card h-100 p-3">
+            <img src="images/blog/google_quantum_riva.jpg" class="blog-img shadow-sm" alt="Google Quantum AI conference in Riva del Garda">
+            <div class="card-body p-0">
+              <span class="badge badge-date">October 19-23, 2026</span>
+              <h4 class="card-title fw-bold h5">Frontiers in Scaling Superconducting Quantum Computing! </h4>
+              <p class="card-text small text-body-secondary">
+                Meet us at the Google Quantum AI conference: "Frontiers in Scaling Superconducting Quantum Computing" in Riva del Garda, Italy!
+              </p>
+              <a href="https://quantumai-meeting.com" target="_blank" class="btn btn-sm blog-more">Read more →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card blog-card h-100 p-3">
+            <img src="images/blog/munich.jpg" class="blog-img shadow-sm" alt="Munich Quantum Software Forum">
+            <div class="card-body p-0">
+              <span class="badge badge-date">October 14-15, 2026</span>
+              <h4 class="card-title fw-bold h5">Munich Quantum Software Forum! 🎉</h4>
+              <p class="card-text small text-body-secondary">
+                Our software team presented Bragi, our calibration toolkit at the Munich Quantum Software Forum 💻.
+              </p>
+              <a href="https://munich-quantum-software.github.io/mqsf/2026/" target="_blank" class="btn btn-sm blog-more">Read more →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card blog-card h-100 p-3">
             <img src="images/blog/sqa2026_booth.jpg" class="blog-img shadow-sm" alt="OpenSuperQPlus booth at the SQA 2026 conference">
             <div class="card-body p-0">
               <span class="badge badge-date">August 25-28, 2026</span>
@@ -275,7 +338,7 @@
                 Chalmers, ScalinQ and IQM Quantum Computers welcomed more than 500 scientists and engineers to Gothenburg for the Superconducting Qubits and Algorithms conference, making it the largest edition of the conference to date. 
                 The conference was chaired by our own Giovanna Tancredi and spanned four days of talks, poster sessions and a packed exhibitor floor making it the place to be for superconducting quantum computing in Europe.
               </p>
-              <a href="https://www.sqa-conference.org/" target="_blank" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
+              <a href="https://www.sqa-conference.org/" target="_blank" class="btn btn-sm blog-more">Read more →</a>
             </div>
           </div>
         </div>
@@ -289,7 +352,7 @@
               <p class="card-text small text-body-secondary">
                 We hosted the OpenSuperQPlus consortium at Chalmers for its final project meeting, reviewing progress on the project's quantum demonstrators and discussing how to sustain the project's results, ahead of the SQA 2026 conference.
               </p>
-              <a href="https://opensuperqplus.eu/news/opensuperqplus-holds-final-project-meeting-in-gothenburg-ahead-of-sqa-2026" target="_blank" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
+              <a href="https://opensuperqplus.eu/news/opensuperqplus-holds-final-project-meeting-in-gothenburg-ahead-of-sqa-2026" target="_blank" class="btn btn-sm blog-more">Read more →</a>
             </div>
           </div>
         </div>
@@ -298,40 +361,40 @@
           <div class="card blog-card h-100 p-3">
             <img src="images/papers/mpstab.png" class="blog-img shadow-sm" alt="MPStab preprint figure">
             <div class="card-body p-0">
-              <span class="badge badge-date">July 2026</span>
+              <span class="badge badge-date">July 27, 2026</span>
               <h4 class="card-title fw-bold h5">New preprint out 🗞️</h4>
               <p class="card-text small text-body-secondary">
                 We have a new preprint published by the group: "MPStab: an hybrid stabilizers tensor-network quantum circuit simulator".
               </p>
-              <a href="https://arxiv.org/abs/2607.24258" target="_blank" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
+              <a href="https://arxiv.org/abs/2607.24258" target="_blank" class="btn btn-sm blog-more">Read more →</a>
             </div>
           </div>
         </div>
 
         <div class="col">
           <div class="card blog-card h-100 p-3">
-            <img src="images/blog/farn_summer.png" class="blog-img shadow-sm" alt="Post 1">
+            <img src="images/blog/chalmers_summer.jpeg" class="blog-img shadow-sm" alt="Post 1">
             <div class="card-body p-0">
               <span class="badge badge-date">April 15, 2026</span>
               <h4 class="card-title fw-bold h5">Summer internship calls! 🌴 </h4>
               <p class="card-text small text-body-secondary">
                 Join the group with a paid 10 weeks summer internship!  
               </p>
-              <a href="internship.html" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
+              <a href="internship.html" class="btn btn-sm blog-more">Read more →</a>
             </div>
           </div>
         </div>  
 
         <div class="col">
           <div class="card blog-card h-100 p-3">
-            <img src="images/blog/farn_going_to_aps.png" class="blog-img shadow-sm" alt="Post 1">
+            <img src="images/blog/APS_poster.jpg" class="blog-img shadow-sm" alt="Post 1">
             <div class="card-body p-0">
               <span class="badge badge-date">March 16-20, 2026</span>
               <h4 class="card-title fw-bold h5">Meet us at APS March meeting 🌎 </h4>
               <p class="card-text small text-body-secondary">
                 Some of us will be presenting our group's work at the APS March Meeting 2026 in Denver!  
               </p>
-              <a href="https://summit.aps.org/?utm_source=Google+Ads&utm_medium=Search+Ads&utm_campaign=Global+Physics+Summit+Awareness+-+Sept+2025+ROW&utm_content=Ad+1&campaignid=23031439103&adgroupid=189483977230&adid=774691309832&gad_source=1&gad_campaignid=23031439103&gbraid=0AAAAA9c2li1h8EJSv80FCXpDSyU4EWOTZ&gclid=Cj0KCQjw37nNBhDkARIsAEBGI8OjIfert-VDmjZzBFDwg6HT8CEC5tPsTSDT77xsxZ6hmnDMfAB4Py4aAnlUEALw_wcB" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
+              <a href="https://summit.aps.org/?utm_source=Google+Ads&utm_medium=Search+Ads&utm_campaign=Global+Physics+Summit+Awareness+-+Sept+2025+ROW&utm_content=Ad+1&campaignid=23031439103&adgroupid=189483977230&adid=774691309832&gad_source=1&gad_campaignid=23031439103&gbraid=0AAAAA9c2li1h8EJSv80FCXpDSyU4EWOTZ&gclid=Cj0KCQjw37nNBhDkARIsAEBGI8OjIfert-VDmjZzBFDwg6HT8CEC5tPsTSDT77xsxZ6hmnDMfAB4Py4aAnlUEALw_wcB" class="btn btn-sm blog-more">Read more →</a>
             </div>
           </div>
         </div>  
@@ -346,21 +409,21 @@
               <p class="card-text small text-body-secondary">
                 We have a new preprint published by the group: "Electrical post-fabrication tuning of aluminum Josephson junctions at room temperature".
               </p>
-              <a href="https://arxiv.org/abs/2602.20002" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
+              <a href="https://arxiv.org/abs/2602.20002" class="btn btn-sm blog-more">Read more →</a>
             </div>
           </div>
         </div>
 
         <div class="col">
           <div class="card blog-card h-100 p-3">
-            <img src="images/blog/farn_webpage.png" class="blog-img shadow-sm" alt="Post 1">
+            <img src="images/group_photo.JPG" class="blog-img shadow-sm" alt="Post 1">
             <div class="card-body p-0">
               <span class="badge badge-date">Jan 20, 2026</span>
               <h4 class="card-title fw-bold h5">New webpage 🌐 </h4>
               <p class="card-text small text-body-secondary">
                 Our new webpage is online ✨ 
               </p>
-              <a href="https://www.qc2lab.com" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
+              <a href="https://www.qc2lab.com" class="btn btn-sm blog-more">Read more →</a>
             </div>
           </div>
         </div>
@@ -376,21 +439,7 @@
                 We have a new preprint published by the group: "Real-time adaptive tracking of fluctuating relaxation rates
                 in superconducting qubits".
               </p>
-              <a href="https://arxiv.org/abs/2506.09576" class="btn btn-sm btn-link p-0 text-primary fw-bold text-decoration-none">Read more →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Blog Post 2 -->
-        <div class="col">
-          <div class="card blog-card h-100 p-3">
-            <img src="images/blog/mascot.png" class="blog-img shadow-sm" alt="Post 2">
-            <div class="card-body p-0">
-              <span class="badge badge-date">Dec 15, 2025</span>
-              <h4 class="card-title fw-bold h5">Farn is our new mascot 🎉</h4>
-              <p class="card-text small text-body-secondary">
-                We give a warm welcome to Farn, our new mascot! Farn joins the group after a long sailing across the oceans.
-              </p>
+              <a href="https://arxiv.org/abs/2506.09576" class="btn btn-sm blog-more">Read more →</a>
             </div>
           </div>
         </div>
