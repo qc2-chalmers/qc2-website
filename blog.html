@@ -11,6 +11,7 @@
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/docs.css" rel="stylesheet">
+  <link href="css/feed.css" rel="stylesheet">
 
   <style>
     /* Theme-aware Color Palette (Same as index.html) */
@@ -116,55 +117,6 @@
       transition: all 0.2s ease;
     }
     .blog-more:hover { background-color: #0369a1; border-color: #0369a1; color: #fff; }
-
-    /* View switch: grid / feed */
-    .view-switch { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2rem; }
-    .view-switch .btn { border-radius: 2rem; font-weight: 600; padding: 0.35rem 1.1rem; }
-    .view-switch .btn.active { background-color: #0369a1; border-color: #0369a1; color: #fff; }
-
-    /* Feed mode: full-screen overlay, scrollable everywhere */
-    body.feed-open { overflow: hidden; }
-    /* backdrop-filter would make the section the containing block of the fixed overlay */
-    body.feed-open .content-block { backdrop-filter: none; -webkit-backdrop-filter: none; }
-    body.feed-open .view-switch {
-      position: fixed; top: 0.75rem; left: 50%; transform: translateX(-50%);
-      z-index: 1060; margin: 0;
-      padding: 0.35rem; border-radius: 2rem;
-      background: var(--bs-body-bg); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-    }
-    #blog-feed.reels {
-      display: block;
-      position: fixed;
-      inset: 0;
-      z-index: 1050;
-      margin: 0;
-      overflow-y: auto;
-      overscroll-behavior: contain;
-      scroll-snap-type: y mandatory;
-      background: var(--bs-body-bg);
-      scrollbar-width: none;
-      outline: none;
-    }
-    #blog-feed.reels::-webkit-scrollbar { display: none; }
-    #blog-feed.reels > .col {
-      width: 100%;
-      height: 100vh;
-      height: 100dvh;
-      display: flex;
-      justify-content: center;
-      padding: 4.5rem 1rem 1.5rem;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-    }
-    #blog-feed.reels .blog-card { width: 100%; max-width: 560px; }
-    #blog-feed.reels .blog-card:hover { transform: none; }
-    #blog-feed.reels .blog-img { height: 50%; margin-bottom: 1rem; }
-    #blog-feed.reels .blog-card .card-body { overflow-y: auto; }
-    .reels-hint {
-      display: none; position: fixed; bottom: 0.5rem; left: 0; right: 0;
-      z-index: 1060; text-align: center; font-size: 0.8rem; pointer-events: none;
-    }
-    .reels-hint.show { display: block; }
 
     .badge-date {
       background-color: var(--qc2-blue) !important;
@@ -337,13 +289,13 @@
 
       <div class="view-switch" role="group" aria-label="Blog view">
         <button type="button" class="btn btn-outline-secondary active" data-view="grid">▦ Grid</button>
-        <button type="button" class="btn btn-outline-secondary" data-view="reels">▤ Feed</button>
+        <button type="button" class="btn btn-outline-secondary" data-view="feed">▤ Feed</button>
       </div>
 
-      <div id="blog-feed" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div id="blog-feed" data-feed="blogView" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
 
-        <div class="col">
+        <div class="col feed-slide">
           <div class="card blog-card h-100 p-3">
             <img src="images/blog/google_quantum_riva.jpg" class="blog-img shadow-sm" alt="Google Quantum AI conference in Riva del Garda">
             <div class="card-body p-0">
@@ -357,7 +309,7 @@
           </div>
         </div>
 
-        <div class="col">
+        <div class="col feed-slide">
           <div class="card blog-card h-100 p-3">
             <img src="images/papers/rio.png" class="blog-img fit-contain shadow-sm" alt="Optimal robust single-qubit gates preprint figure">
             <div class="card-body p-0">
@@ -371,7 +323,7 @@
           </div>
         </div>
 
-        <div class="col">
+        <div class="col feed-slide">
           <div class="card blog-card h-100 p-3">
             <img src="images/blog/munich.jpg" class="blog-img shadow-sm" alt="Munich Quantum Software Forum">
             <div class="card-body p-0">
@@ -385,7 +337,7 @@
           </div>
         </div>
 
-        <div class="col">
+        <div class="col feed-slide">
           <div class="card blog-card h-100 p-3">
             <img src="images/blog/sqa2026_booth.jpg" class="blog-img shadow-sm" alt="OpenSuperQPlus booth at the SQA 2026 conference">
             <div class="card-body p-0">
@@ -400,7 +352,7 @@
           </div>
         </div>
 
-        <div class="col">
+        <div class="col feed-slide">
           <div class="card blog-card h-100 p-3">
             <img src="images/blog/osqplus_gothenburg_meeting.jpg" class="blog-img shadow-sm" alt="OpenSuperQPlus consortium group photo at Chalmers University of Technology">
             <div class="card-body p-0">
@@ -414,7 +366,7 @@
           </div>
         </div>
 
-        <div class="col">
+        <div class="col feed-slide">
           <div class="card blog-card h-100 p-3">
             <img src="images/papers/mpstab.png" class="blog-img shadow-sm" alt="MPStab preprint figure">
             <div class="card-body p-0">
@@ -428,7 +380,7 @@
           </div>
         </div>
 
-        <div class="col">
+        <div class="col feed-slide">
           <div class="card blog-card h-100 p-3">
             <img src="images/blog/chalmers_summer.jpeg" class="blog-img shadow-sm" alt="Post 1">
             <div class="card-body p-0">
@@ -442,7 +394,7 @@
           </div>
         </div>  
 
-        <div class="col">
+        <div class="col feed-slide">
           <div class="card blog-card h-100 p-3">
             <img src="images/blog/APS_poster.jpg" class="blog-img shadow-sm" alt="Post 1">
             <div class="card-body p-0">
@@ -457,7 +409,7 @@
         </div>  
 
         <!-- Blog Post 1 -->
-        <div class="col">
+        <div class="col feed-slide">
           <div class="card blog-card h-100 p-3">
             <img src="images/papers/website teaser.png" class="blog-img shadow-sm" alt="Post 4">
             <div class="card-body p-0">
@@ -471,7 +423,7 @@
           </div>
         </div>
 
-        <div class="col">
+        <div class="col feed-slide">
           <div class="card blog-card h-100 p-3">
             <img src="images/group_photo.JPG" class="blog-img pos-upper shadow-sm" alt="Post 1">
             <div class="card-body p-0">
@@ -486,7 +438,7 @@
         </div>
 
         <!-- Blog Post 1 -->
-        <div class="col">
+        <div class="col feed-slide">
           <div class="card blog-card h-100 p-3">
             <img src="images/papers/real-time.png" class="blog-img shadow-sm" alt="Post 4">
             <div class="card-body p-0">
@@ -502,7 +454,6 @@
         </div>
 
       </div>
-      <p id="reels-hint" class="reels-hint text-body-secondary">Scroll, swipe or use ↑ ↓ to move between posts</p>
     </section>
 
   </main>
@@ -589,36 +540,6 @@
       })
     })()
   </script>
-  <script>
-    (function () {
-      const feed = document.getElementById('blog-feed');
-      const hint = document.getElementById('reels-hint');
-      const buttons = document.querySelectorAll('.view-switch [data-view]');
-      function setView(view) {
-        const reels = view === 'reels';
-        feed.classList.toggle('reels', reels);
-        feed.classList.toggle('row', !reels);
-        document.body.classList.toggle('feed-open', reels);
-        hint.classList.toggle('show', reels);
-        buttons.forEach(b => b.classList.toggle('active', b.dataset.view === view));
-        feed.scrollTop = 0;
-        if (reels) feed.focus();
-        try { localStorage.setItem('blogView', view); } catch (e) {}
-      }
-      buttons.forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
-      document.addEventListener('keydown', e => {
-        if (!feed.classList.contains('reels')) return;
-        if (e.key === 'Escape') { setView('grid'); return; }
-        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-          e.preventDefault();
-          feed.scrollBy({ top: (e.key === 'ArrowDown' ? 1 : -1) * feed.clientHeight, behavior: 'smooth' });
-        }
-      });
-      feed.tabIndex = 0;
-      let saved = null;
-      try { saved = localStorage.getItem('blogView'); } catch (e) {}
-      if (saved === 'reels') setView('reels');
-    })();
-  </script>
+  <script src="js/feed.js"></script>
 </body>
 </html>
