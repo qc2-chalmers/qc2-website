@@ -122,27 +122,48 @@
     .view-switch .btn { border-radius: 2rem; font-weight: 600; padding: 0.35rem 1.1rem; }
     .view-switch .btn.active { background-color: #0369a1; border-color: #0369a1; color: #fff; }
 
+    /* Feed mode: full-screen overlay, scrollable everywhere */
+    body.feed-open { overflow: hidden; }
+    /* backdrop-filter would make the section the containing block of the fixed overlay */
+    body.feed-open .content-block { backdrop-filter: none; -webkit-backdrop-filter: none; }
+    body.feed-open .view-switch {
+      position: fixed; top: 0.75rem; left: 50%; transform: translateX(-50%);
+      z-index: 1060; margin: 0;
+      padding: 0.35rem; border-radius: 2rem;
+      background: var(--bs-body-bg); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    }
     #blog-feed.reels {
       display: block;
-      height: 80vh;
-      max-width: 520px;
-      margin: 0 auto;
+      position: fixed;
+      inset: 0;
+      z-index: 1050;
+      margin: 0;
       overflow-y: auto;
+      overscroll-behavior: contain;
       scroll-snap-type: y mandatory;
+      background: var(--bs-body-bg);
       scrollbar-width: none;
+      outline: none;
     }
     #blog-feed.reels::-webkit-scrollbar { display: none; }
     #blog-feed.reels > .col {
       width: 100%;
-      height: 100%;
-      padding: 0 0 1rem 0;
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      justify-content: center;
+      padding: 4.5rem 1rem 1.5rem;
       scroll-snap-align: start;
       scroll-snap-stop: always;
     }
+    #blog-feed.reels .blog-card { width: 100%; max-width: 560px; }
     #blog-feed.reels .blog-card:hover { transform: none; }
-    #blog-feed.reels .blog-img { height: 55%; margin-bottom: 1rem; }
+    #blog-feed.reels .blog-img { height: 50%; margin-bottom: 1rem; }
     #blog-feed.reels .blog-card .card-body { overflow-y: auto; }
-    .reels-hint { text-align: center; font-size: 0.85rem; margin-top: 0.75rem; display: none; }
+    .reels-hint {
+      display: none; position: fixed; bottom: 0.5rem; left: 0; right: 0;
+      z-index: 1060; text-align: center; font-size: 0.8rem; pointer-events: none;
+    }
     .reels-hint.show { display: block; }
 
     .badge-date {
@@ -577,14 +598,17 @@
         const reels = view === 'reels';
         feed.classList.toggle('reels', reels);
         feed.classList.toggle('row', !reels);
+        document.body.classList.toggle('feed-open', reels);
         hint.classList.toggle('show', reels);
         buttons.forEach(b => b.classList.toggle('active', b.dataset.view === view));
         feed.scrollTop = 0;
+        if (reels) feed.focus();
         try { localStorage.setItem('blogView', view); } catch (e) {}
       }
       buttons.forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
-      feed.addEventListener('keydown', e => {
+      document.addEventListener('keydown', e => {
         if (!feed.classList.contains('reels')) return;
+        if (e.key === 'Escape') { setView('grid'); return; }
         if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
           e.preventDefault();
           feed.scrollBy({ top: (e.key === 'ArrowDown' ? 1 : -1) * feed.clientHeight, behavior: 'smooth' });
