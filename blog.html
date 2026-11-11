@@ -195,9 +195,16 @@
   <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="images/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
   <link rel="icon" href="images/favicon/favicon.ico">
+  <link href="css/site.css" rel="stylesheet">
 </head>
 
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="sw-arrow-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></symbol>
+    <symbol id="sw-arrow-up-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/></symbol>
+    <symbol id="sw-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></symbol>
+  </svg>
+
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="check2" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></symbol>
     <symbol id="circle-half" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" /></symbol>
@@ -208,63 +215,75 @@
     <symbol id="house-fill" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/><path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/></symbol>
   </svg>
 
-    <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="ic-menu" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></symbol>
+      <symbol id="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="ic-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v10.5a1.5 1.5 0 0 0 1.5 1.5H10v-6h4v6h3.5a1.5 1.5 0 0 0 1.5-1.5V9"/></symbol>
+      <symbol id="ic-research" viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v6.5L4.6 18.4A1.75 1.75 0 0 0 6.1 21h11.8a1.75 1.75 0 0 0 1.5-2.6L14 9.5V3"/><path d="M7.4 15h9.2"/></symbol>
+      <symbol id="ic-publications" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></symbol>
+      <symbol id="ic-software" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
+      <symbol id="ic-news" viewBox="0 0 24 24"><path d="M4 5h13v14a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v10a2 2 0 0 1-2 2"/><path d="M8 9h5M8 13h5M8 17h3"/></symbol>
+      <symbol id="ic-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18 14.2a6.5 6.5 0 0 1 3.5 5.8"/></symbol>
+      <symbol id="ic-alumni" viewBox="0 0 24 24"><path d="M2 9.5 12 5l10 4.5-10 4.5z"/><path d="M6 11.5V16c3.5 2.7 8.5 2.7 12 0v-4.5"/><path d="M22 9.5V15"/></symbol>
+      <symbol id="ic-theses" viewBox="0 0 24 24"><path d="M2 5h6a4 4 0 0 1 4 4v11a3 3 0 0 0-3-3H2z"/><path d="M22 5h-6a4 4 0 0 0-4 4v11a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="ic-talks" viewBox="0 0 24 24"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 10.5a6.5 6.5 0 0 0 13 0"/><path d="M12 17v4.5"/></symbol>
+      <symbol id="ic-events" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M8 2.5v4M16 2.5v4M3.5 9.5h17"/></symbol>
+      <symbol id="ic-jobs" viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="13" rx="2"/><path d="M8.5 7V5.5a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2V7"/><path d="M2.5 12.5h19"/></symbol>
+    </svg>
     <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
       <a class="navbar-brand d-flex align-items-center gap-2 p-0 me-0 me-lg-4" href="index.html">
         <img src="images/qc2_logos/qc2_logo_light.png" alt="QC2 Lab Logo" style="height: 65px; width: auto;">
       </a>
-      <div class="d-flex align-items-center">
-        <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-label="Toggle navigation">
-          <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>
-        </button>
-      </div>
-      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" data-bs-scroll="true">
-        <div class="offcanvas-header px-4 pb-0">
-          <h5 class="offcanvas-title text-white">Menu</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#bdNavbar"></button>
+      <button class="navbar-toggler site-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="Open menu">
+        <svg class="nav-ic" aria-hidden="true"><use href="#ic-menu"></use></svg>
+      </button>
+      <div class="offcanvas-lg offcanvas-top site-menu flex-grow-1" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarLabel">
+        <div class="offcanvas-header">
+          <span class="site-menu-title" id="bdNavbarLabel">Menu</span>
+          <button type="button" class="site-toggler" data-bs-dismiss="offcanvas" data-bs-target="#bdNavbar" aria-label="Close menu">
+            <svg class="nav-ic" aria-hidden="true"><use href="#ic-close"></use></svg>
+          </button>
         </div>
-        <div class="offcanvas-body p-4 pt-0 p-lg-0">
-          <hr class="d-lg-none text-white-50">
-          <ul class="navbar-nav flex-row flex-wrap ms-md-auto align-items-center">
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="research.html">Research</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="publications.html">Publications</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="blog.html">News</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="people.html">People</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="alumni.html">Alumni</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="theses.html">Theses</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="talks.html">Talks</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="events.html">Events</a></li>
-            <li class="nav-item col-6 col-lg-auto"><a class="nav-link py-2 px-0 px-lg-2" href="index.html#jobs">Jobs</a></li>
-            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
-              <div class="vr d-none d-lg-flex h-100 mx-lg-3 text-white"></div>
-              <hr class="d-lg-none my-2 text-white-50">
-            </li>
-            <li class="nav-item dropdown">
+        <div class="offcanvas-body p-lg-0">
+          <ul class="navbar-nav site-nav ms-lg-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link py-2 px-lg-2" href="index.html"><svg class="nav-ic" aria-hidden="true"><use href="#ic-home"></use></svg><span>Home</span></a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-lg-2" href="research.html"><svg class="nav-ic" aria-hidden="true"><use href="#ic-research"></use></svg><span>Research</span></a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-lg-2" href="publications.html"><svg class="nav-ic" aria-hidden="true"><use href="#ic-publications"></use></svg><span>Publications</span></a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-lg-2" href="software.html"><svg class="nav-ic" aria-hidden="true"><use href="#ic-software"></use></svg><span>Software</span></a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-lg-2" href="blog.html" aria-current="page"><svg class="nav-ic" aria-hidden="true"><use href="#ic-news"></use></svg><span>News</span></a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-lg-2" href="people.html"><svg class="nav-ic" aria-hidden="true"><use href="#ic-people"></use></svg><span>People</span></a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-lg-2" href="alumni.html"><svg class="nav-ic" aria-hidden="true"><use href="#ic-alumni"></use></svg><span>Alumni</span></a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-lg-2" href="theses.html"><svg class="nav-ic" aria-hidden="true"><use href="#ic-theses"></use></svg><span>Theses</span></a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-lg-2" href="talks.html"><svg class="nav-ic" aria-hidden="true"><use href="#ic-talks"></use></svg><span>Talks</span></a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-lg-2" href="events.html"><svg class="nav-ic" aria-hidden="true"><use href="#ic-events"></use></svg><span>Events</span></a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-lg-2" href="index.html#jobs"><svg class="nav-ic" aria-hidden="true"><use href="#ic-jobs"></use></svg><span>Jobs</span></a></li>
+            <li class="nav-item site-nav-sep d-none d-lg-flex py-1"><div class="vr h-100 mx-3 text-white"></div></li>
+            <li class="nav-item dropdown site-theme">
               <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
                 <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
-                <span class="d-lg-none ms-2">Toggle theme</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
-                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#sun-fill"></use></svg>
-                        Light
-                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
-                    </button>
+                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                    <svg class="bi me-2 opacity-50 theme-icon"><use href="#sun-fill"></use></svg>
+                    Light
+                    <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                  </button>
                 </li>
                 <li>
-                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
-                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#moon-stars-fill"></use></svg>
-                        Dark
-                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
-                    </button>
+                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                    <svg class="bi me-2 opacity-50 theme-icon"><use href="#moon-stars-fill"></use></svg>
+                    Dark
+                    <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                  </button>
                 </li>
                 <li>
-                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
-                        <svg class="bi me-2 opacity-50 theme-icon"><use href="#circle-half"></use></svg>
-                        Auto
-                        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
-                    </button>
+                  <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
+                    <svg class="bi me-2 opacity-50 theme-icon"><use href="#circle-half"></use></svg>
+                    Auto
+                    <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+                  </button>
                 </li>
               </ul>
             </li>
@@ -277,9 +296,7 @@
   <main class="container-xxl bd-gutter mt-5">
     
     <div class="d-flex justify-content-between align-items-center mb-4 wide-section mx-auto">
-        <a href="index.html" class="btn-qc2 shadow-sm">
-            <svg class="section-title-icon me-2" style="width:1.2em; height:1.2em;"><use href="#house-fill"></use></svg> Back to Home
-        </a>
+        <a class="sw-btn secondary" href="index.html"><span class="emoji" aria-hidden="true">🏠</span><span class="lbl">Back to Home</span></a>
     </div>
 
     <section class="content-block wide-section mx-auto">
@@ -288,11 +305,11 @@
       </h2>
 
       <div class="view-switch" role="group" aria-label="Blog view">
-        <button type="button" class="btn btn-outline-secondary active" data-view="grid">▦ Grid</button>
-        <button type="button" class="btn btn-outline-secondary" data-view="feed">▤ Feed</button>
+        <button class="sw-btn secondary sm active" type="button" data-view="grid"><span class="emoji" aria-hidden="true">🗂️</span><span class="lbl">Grid</span></button>
+        <button class="sw-btn secondary sm" type="button" data-view="feed"><span class="emoji" aria-hidden="true">📜</span><span class="lbl">Feed</span></button>
       </div>
 
-      <div id="blog-feed" data-feed="blogView" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div id="blog-feed" data-feed="blogView" class="row row-cols-2 row-cols-lg-3 g-4">
 
 
         <div class="col feed-slide">
@@ -304,7 +321,7 @@
               <p class="card-text small text-body-secondary">
                 Meet us at the Google Quantum AI conference: "Frontiers in Scaling Superconducting Quantum Computing" in Riva del Garda, Italy!
               </p>
-              <a href="https://quantumai-meeting.com" target="_blank" class="btn btn-sm blog-more">Read more →</a>
+              <a class="sw-btn secondary sm blog-more" href="https://quantumai-meeting.com" target="_blank" rel="noopener"><span class="emoji" aria-hidden="true">🔗</span><span class="lbl">Read more</span><svg class="arrow out" aria-hidden="true"><use href="#sw-arrow-up-right"></use></svg></a>
             </div>
           </div>
         </div>
@@ -318,7 +335,7 @@
               <p class="card-text small text-body-secondary">
                 We have a new preprint published by the group: "Optimal robust single-qubit gates in superconducting quantum processors".
               </p>
-              <a href="https://arxiv.org/abs/2610.24212" target="_blank" class="btn btn-sm blog-more">Read more →</a>
+              <a class="sw-btn secondary sm blog-more" href="https://arxiv.org/abs/2610.24212" target="_blank" rel="noopener"><span class="emoji" aria-hidden="true">🔗</span><span class="lbl">Read more</span><svg class="arrow out" aria-hidden="true"><use href="#sw-arrow-up-right"></use></svg></a>
             </div>
           </div>
         </div>
@@ -332,7 +349,7 @@
               <p class="card-text small text-body-secondary">
                 Our software team presented Bragi, our calibration toolkit at the Munich Quantum Software Forum 💻.
               </p>
-              <a href="https://munich-quantum-software.github.io/mqsf/2026/" target="_blank" class="btn btn-sm blog-more">Read more →</a>
+              <a class="sw-btn secondary sm blog-more" href="https://munich-quantum-software.github.io/mqsf/2026/" target="_blank" rel="noopener"><span class="emoji" aria-hidden="true">🔗</span><span class="lbl">Read more</span><svg class="arrow out" aria-hidden="true"><use href="#sw-arrow-up-right"></use></svg></a>
             </div>
           </div>
         </div>
@@ -347,7 +364,7 @@
                 Chalmers, ScalinQ and IQM Quantum Computers welcomed more than 500 scientists and engineers to Gothenburg for the Superconducting Qubits and Algorithms conference, making it the largest edition of the conference to date. 
                 The conference was chaired by our own Giovanna Tancredi and spanned four days of talks, poster sessions and a packed exhibitor floor making it the place to be for superconducting quantum computing in Europe.
               </p>
-              <a href="https://www.sqa-conference.org/" target="_blank" class="btn btn-sm blog-more">Read more →</a>
+              <a class="sw-btn secondary sm blog-more" href="https://www.sqa-conference.org/" target="_blank" rel="noopener"><span class="emoji" aria-hidden="true">🔗</span><span class="lbl">Read more</span><svg class="arrow out" aria-hidden="true"><use href="#sw-arrow-up-right"></use></svg></a>
             </div>
           </div>
         </div>
@@ -361,7 +378,7 @@
               <p class="card-text small text-body-secondary">
                 We hosted the OpenSuperQPlus consortium at Chalmers for its final project meeting, reviewing progress on the project's quantum demonstrators and discussing how to sustain the project's results, ahead of the SQA 2026 conference.
               </p>
-              <a href="https://opensuperqplus.eu/news/opensuperqplus-holds-final-project-meeting-in-gothenburg-ahead-of-sqa-2026" target="_blank" class="btn btn-sm blog-more">Read more →</a>
+              <a class="sw-btn secondary sm blog-more" href="https://opensuperqplus.eu/news/opensuperqplus-holds-final-project-meeting-in-gothenburg-ahead-of-sqa-2026" target="_blank" rel="noopener"><span class="emoji" aria-hidden="true">🔗</span><span class="lbl">Read more</span><svg class="arrow out" aria-hidden="true"><use href="#sw-arrow-up-right"></use></svg></a>
             </div>
           </div>
         </div>
@@ -375,7 +392,7 @@
               <p class="card-text small text-body-secondary">
                 We have a new preprint published by the group: "MPStab: an hybrid stabilizers tensor-network quantum circuit simulator".
               </p>
-              <a href="https://arxiv.org/abs/2607.24258" target="_blank" class="btn btn-sm blog-more">Read more →</a>
+              <a class="sw-btn secondary sm blog-more" href="https://arxiv.org/abs/2607.24258" target="_blank" rel="noopener"><span class="emoji" aria-hidden="true">🔗</span><span class="lbl">Read more</span><svg class="arrow out" aria-hidden="true"><use href="#sw-arrow-up-right"></use></svg></a>
             </div>
           </div>
         </div>
@@ -389,7 +406,7 @@
               <p class="card-text small text-body-secondary">
                 Join the group with a paid 10 weeks summer internship!  
               </p>
-              <a href="internship.html" class="btn btn-sm blog-more">Read more →</a>
+              <a class="sw-btn secondary sm blog-more" href="internship.html"><span class="emoji" aria-hidden="true">🔗</span><span class="lbl">Read more</span><svg class="arrow right" aria-hidden="true"><use href="#sw-arrow-right"></use></svg></a>
             </div>
           </div>
         </div>  
@@ -403,7 +420,7 @@
               <p class="card-text small text-body-secondary">
                 Some of us will be presenting our group's work at the APS March Meeting 2026 in Denver!  
               </p>
-              <a href="https://summit.aps.org/?utm_source=Google+Ads&utm_medium=Search+Ads&utm_campaign=Global+Physics+Summit+Awareness+-+Sept+2025+ROW&utm_content=Ad+1&campaignid=23031439103&adgroupid=189483977230&adid=774691309832&gad_source=1&gad_campaignid=23031439103&gbraid=0AAAAA9c2li1h8EJSv80FCXpDSyU4EWOTZ&gclid=Cj0KCQjw37nNBhDkARIsAEBGI8OjIfert-VDmjZzBFDwg6HT8CEC5tPsTSDT77xsxZ6hmnDMfAB4Py4aAnlUEALw_wcB" class="btn btn-sm blog-more">Read more →</a>
+              <a class="sw-btn secondary sm blog-more" href="https://summit.aps.org/?utm_source=Google+Ads&utm_medium=Search+Ads&utm_campaign=Global+Physics+Summit+Awareness+-+Sept+2025+ROW&utm_content=Ad+1&campaignid=23031439103&adgroupid=189483977230&adid=774691309832&gad_source=1&gad_campaignid=23031439103&gbraid=0AAAAA9c2li1h8EJSv80FCXpDSyU4EWOTZ&gclid=Cj0KCQjw37nNBhDkARIsAEBGI8OjIfert-VDmjZzBFDwg6HT8CEC5tPsTSDT77xsxZ6hmnDMfAB4Py4aAnlUEALw_wcB"><span class="emoji" aria-hidden="true">🔗</span><span class="lbl">Read more</span><svg class="arrow out" aria-hidden="true"><use href="#sw-arrow-up-right"></use></svg></a>
             </div>
           </div>
         </div>  
@@ -418,7 +435,7 @@
               <p class="card-text small text-body-secondary">
                 We have a new preprint published by the group: "Electrical post-fabrication tuning of aluminum Josephson junctions at room temperature".
               </p>
-              <a href="https://arxiv.org/abs/2602.20002" class="btn btn-sm blog-more">Read more →</a>
+              <a class="sw-btn secondary sm blog-more" href="https://arxiv.org/abs/2602.20002"><span class="emoji" aria-hidden="true">🔗</span><span class="lbl">Read more</span><svg class="arrow out" aria-hidden="true"><use href="#sw-arrow-up-right"></use></svg></a>
             </div>
           </div>
         </div>
@@ -432,7 +449,7 @@
               <p class="card-text small text-body-secondary">
                 Our new webpage is online ✨ 
               </p>
-              <a href="https://www.qc2lab.com" class="btn btn-sm blog-more">Read more →</a>
+              <a class="sw-btn secondary sm blog-more" href="https://www.qc2lab.com"><span class="emoji" aria-hidden="true">🔗</span><span class="lbl">Read more</span><svg class="arrow out" aria-hidden="true"><use href="#sw-arrow-up-right"></use></svg></a>
             </div>
           </div>
         </div>
@@ -448,7 +465,7 @@
                 We have a new preprint published by the group: "Real-time adaptive tracking of fluctuating relaxation rates
                 in superconducting qubits".
               </p>
-              <a href="https://arxiv.org/abs/2506.09576" class="btn btn-sm blog-more">Read more →</a>
+              <a class="sw-btn secondary sm blog-more" href="https://arxiv.org/abs/2506.09576"><span class="emoji" aria-hidden="true">🔗</span><span class="lbl">Read more</span><svg class="arrow out" aria-hidden="true"><use href="#sw-arrow-up-right"></use></svg></a>
             </div>
           </div>
         </div>
@@ -457,37 +474,19 @@
     </section>
 
   </main>
-  <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary text-center">
-    <h4 class="fw-semibold mb-4 text-body-secondary">Supported by</h4>
-    <div class="container py-4 text-body-secondary">
-      
-      <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
-        <a href="https://www.vinnova.se/en/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vinnova_logo.png" alt="Logo 1"></div>
-        </a>
-        <a href="https://www.vr.se/english.html" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/vetenskapsradet_logo.png" alt="Logo 2"></div>
-        </a>
-        <a href="https://kaw.wallenberg.org/en" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/kaw_logo.png" alt="Logo 3"></div>
-        </a>
-        <a href="https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-high-performance-computing-joint-undertaking-eurohpc-ju_en" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/euroHPC_logo.png" alt="Logo 1"></div>
-        </a>
-        <a href="https://www.chalmers.se/en/centres/wacqt/" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/wacqt_logo.png" alt="Logo 2"></div>
-        </a>
-        <a href="https://quantera.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/quantera_logo.png" alt="Logo 3"></div>
-        </a>
-        <a href="https://opensuperqplus.eu" target="_blank" class="text-decoration-none">
-          <div class="collab-box shadow-sm"><img src="images/sponsors_logos/osq_logo.png" alt="Logo 4"></div>
-        </a>
+  <footer class="site-footer bd-footer mt-5 bg-body-tertiary text-center">
+    <div class="container">
+      <h4 class="site-footer-title">Supported by</h4>
+      <div class="sponsor-grid">
+        <a class="collab-box" href="https://www.vinnova.se/en/" target="_blank" rel="noopener" aria-label="Vinnova"><img src="images/sponsors_logos/vinnova_logo.png" alt="Vinnova"></a>
+        <a class="collab-box" href="https://www.vr.se/english.html" target="_blank" rel="noopener" aria-label="Vetenskapsrådet"><img src="images/sponsors_logos/vetenskapsradet_logo.png" alt="Vetenskapsrådet"></a>
+        <a class="collab-box" href="https://kaw.wallenberg.org/en" target="_blank" rel="noopener" aria-label="Knut and Alice Wallenberg Foundation"><img src="images/sponsors_logos/kaw_logo.png" alt="Knut and Alice Wallenberg Foundation"></a>
+        <a class="collab-box" href="https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-high-performance-computing-joint-undertaking-eurohpc-ju_en" target="_blank" rel="noopener" aria-label="EuroHPC Joint Undertaking"><img src="images/sponsors_logos/euroHPC_logo.png" alt="EuroHPC Joint Undertaking"></a>
+        <a class="collab-box" href="https://www.chalmers.se/en/centres/wacqt/" target="_blank" rel="noopener" aria-label="WACQT"><img src="images/sponsors_logos/wacqt_logo.png" alt="WACQT"></a>
+        <a class="collab-box" href="https://quantera.eu" target="_blank" rel="noopener" aria-label="QuantERA"><img src="images/sponsors_logos/quantera_logo.png" alt="QuantERA"></a>
+        <a class="collab-box" href="https://opensuperqplus.eu" target="_blank" rel="noopener" aria-label="OpenSuperQPlus"><img src="images/sponsors_logos/osq_logo.png" alt="OpenSuperQPlus"></a>
       </div>
-      
-      <div class="mt-2">
-        <small>© 2026 - Made with ​💙​ by QC2 Lab </small><br>
-      </div>
+      <small class="site-footer-copy">© 2026 · Made with 💙 by QC2 Lab</small>
     </div>
   </footer>
 
@@ -541,5 +540,6 @@
     })()
   </script>
   <script src="js/feed.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>

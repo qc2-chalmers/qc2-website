@@ -26,3 +26,6 @@ build/
 
 # Logs
 *.log
+# Toolkit docs: fetched during the Vercel build (vercel.json), never committed
+toolkit-docs/
+_site/
