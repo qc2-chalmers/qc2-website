@@ -159,9 +159,15 @@
   </svg>
 
   <header class="navbar navbar-expand-lg bd-navbar sticky-top">
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+      <defs><linearGradient id="title-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset=".55" stop-color="#4f46e5"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
       <symbol id="ic-menu" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></symbol>
       <symbol id="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="ic-mission" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+      <symbol id="ic-camera" viewBox="0 0 24 24"><path d="M3 8.5A2 2 0 0 1 5 6.5h2.2l1.4-2h6.8l1.4 2H19a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.6"/></symbol>
+      <symbol id="ic-chevron-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
+      <symbol id="ic-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="ic-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></symbol>
       <symbol id="ic-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v10.5a1.5 1.5 0 0 0 1.5 1.5H10v-6h4v6h3.5a1.5 1.5 0 0 0 1.5-1.5V9"/></symbol>
       <symbol id="ic-research" viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v6.5L4.6 18.4A1.75 1.75 0 0 0 6.1 21h11.8a1.75 1.75 0 0 0 1.5-2.6L14 9.5V3"/><path d="M7.4 15h9.2"/></symbol>
       <symbol id="ic-publications" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></symbol>
@@ -242,7 +248,7 @@
     </div>
 
     <section class="content-block wide-section mx-auto">
-      <h2 class="display-5 mb-5 fw-semibold text-center"><svg class="section-title-icon"><use href="#book-half"></use></svg>QC2 Lab archive</h2>
+      <h2 class="display-5 mb-5 fw-semibold text-center"><span class="title-chip" aria-hidden="true"><svg class="nav-ic"><use href="#ic-publications"></use></svg></span>QC2 Lab archive</h2>
       <div class="view-switch" role="group" aria-label="Publications view">
         <button class="sw-btn secondary sm active" type="button" data-view="grid"><span class="emoji" aria-hidden="true">🗂️</span><span class="lbl">Grid</span></button>
         <button class="sw-btn secondary sm" type="button" data-view="feed"><span class="emoji" aria-hidden="true">📜</span><span class="lbl">Feed</span></button>
@@ -251,6 +257,27 @@
       <div id="pub-feed" data-feed="pubView">
       
     <div class="year-separator"><span>2026</span></div>
+
+      <div class="feed-slide">
+      <article class="pub-card">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-8">
+            <h3 class="fw-bold mb-3">Suppressing microwave crosstalk in superconducting quantum processors by designing parasitic drive capacitances</h3>
+            <div class="d-flex flex-column gap-3">
+                <p class="text-secondary fw-medium mb-0 pub-authors" style="color: #64748b !important;">
+                    <span class="authors-full">Anuj Aggarwal, Jorge Fernández-Pendás, Simon Pettersson Fors, Zakaria Mohamed, Halldór Jakobsson, Amr Osman, Janka Biznárová, Andreas Nylander, Anita Fadavi Roudsari, Marcus Rommel, Anton Frisk Kockum, Giovanna Tancredi</span><span class="authors-short">Anuj Aggarwal et al.</span>
+                </p>
+                <div class="d-flex flex-wrap gap-2" style="width: fit-content;">
+                  <a class="sw-btn primary sm" href="https://arxiv.org/abs/2610.36365" target="_blank" rel="noopener"><span class="emoji" aria-hidden="true">📄</span><span class="lbl"><span class="lbl-long">Read on arXiv</span><span class="lbl-short">arXiv</span></span><svg class="arrow out" aria-hidden="true"><use href="#sw-arrow-up-right"></use></svg></a>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <img src="images/papers/microwave_crosstalk_suppression.png" class="pub-img" alt="Paper Image">
+            </div>
+        </div>
+      </article>
+      </div>
 
       <div class="feed-slide">
       <article class="pub-card">

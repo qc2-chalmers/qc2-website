@@ -945,3 +945,150 @@
   :root .sponsor-grid .collab-box { height: 60px !important; padding: 10px 14px !important; }
 }
 :root .sponsor-grid .collab-box:has(img[src*="chalmers_logo"]) { padding-left: 8px !important; padding-right: 8px !important; }
+
+/* =====================================================================
+   Section titles: line icon inside a soft gradient chip
+   ===================================================================== */
+.title-chip {
+  display: inline-grid; place-items: center;
+  width: 1.35em; height: 1.35em; margin-right: .45em;
+  vertical-align: -.22em;
+  border-radius: .38em;
+  color: var(--ui-accent);
+  background: linear-gradient(135deg, rgba(56, 189, 248, .16), rgba(99, 102, 241, .16) 60%, rgba(167, 139, 250, .2));
+  border: 1px solid rgba(99, 102, 241, .22);
+  box-shadow: 0 6px 14px -8px rgba(79, 70, 229, .45);
+}
+.title-chip .nav-ic { width: .72em; height: .72em; stroke-width: 1.9; }
+[data-bs-theme="dark"] .title-chip { border-color: rgba(129, 140, 248, .35); }
+
+/* Sub-section titles (Staff, Postdocs, PhD Theses, 2026, ...) */
+:root .category-title {
+  display: inline-flex !important; align-items: center; gap: .55rem;
+  border: 0 !important; padding-bottom: 0 !important;
+}
+:root .category-title::before {
+  content: ""; width: .5rem; height: 1.2em; border-radius: 999px;
+  background: linear-gradient(180deg, #38bdf8, #6366f1 60%, #a78bfa);
+}
+:root .category-title::after { display: none !important; }
+:root .year-separator { color: var(--ui-accent) !important; }
+:root .year-separator::before, :root .year-separator::after {
+  height: 2px !important; border-radius: 2px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, .35)) !important;
+}
+:root .year-separator::after { background: linear-gradient(90deg, rgba(99, 102, 241, .35), transparent) !important; }
+
+/* Feed controls with line icons */
+:root .feed-back { display: inline-flex; align-items: center; gap: .5rem; }
+:root .feed-back .nav-ic { width: 18px; height: 18px; }
+:root .feed-arrows button { display: grid; place-items: center; }
+:root .feed-arrows button .nav-ic { width: 18px; height: 18px; }
+/* tighter, baseline-aligned title chips */
+.title-chip {
+  width: 1em; height: 1em;
+  margin-right: .32em;
+  vertical-align: -.1em;
+  border-radius: .3em;
+  box-shadow: 0 4px 10px -6px rgba(79, 70, 229, .5);
+}
+.title-chip .nav-ic { width: .66em; height: .66em; stroke-width: 2; }
+
+/* Feed on phones: centred media, no side scrollbar shifting the content */
+@media (max-width: 991.98px) {
+  :root [data-feed].feed-on > .feed-slide > * { scrollbar-width: none; }
+  :root [data-feed].feed-on > .feed-slide > *::-webkit-scrollbar { display: none; }
+  :root [data-feed].feed-on .blog-card .blog-img,
+  :root [data-feed].feed-on .pub-card .pub-img {
+    display: block; width: 100% !important; max-width: 100%;
+    height: min(36vh, 300px) !important; aspect-ratio: auto !important;
+    margin: 0 auto 1rem !important;
+    object-fit: contain !important; object-position: center !important;
+    padding: .4rem !important; background: #fff !important;
+    border-radius: 1rem !important; box-sizing: border-box;
+  }
+  :root [data-feed].feed-on .blog-card { padding: 1rem !important; }
+  :root [data-feed].feed-on .blog-card .card-title { font-size: 1.15rem !important; }
+  :root [data-feed].feed-on .blog-card .card-text { font-size: .9rem !important; }
+  :root [data-feed].feed-on .pub-card .row > * { padding-left: 0; padding-right: 0; }
+}
+@media (max-width: 991.98px) {
+  :root [data-feed].feed-on .blog-card .blog-img { object-fit: cover !important; padding: 0 !important; }
+}
+
+/* =====================================================================
+   Section titles v3: icon is a glyph of the title, not a separate box
+   ===================================================================== */
+h1:has(> .title-chip), h2:has(> .title-chip), h3:has(> .title-chip) {
+  display: flex; align-items: center; justify-content: center;
+  gap: .32em; flex-wrap: wrap;
+}
+.title-chip {
+  width: auto; height: auto; margin: 0; padding: 0;
+  background: none; border: 0; box-shadow: none; border-radius: 0;
+  display: inline-flex; vertical-align: middle;
+}
+.title-chip .nav-ic {
+  width: .92em; height: .92em;
+  stroke: url(#title-grad); stroke-width: 2.3;
+}
+[data-bs-theme="dark"] .title-chip .nav-ic { stroke-width: 2.1; }
+@media (max-width: 767.98px) {
+  #mission h2, #publications h2, #jobs h2 { justify-content: flex-start; }
+}
+
+/* =====================================================================
+   Phones: one compact row per item (news, publications, theses, talks)
+   ===================================================================== */
+@media (max-width: 575.98px) {
+  #pictures-title { font-size: 1.6rem !important; justify-content: flex-start; text-align: left; }
+  :root .row.row-cols-1 { --bs-gutter-y: .6rem; }
+
+  /* news: thumbnail left, text right */
+  :root #blog-feed:not(.feed-on) .blog-card {
+    display: grid !important; grid-template-columns: 96px minmax(0, 1fr); gap: .75rem;
+    align-items: start; padding: .65rem !important;
+  }
+  :root #blog-feed:not(.feed-on) .blog-card .blog-img {
+    width: 96px !important; height: 96px !important; aspect-ratio: 1; object-fit: cover;
+    margin: 0 !important; padding: 0 !important; border-radius: .75rem;
+  }
+  :root #blog-feed:not(.feed-on) .blog-card .card-body { min-width: 0; }
+  :root #blog-feed:not(.feed-on) .blog-card .badge-date { font-size: .55rem; margin-bottom: .3rem !important; white-space: nowrap; }
+  :root #blog-feed:not(.feed-on) .blog-card .card-title { font-size: .92rem !important; margin-bottom: .3rem; }
+  :root #blog-feed:not(.feed-on) .blog-card .card-text {
+    font-size: .76rem !important; margin-bottom: .5rem !important;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  :root #blog-feed:not(.feed-on) .blog-card .sw-btn { width: auto; min-height: 32px; padding: .1rem .7rem .1rem .2rem; }
+
+  /* publications: one per row, thumbnail left */
+  :root #pub-feed:not(.feed-on) { grid-template-columns: 1fr; }
+  :root #pub-feed:not(.feed-on) .pub-card { padding: .65rem !important; }
+  :root #pub-feed:not(.feed-on) .pub-card .row {
+    display: grid !important; grid-template-columns: 96px minmax(0, 1fr); gap: .75rem;
+    flex-direction: initial; align-items: start;
+  }
+  :root #pub-feed:not(.feed-on) .pub-card .row > .col-md-4 { grid-column: 1; grid-row: 1; }
+  :root #pub-feed:not(.feed-on) .pub-card .row > .col-md-8 { grid-column: 2; grid-row: 1; min-width: 0; }
+  :root #pub-feed:not(.feed-on) .pub-img { width: 96px !important; height: 96px !important; aspect-ratio: 1; padding: .2rem !important; }
+  :root #pub-feed:not(.feed-on) .pub-card h3 { font-size: .92rem !important; }
+  :root #pub-feed:not(.feed-on) .pub-card .d-flex.flex-wrap {
+    display: flex !important; flex-direction: row; flex-wrap: wrap; min-height: 0; gap: .35rem !important; width: auto !important;
+  }
+  :root #pub-feed:not(.feed-on) .pub-card .sw-btn { width: auto; min-height: 32px; padding: .1rem .7rem .1rem .2rem; }
+
+  /* theses & talks: one compact card per row */
+  :root .thesis-card, :root .talk-card { padding: .8rem .9rem !important; }
+  :root h4.thesis-title, :root h4.talk-title { font-size: .92rem !important; letter-spacing: 0; }
+  :root .thesis-supervisor { display: flex; flex-wrap: wrap; gap: .3rem; margin-bottom: .6rem; }
+  :root .thesis-card .sw-btn { width: auto; align-self: flex-start; margin-top: .2rem; min-height: 32px; padding: .1rem .75rem .1rem .2rem; }
+  :root .thesis-card .lbl-long { display: inline; }
+  :root .thesis-card .lbl-short { display: none; }
+}
+h1:has(> .title-chip), h2:has(> .title-chip), h3:has(> .title-chip) { flex-wrap: nowrap; }
+.title-chip { flex: 0 0 auto; }
+h1:has(> .title-chip), h2:has(> .title-chip), h3:has(> .title-chip) { text-align: left; }
+@media (max-width: 575.98px) {
+  :root h1:has(> .title-chip), :root h2:has(> .title-chip), :root h3:has(> .title-chip) { font-size: 1.6rem !important; }
+}
