@@ -930,3 +930,18 @@
   :root .person-card .lbl-long { display: none; }
   :root .person-card .lbl-short { display: inline; }
 }
+.sw-badge .badge-short { display: none; }
+@media (max-width: 767.98px) {
+  .sw-card .sw-actions .sw-badge .badge-long { display: none; }
+  .sw-card .sw-actions .sw-badge .badge-short { display: inline; }
+}
+
+/* Footer with 8 sponsor tiles: 8 / 4 / 2 per row */
+:root .sponsor-grid { grid-template-columns: repeat(8, minmax(0, 1fr)) !important; max-width: 1320px; }
+@media (max-width: 1199.98px) { :root .sponsor-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; max-width: 820px; } }
+@media (max-width: 575.98px) {
+  :root .sponsor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  :root .sponsor-grid > :last-child:nth-child(3n + 1) { grid-column: auto; }
+  :root .sponsor-grid .collab-box { height: 60px !important; padding: 10px 14px !important; }
+}
+:root .sponsor-grid .collab-box:has(img[src*="chalmers_logo"]) { padding-left: 8px !important; padding-right: 8px !important; }
