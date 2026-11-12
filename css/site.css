@@ -1208,3 +1208,17 @@ h1:has(> .title-chip), h2:has(> .title-chip), h3:has(> .title-chip) { text-align
     linear-gradient(150deg, rgba(56, 189, 248, .15) 0%, rgba(99, 102, 241, .09) 45%, transparent 80%),
     var(--card-bg) !important;
 }
+
+/* Desktop: dropdown titles get the same blue underline as plain links (on hover and for the current section).
+   ::after is taken by the chevron, so the underline is drawn as a background. */
+@media (min-width: 992px) {
+  .site-nav .nav-group > .dropdown-toggle {
+    background-image: linear-gradient(#60a5fa, #60a5fa);
+    background-repeat: no-repeat;
+    background-position: center bottom .1rem;
+    background-size: 0 2px;
+    transition: background-size .25s ease, color .2s ease;
+  }
+  .site-nav .nav-group:hover > .dropdown-toggle,
+  .site-nav .nav-group.has-current > .dropdown-toggle { background-size: calc(100% - 1rem) 2px; }
+}

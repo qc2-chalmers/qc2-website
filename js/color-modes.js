@@ -49,7 +49,9 @@
     btnToActive.classList.add('active')
     btnToActive.setAttribute('aria-pressed', 'true')
     activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    // the site's switcher has no #bd-theme-text label: without this guard the script crashed
+    // before wiring the Light/Dark/Auto buttons, so the theme could not be changed
+    const themeSwitcherLabel = `${themeSwitcherText ? themeSwitcherText.textContent : 'Toggle theme'} (${btnToActive.dataset.bsThemeValue})`
     themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
 
     if (focus) {
