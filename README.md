@@ -16,10 +16,26 @@ This website is built using a modern, responsive web stack designed for performa
 - `/css`: Contains Bootstrap framework files and custom style overrides.
 - `/images`: Organized by category (`carousel/`, `people/`, `papers/`, `blog/`) for easy management.
 - `/js`: Contains standard Bootstrap scripts and custom theme-switching logic.
-- `index.html`: The main landing page.
-- `people.html`: Team member profiles and professional information.
-- `publications.html`: Archived research papers and experimental studies.
-- `blog.html`: The Lab's blog, containing news about publications, events, people.
+- `/pages`: The source of every page (`index.html`, `people.html`, `publications.html`, `blog.html`, ...). **Edit pages here.**
+- `/partials`: Blocks shared by all pages: `header.html` (navigation bar) and `footer.html` ("Supported by" logos).
+- `/scripts/build_pages.py`: Builds the final pages in the site root from `pages/` + `partials/`.
 
 ## Getting Started
-To view the website locally, simply open the `index.html` file in any modern web browser. No compilation or build steps are required.
+The navigation bar and footer live in one place (`partials/`), and each page in `pages/` contains a marker where they go:
+
+```html
+<!-- include: header -->                    <!-- navigation bar -->
+<!-- include: header active=blog.html -->   <!-- ...with "News" highlighted (for sub-pages) -->
+<!-- include: footer -->                    <!-- footer -->
+```
+
+To view the website locally, build the pages and serve the folder:
+
+```sh
+uv run scripts/build_pages.py     # or: python3 scripts/build_pages.py
+python3 -m http.server            # then open http://localhost:8000
+```
+
+The generated pages in the site root are not committed (they are in `.gitignore`) — do not edit them, edit `pages/` instead and rebuild. Vercel runs the build on every deployment (see `vercel.json`).
+
+To add a new page, copy an existing file in `pages/` (e.g. `pages/internship.html`), keep the include markers and replace the `<main>` content.

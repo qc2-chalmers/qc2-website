@@ -1,5 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "python3 scripts/sync_docs.py || sh scripts/docs_placeholder.sh",
+  "buildCommand": "python3 scripts/build_pages.py && (python3 scripts/sync_docs.py || sh scripts/docs_placeholder.sh)",
   "outputDirectory": "."
 }
