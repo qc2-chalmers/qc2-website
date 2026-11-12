@@ -33,6 +33,20 @@
   .site-nav .nav-link:not(.dropdown-toggle):hover::after,
   .site-nav .nav-link[aria-current="page"]::after { transform: scaleX(1); }
   .site-nav .nav-link[aria-current="page"] { color: #fff !important; }
+  .nav-group.has-current > .dropdown-toggle { color: #fff !important; }
+  .nav-group > .dropdown-menu {
+    margin-top: 0; padding: .4rem; min-width: 12rem;
+    background: #0f172a; border: 1px solid rgba(255,255,255,.12); border-radius: .8rem;
+    box-shadow: 0 18px 40px -12px rgba(0,0,0,.6);
+  }
+  .nav-group:hover > .dropdown-menu { display: block; }
+  .nav-group .dropdown-item {
+    display: flex; align-items: center; gap: .5rem;
+    color: rgba(255,255,255,.9); border-radius: .5rem; padding: .5rem .75rem; font-size: 1rem;
+  }
+  .nav-group .dropdown-item:hover, .nav-group .dropdown-item:focus { background: rgba(96,165,250,.16); color: #60a5fa; }
+  .nav-group .dropdown-item[aria-current="page"] { background: rgba(96,165,250,.22); color: #fff; }
+  .nav-group .dropdown-item .nav-ic { display: none; }
 }
 
 @media (max-width: 991.98px) {
@@ -50,35 +64,38 @@
   }
   .site-menu .offcanvas-body { padding: 0 1.25rem 1.5rem !important; overflow-y: auto; }
 
-  .site-nav { display: grid !important; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
-  .site-nav .nav-item { width: auto; }
-  /* Events + Jobs share the last row, centred */
-  .site-nav { grid-template-columns: repeat(6, 1fr); }
-  .site-nav > .nav-item { grid-column: span 2; }
-  .site-nav > .nav-item:nth-child(10) { grid-column: 2 / span 2; }
-  .site-nav > .site-theme { grid-column: 1 / -1; }
-  .site-nav > .nav-item > .nav-link {
-    display: flex !important; flex-direction: column; align-items: center; justify-content: center; gap: .45rem;
-    min-height: 84px; padding: .6rem .4rem !important;
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, .04);
-    border: 1px solid rgba(255, 255, 255, .08);
-    color: #e2e8f0 !important;
-    font-size: .85rem !important; font-weight: 500 !important;
-    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+  /* vertical list; Research / People are accordions */
+  .site-nav { display: flex !important; flex-direction: column; gap: .25rem; align-items: stretch !important; }
+  .site-nav .nav-item { width: 100%; }
+  .site-nav > .nav-item > .nav-link,
+  .site-nav .nav-group .dropdown-item {
+    display: flex !important; flex-direction: row; align-items: center; gap: .8rem;
+    width: 100%; min-height: 52px; padding: .7rem .9rem !important; white-space: normal;
+    border-radius: .85rem; border: 0; background: transparent;
+    color: #e2e8f0 !important; font-size: 1.05rem !important; font-weight: 500 !important;
+    transition: background .2s ease;
   }
   .site-nav > .nav-item > .nav-link:hover,
-  .site-nav > .nav-item > .nav-link:active {
-    background: rgba(96, 165, 250, .12); border-color: rgba(96, 165, 250, .4); transform: translateY(-2px);
+  .site-nav > .nav-item > .nav-link:active,
+  .site-nav .nav-group .dropdown-item:hover { background: rgba(96,165,250,.12); }
+  .site-nav > .nav-item > .nav-link[aria-current="page"],
+  .site-nav .nav-group .dropdown-item[aria-current="page"] { background: rgba(96,165,250,.18); color: #fff !important; }
+  .site-nav .nav-ic { width: 22px; height: 22px; color: #93c5fd; }
+
+  .site-nav .nav-group > .dropdown-toggle { justify-content: space-between; }
+  .site-nav .nav-group > .dropdown-toggle::after { transition: transform .2s ease; }
+  .site-nav .nav-group > .dropdown-toggle.show::after { transform: rotate(180deg); }
+  .site-nav .nav-group.has-current > .dropdown-toggle { color: #fff !important; }
+  .site-nav .nav-group > .dropdown-menu {
+    position: static !important; transform: none !important; inset: auto !important;
+    margin: .1rem 0 .3rem 1.1rem !important; padding: 0 0 0 .6rem !important; min-width: 0;
+    background: transparent; border: 0; border-left: 2px solid rgba(96,165,250,.3); border-radius: 0;
   }
-  .site-nav > .nav-item > .nav-link[aria-current="page"] {
-    background: rgba(96, 165, 250, .16); border-color: rgba(96, 165, 250, .6); color: #fff !important;
-  }
-  .site-nav .nav-ic { width: 24px; height: 24px; color: #93c5fd; }
+  .site-nav .nav-group .dropdown-item { min-height: 46px; font-size: 1rem !important; }
   .site-nav-sep { display: none !important; }
 
   /* theme picker as a segmented pill across the whole grid */
-  .site-theme { grid-column: 1 / -1; margin-top: .5rem; }
+  .site-theme { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid rgba(255,255,255,.08); }
   .site-theme #bd-theme { display: none !important; }
   .site-theme .dropdown-menu {
     display: flex !important; position: static !important; transform: none !important; inset: auto !important;
