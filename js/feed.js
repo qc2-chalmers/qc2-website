@@ -17,10 +17,10 @@
 
   const ui = document.createElement('div');
   ui.className = 'feed-ui';
-  ui.innerHTML = '<button type="button" class="feed-back">▦ Back to grid view</button>' +
+  ui.innerHTML = '<button type="button" class="feed-back"><svg class="nav-ic" aria-hidden="true"><use href="#ic-grid"></use></svg><span>Back to grid</span></button>' +
     '<div class="feed-counter"></div>' +
-    '<div class="feed-arrows"><button type="button" data-dir="-1" aria-label="Previous">▲</button>' +
-    '<button type="button" data-dir="1" aria-label="Next">▼</button></div>';
+    '<div class="feed-arrows"><button type="button" data-dir="-1" aria-label="Previous"><svg class="nav-ic" aria-hidden="true"><use href="#ic-chevron-up"></use></svg></button>' +
+    '<button type="button" data-dir="1" aria-label="Next"><svg class="nav-ic" aria-hidden="true"><use href="#ic-chevron-down"></use></svg></button></div>';
   document.body.appendChild(ui);
   const counter = ui.querySelector('.feed-counter');
 
