@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="QC2 at the Munich Quantum Software Forum 2026: pitch and poster on Bragi">
+  <meta name="author" content="QC2 Team">
+
+  <title>Munich Quantum Software Forum 2026 · QC2 Lab</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/docs.css" rel="stylesheet">
+
+  <style>
+    /* Theme-aware Color Palette */
+    :root {
+      --bd-violet: #2563eb;
+      --bd-violet-rgb: 37, 99, 235;
+      --qc2-blue: #e0f2fe; 
+    }
+
+    body {
+      background-attachment: fixed;
+      background-size: cover;
+      transition: background 0.5s ease;
+    }
+
+    [data-bs-theme="light"] body { background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+    [data-bs-theme="dark"] body { background-image: linear-gradient(135deg, #0f172a 0%, #020617 100%); }
+
+    .bd-navbar { background-color: #0f172a !important; padding: 1.5rem 0 !important; }
+    .bd-navbar::after { background-image: none !important; background-color: #0f172a !important; }
+    .bd-navbar .nav-link, .bd-navbar .navbar-brand { color: rgba(255, 255, 255, 0.9) !important; }
+    .bd-navbar .nav-link:hover { color: #60a5fa !important; }
+    .bd-navbar .nav-link {
+      font-size: 1.1rem !important;
+      font-weight: 500 !important;
+    }
+    .offcanvas-lg, .offcanvas-md, .offcanvas-sm {
+      background-color: #0f172a !important;
+    }
+    .offcanvas-body .nav-link {
+      color: rgba(255, 255, 255, 0.9) !important;
+    }
+    .btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+    [data-bs-theme="dark"] .bd-navbar { background-color: #020617 !important; }
+
+    .content-block {
+      border: 1px solid var(--bs-border-color);
+      border-radius: 1.25rem;
+      padding: 3rem 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    [data-bs-theme="light"] .content-block { background-color: #ffffff51 !important; border-color: rgba(0,0,0,0.1); }
+    [data-bs-theme="dark"] .content-block { background-color: rgba(30, 41, 59, 0.8) !important; border-color: rgba(255,255,255,0.15); }
+
+    .btn-qc2 {
+      background-color: var(--qc2-blue) !important; 
+      border: 2px solid #7dd3fc !important;       
+      padding: 0.6rem 1.2rem !important;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      color: #0369a1 !important;
+      border-radius: 0.5rem !important;
+      transition: all 0.2s ease !important;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .btn-qc2:hover { filter: brightness(0.9); transform: translateY(-2px); color: #0369a1 !important; }
+
+    .wide-section { max-width: 1200px !important; }
+    .section-title-icon { width: 1em; height: 1em; vertical-align: -0.15em; margin-right: 0.75rem; fill: currentColor; }
+    
+    .internship-section h2 {
+      color: #0369a1;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid #0369a1;
+      padding-bottom: 0.75rem;
+      font-size: 1.5rem;
+    }
+
+    .internship-section h3 {
+      color: #0369a1;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .internship-section ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .internship-section li {
+      margin-bottom: 0.35rem;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .internship-intro {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-heading svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #0369a1;
+      flex-shrink: 0;
+    }
+
+    .contact-box {
+      background-color: var(--qc2-blue);
+      border-left: 4px solid #0369a1;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo-container { background-color: #ffffff; padding: 10px 20px; border-radius: 8px; display: inline-block; margin-bottom: 15px; border: 1px solid rgba(0,0,0,0.1); }
+    .footer-logo-img { max-height: 40px; display: block; }
+
+    .collab-box {
+      width: 250px;          
+      height: 100px;         
+      background-color: #deefff !important; 
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border: 1px solid rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+    .collab-box:hover { transform: scale(1.05); }
+    .collab-box img { max-width: 90%; max-height: 90%; object-fit: contain; }
+    .event-figure img { width: 100%; max-height: 640px; object-fit: cover; }
+    .poster-frame { border-radius: 0.75rem; overflow: hidden; border: 1px solid var(--bs-border-color); background: #fff; }
+    .poster-frame object { display: block; width: 100%; height: 80vh; min-height: 480px; }
+  </style>
+
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <link href="css/site.css" rel="stylesheet">
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="sw-arrow-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></symbol>
+    <symbol id="sw-arrow-up-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/></symbol>
+    <symbol id="sw-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></symbol>
+  </svg>
+
+  <!-- SVG ICON SYMBOLS -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check2" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" /></symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" /><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" /></symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" /></symbol>
+    <symbol id="three-dots" viewBox="0 0 16 16"><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" /></symbol>
+    <symbol id="house-fill" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/><path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/></symbol>
+    <symbol id="code-square" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0m2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0"/></symbol>
+    <symbol id="people-fill" viewBox="0 0 16 16"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></symbol>
+    <symbol id="briefcase-fill" viewBox="0 0 16 16"><path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.7 7.129-1.969-2.75a.5.5 0 1 0-.86.488L7.858 9.5 5.37 12.882a.5.5 0 0 0 .86.488l1.969-2.75 1.969 2.75a.5.5 0 0 0 .86-.488L8.358 9.5l2.488-3.371a.5.5 0 0 0-.86-.488l-1.97 2.75z"/></symbol>
+    <symbol id="file-earmark-text" viewBox="0 0 16 16"><path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/><path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2H12v.5a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5V1z"/></symbol>
+    <symbol id="chat-dots" viewBox="0 0 16 16"><path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/><path d="m14.046 12.868c.196-.392.201-.753.069-1.124l.748-1.049a.5.5 0 0 0-.182-.693l-.53-.265a6.47 6.47 0 0 0 1.079-1.897.5.5 0 0 0-.121-.645l-.559-.185a6.592 6.592 0 0 0 .367-2.734c0-3.314-2.686-6-6-6-3.314 0-6 2.686-6 6 0 3.314 2.686 6 6 6 .369 0 .729-.017 1.084-.05-.726.368-1.635.572-2.584.572-.859 0-1.69-.201-2.42-.56l-.45.975c-.168.432-.295.974-.371 1.529-.076.556.064 1.194.273 1.813.205.616.531 1.203 1.008 1.72.982 1.026 2.37 1.513 3.866 1.513 1.496 0 2.884-.487 3.866-1.513.477-.517.803-1.104 1.008-1.72.209-.619.35-1.257.273-1.813a4.997 4.997 0 0 0-.371-1.529l-.45-.975c.73.359 1.561.56 2.42.56 1.35 0 2.419-.418 2.419-1.302v-.001c0-.168-.046-.336-.136-.512l-.526-1.243z"/></symbol>
+  </svg>
+
+  <!-- include: header active=blog.html -->
+
+  <main class="container-xxl bd-gutter mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4 wide-section mx-auto">
+      <a class="sw-btn secondary" href="blog.html"><span class="emoji" aria-hidden="true">📰</span><span class="lbl">Back to News</span></a>
+    </div>
+
+    <section class="content-block wide-section mx-auto">
+      <span class="badge rounded-pill text-bg-primary mb-3">October 14-15, 2026</span>
+      <h1 class="display-5 mb-4 fw-semibold" style="color: #0369a1;">Bragi at the Munich Quantum Software Forum 2026</h1>
+
+      <div class="internship-intro">
+        <p class="lead mb-4">
+          Our software team travelled to the <a href="https://munich-quantum-software.github.io/mqsf/2026/" target="_blank">Munich Quantum Software Forum</a>
+          to present <strong>Bragi</strong>, the calibration toolkit we develop to characterize and operate the superconducting quantum processors made in our lab.
+          We gave a short pitch on stage and presented a poster during the poster session.
+        </p>
+        <p class="mb-4">
+          Representing QC2 were <strong>Axel Andersson</strong>, <strong>Matteo Robbiati</strong>, <strong>Joel Sandås</strong> and <strong>Michele Faucci Giannelli</strong>,
+          on behalf of the whole QC2 software team.
+        </p>
+      </div>
+
+      <figure class="event-figure mb-5">
+        <img src="images/blog/mqsf2026_pitch.jpg" class="img-fluid rounded-4 shadow-sm" alt="Pitch of Bragi on stage at the Munich Quantum Software Forum 2026">
+        <figcaption class="text-body-secondary small mt-2">Pitching Bragi on stage at the Munich Quantum Software Forum.</figcaption>
+      </figure>
+
+      <div class="internship-section">
+        <h2 class="section-heading"><svg viewBox="0 0 16 16" fill="currentColor"><use href="#people-fill"></use></svg>Meeting the community</h2>
+        <p>
+          The forum was a great networking opportunity. Beyond presenting our work, we talked with many people from the quantum software community
+          and caught up with our collaborators on international projects such as <strong>EuroQSS</strong> and <strong>OpenSuperQPlus</strong>,
+          as well as with long-standing partners like <strong>Qblox</strong>. It was also the chance to establish new connections with other groups,
+          such as the authors of <strong>OQTOPUS</strong>.
+        </p>
+
+        <h2 class="section-heading"><svg viewBox="0 0 16 16" fill="currentColor"><use href="#file-earmark-text"></use></svg>The poster</h2>
+        <p>
+          The poster gives an overview of Bragi: its modular monorepo, the CZ calibration pipeline, a readout crosstalk characterization and the interactive GUI.
+        </p>
+        <div class="poster-frame mb-3 shadow-sm">
+          <object data="files/posters/bragi_poster_mqsf2026.pdf#view=FitH" type="application/pdf" aria-label="Bragi poster">
+            <p class="p-4 mb-0">Your browser cannot display the poster inline — use the download button below.</p>
+          </object>
+        </div>
+        <a class="sw-btn primary" href="files/posters/bragi_poster_mqsf2026.pdf" download><span class="emoji" aria-hidden="true">📄</span><span class="lbl">Download the poster (PDF)</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- include: footer -->
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/color-modes.js"></script>
+  <script src="js/site.js"></script>
+</body>
+
+</html>
