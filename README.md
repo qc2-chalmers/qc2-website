@@ -17,11 +17,11 @@ This website is built using a modern, responsive web stack designed for performa
 - `/images`: Organized by category (`carousel/`, `people/`, `papers/`, `blog/`) for easy management.
 - `/js`: Contains standard Bootstrap scripts and custom theme-switching logic.
 - `/pages`: The source of every page (`index.html`, `people.html`, `publications.html`, `blog.html`, ...). **Edit pages here.**
-- `/partials`: Blocks shared by all pages: `header.html` (navigation bar) and `footer.html` ("Supported by" logos).
-- `/scripts/build_pages.py`: Builds the final pages in the site root from `pages/` + `partials/`.
+- `/components`: Blocks shared by all pages: `header.html` (navigation bar) and `footer.html` ("Supported by" logos).
+- `/scripts/build_pages.py`: Builds the final pages in the site root from `pages/` + `components/`.
 
 ## Getting Started
-The navigation bar and footer live in one place (`partials/`), and each page in `pages/` contains a marker where they go:
+The navigation bar and footer live in one place (`components/`), and each page in `pages/` contains a marker where they go:
 
 ```html
 <!-- include: header -->                    <!-- navigation bar -->
