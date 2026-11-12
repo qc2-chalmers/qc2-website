@@ -1191,8 +1191,8 @@ h1:has(> .title-chip), h2:has(> .title-chip), h3:has(> .title-chip) { text-align
 @media (min-width: 992px) {
   .site-nav > .nav-item:first-child::after,
   .site-nav-sep .vr {
-    width: 2px !important; min-width: 2px; height: 1.9rem !important; margin: 0 1rem !important; border-radius: 2px;
-    background: rgba(203, 213, 225, .45) !important;
+    width: 1px !important; min-width: 1px; height: 1.35rem !important; margin: 0 .9rem !important; border-radius: 1px;
+    background: rgba(203, 213, 225, .38) !important;
   }
 }
 
